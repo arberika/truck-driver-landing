@@ -42,6 +42,21 @@ function formatEventMessage(event) {
   message += `🌐 <b>URL:</b> ${event.page?.url || 'N/A'}\n`;
   message += `👤 <b>User ID:</b> ${event.user_id?.substring(0, 20)}...\n`;
 
+  // UTM parameters
+  if (event.utm) {
+    const utm = event.utm;
+    if (utm.utm_source || utm.utm_medium || utm.utm_campaign) {
+      message += `\n🎯 <b>UTM метки:</b>\n`;
+      if (utm.utm_source) message += `- Source: ${utm.utm_source}\n`;
+      if (utm.utm_medium) message += `- Medium: ${utm.utm_medium}\n`;
+      if (utm.utm_campaign) message += `- Campaign: ${utm.utm_campaign}\n`;
+      if (utm.utm_term) message += `- Term: ${utm.utm_term}\n`;
+      if (utm.utm_content) message += `- Content: ${utm.utm_content}\n`;
+      if (utm.fbclid) message += `- FB Click ID: ${utm.fbclid.substring(0, 20)}...\n`;
+      if (utm.gclid) message += `- Google Click ID: ${utm.gclid.substring(0, 20)}...\n`;
+    }
+  }
+
   if (event.event_data) {
     if (event.event_data.button_text) {
       message += `🔘 <b>Кнопка:</b> ${event.event_data.button_text}\n`;
@@ -64,6 +79,12 @@ function formatEventMessage(event) {
     message += `\n📱 <b>Устройство:</b>\n`;
     message += `- Язык: ${event.device.language}\n`;
     message += `- Экран: ${event.device.screen_width}x${event.device.screen_height}\n`;
+    if (event.device.is_mobile !== undefined) {
+      message += `- Мобильное: ${event.device.is_mobile ? 'Да' : 'Нет'}\n`;
+    }
+    if (event.device.connection && event.device.connection !== 'unknown') {
+      message += `- Соединение: ${event.device.connection}\n`;
+    }
   }
 
   return message;

@@ -191,6 +191,27 @@ fbq('track', 'PageView');
 
   <!-- ANALYTICS SYSTEM WITH MONGODB -->
   <script>
+// Parse UTM parameters from URL
+function getUTMParams() {
+  const params = new URLSearchParams(window.location.search);
+  const utm = {
+    utm_source: params.get('utm_source'),
+    utm_medium: params.get('utm_medium'),
+    utm_campaign: params.get('utm_campaign'),
+    utm_term: params.get('utm_term'),
+    utm_content: params.get('utm_content'),
+    fbclid: params.get('fbclid'),
+    gclid: params.get('gclid')
+  };
+  // Save to localStorage if present
+  const savedUTM = localStorage.getItem('eriar_utm');
+  if (Object.values(utm).some(v => v !== null)) {
+    localStorage.setItem('eriar_utm', JSON.stringify(utm));
+    localStorage.setItem('eriar_utm_time', Date.now());
+  }
+  return savedUTM ? JSON.parse(savedUTM) : utm;
+}
+
 const ANALYTICS_CONFIG = {
   apiEndpoint: '/api/analytics',
   sessionId: 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
@@ -201,7 +222,8 @@ const ANALYTICS_CONFIG = {
       localStorage.setItem('eriar_user_id', userId);
     }
     return userId;
-  })()
+  })(),
+  utm: getUTMParams()
 };
 
 async function trackEvent(eventName, eventData = {}) {
@@ -211,6 +233,7 @@ async function trackEvent(eventName, eventData = {}) {
     session_id: ANALYTICS_CONFIG.sessionId,
     user_id: ANALYTICS_CONFIG.userId,
     timestamp: new Date().toISOString(),
+    utm: ANALYTICS_CONFIG.utm,
     page: {
       url: window.location.href,
       path: window.location.pathname,
@@ -223,7 +246,9 @@ async function trackEvent(eventName, eventData = {}) {
       screen_width: window.screen.width,
       screen_height: window.screen.height,
       viewport_width: window.innerWidth,
-      viewport_height: window.innerHeight
+      viewport_height: window.innerHeight,
+      is_mobile: /Mobile|Android|iP(ad|hone)/.test(navigator.userAgent),
+      connection: navigator.connection ? navigator.connection.effectiveType : 'unknown'
     }
   };
 
