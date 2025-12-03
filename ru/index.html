@@ -162,7 +162,13 @@
         <div class="inline-flex items-center gap-2 text-xs text-cyan-200 bg-slate-800/80 px-3 py-1 rounded-full w-max border border-cyan-500/40"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> <span id="hero-badge">Набор водителей C+E • выезд через Словакию</span>
         </div>
         <div class="space-y-3">
-         <h1 id="main_heading" class="text-2xl sm:text-3xl font-extrabold leading-snug" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 27.2px;">Работа для водителей C+E в Европе</h1>
+         <div class="relative bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-2 border-cyan-400 rounded-2xl p-4 shadow-lg shadow-cyan-500/20">
+          <div class="absolute -top-2 -left-2 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
+          <div class="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+          <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="absolute -bottom-2 -right-2 w-4 h-4 bg-cyan-400 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+          <h1 id="main_heading" class="text-2xl sm:text-3xl font-extrabold leading-snug text-center" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 27.2px; background: linear-gradient(to right, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Работа для водителей C+E в Европе</h1>
+         </div>
          <p id="hero_subtitle" class="text-sm sm:text-base text-slate-200 max-w-xl" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 16px;">Официальное оформление в Словакии, народные визы и современный автопарк Renault Euro 6. Полное сопровождение оформления документов и прозрачный доход от 2500 до 2700 € в месяц.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
@@ -192,50 +198,65 @@
         <h3 id="video_title" class="text-lg font-semibold text-cyan-300">Видео-презентация вакансии</h3>
         <p id="video_subtitle" class="text-sm text-slate-400 mb-1">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
 
-        <!-- Compact vertical video grid -->
-        <div class="flex flex-col gap-2">
+        <!-- Video carousel: horizontal scroll on mobile, vertical on desktop -->
+        <div class="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none scrollbar-hide">
           <!-- Video 1 -->
-          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden" style="height: 140px;">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EОформление документов%3C/text%3E%3C/svg%3E">
-             <source src="./videos/video1.mp4" type="video/mp4">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EВидео 1%3C/text%3E%3C/svg%3E">
+             <source src="./videos/video4.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
-             Оформление документов
+             Видео 1
             </div>
           </div>
 
           <!-- Video 2 -->
-          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden" style="height: 140px;">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EРабота водителем%3C/text%3E%3C/svg%3E">
-             <source src="./videos/video2.mp4" type="video/mp4">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EВидео 2%3C/text%3E%3C/svg%3E">
+             <source src="./videos/video5.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
-             Работа водителем C+E
+             Видео 2
             </div>
           </div>
 
           <!-- Video 3 -->
-          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden" style="height: 140px;">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EМаршруты%3C/text%3E%3C/svg%3E">
-             <source src="./videos/video3.mp4" type="video/mp4">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EВидео 3%3C/text%3E%3C/svg%3E">
+             <source src="./videos/video6.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
-             Маршруты по Европе
+             Видео 3
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
+            <video
+             class="absolute inset-0 w-full h-full object-cover"
+             controls
+             preload="metadata"
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='14' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EВидео 4%3C/text%3E%3C/svg%3E">
+             <source src="./videos/video7.mp4" type="video/mp4">
+             Ваш браузер не поддерживает видео.
+            </video>
+            <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
+             Видео 4
             </div>
           </div>
         </div>
