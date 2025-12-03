@@ -394,6 +394,23 @@
       final_subtitle: "Оставьте короткую анкету или напишите в Telegram — ответим на вопросы и оценим ваши шансы на трудоустройство."
     };
 
+    // WhatsApp/Telegram messages for each language
+    const contactMessages = {
+      ru: 'Интересует вакансия водителя C+E в Европу с сайта ce.woweri.com, у меня есть все документы для водителя СЕ',
+      uk: 'Цікавить вакансія водія C+E до Європи з сайту ce.woweri.com, у мене є всі документи для водія СЕ',
+      uz: 'ce.woweri.com saytidan Yevropada C+E haydovchi vakansiyasi qiziqtiradi, menda SE haydovchi uchun barcha hujjatlar bor',
+      tj: 'Вакансияи ронандаи C+E ба Аврупо аз сомонаи ce.woweri.com манро ҷолиб мекунад, ман ҳуҷҷатҳои ронандаи СЕ дорам',
+      tk: 'ce.woweri.com saýtyndan Ýewropada C+E sürüji wakansisi gyzyklanýar, mende SE sürüji üçin ähli resminamalar bar',
+      kz: 'ce.woweri.com сайтынан Еуропаға C+E жүргізуші вакансиясы қызықтырады, менде СЕ жүргізушісі үшін барлық құжаттар бар',
+      az: 'ce.woweri.com saytından Avropaya C+E sürücü vakansiyası maraqlandırır, məndə SE sürücüsü üçün bütün sənədlər var',
+      ur: 'ce.woweri.com ویب سائٹ سے یورپ میں C+E ڈرائیور کی ملازمت میں دلچسپی ہے، میرے پاس SE ڈرائیور کے لیے تمام دستاویزات ہیں',
+      tr: 'ce.woweri.com sitesinden Avrupa\'da C+E sürücü pozisyonu ile ilgileniyorum, SE sürücüsü için tüm belgelerim var',
+      en: 'Interested in C+E driver position in Europe from ce.woweri.com website, I have all documents for CE driver'
+    };
+
+    const WHATSAPP_NUMBER = '17329635593';
+    const TELEGRAM_BOT = 'eriar_bot';
+
     // ID элементов, влияющих на конфиг
     const elements = {};
 
@@ -2199,6 +2216,20 @@
 
       // Update HTML lang attribute
       document.documentElement.lang = lang;
+
+      // Update WhatsApp and Telegram links with language-specific message
+      const message = contactMessages[lang] || contactMessages.ru;
+      const encodedMessage = encodeURIComponent(message);
+
+      const headerWhatsApp = document.getElementById('header-whatsapp');
+      const headerTelegram = document.getElementById('header-telegram');
+
+      if (headerWhatsApp) {
+        headerWhatsApp.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+      }
+      if (headerTelegram) {
+        headerTelegram.href = `https://t.me/${TELEGRAM_BOT}`;
+      }
     }
   </script>
 
