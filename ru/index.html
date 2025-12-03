@@ -173,16 +173,20 @@
         <p id="hero-help-text" class="text-xs text-slate-400">Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы.</p>
        </div><!-- Правый блок: видео-презентация -->
        <div class="w-full flex flex-col gap-3 fade-up visible">
-        <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9] flex items-center justify-center">
-         <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-slate-900/20 to-emerald-400/20 pointer-events-none"></div>
-         <div class="relative z-10 flex flex-col items-center justify-center text-center px-4"><button type="button" class="focus-ring w-14 h-14 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center shadow-lg mb-3 hover:bg-cyan-400 transition-colors" aria-label="Видео-презентация вакансии">
-           <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"></path>
-           </svg></button>
-          <p id="video_title" class="text-sm font-semibold mb-1" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Видео-презентация вакансии</p>
-          <p id="video_subtitle" class="text-xs text-slate-300 max-w-xs" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
-         </div>
+        <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9]">
+         <iframe
+           width="100%"
+           height="100%"
+           src="https://www.youtube.com/embed/LC-AJz8uGs0"
+           title="Видео-презентация вакансии"
+           frameborder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+           referrerpolicy="strict-origin-when-cross-origin"
+           allowfullscreen
+           class="absolute inset-0 w-full h-full"
+           style="border-radius: inherit;">
+         </iframe>
         </div>
-        <p class="text-[11px] text-slate-400">После запуска рекламы вставьте сюда ссылку или встройку вашего видео‑ролика.</p>
        </div>
       </section><!-- Кому подойдёт -->
       <section id="fit" class="fade-up visible">
@@ -190,25 +194,25 @@
        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div class="bg-slate-800/80 border border-emerald-500/50 rounded-2xl p-4 flex flex-col gap-2">
          <div class="flex items-center gap-2 mb-1"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-400 text-slate-900 text-sm font-bold">+</span>
-          <p class="font-semibold">Вам подойдёт, если:</p>
+          <p id="fit-suitable-heading" class="font-semibold">Вам подойдёт, если:</p>
          </div>
          <ul class="list-disc list-inside space-y-1 text-slate-100">
-          <li>есть категория C+E и действующие права</li>
-          <li>опыт международных перевозок или по Европе приветствуется</li>
-          <li>вы ответственны и пунктуальны</li>
-          <li>умеете экономично и аккуратно водить</li>
-          <li>готовы к работе в рейсах по несколько недель</li>
+          <li id="fit-pro-1">есть категория C+E и действующие права</li>
+          <li id="fit-pro-2">опыт международных перевозок или по Европе приветствуется</li>
+          <li id="fit-pro-3">вы ответственны и пунктуальны</li>
+          <li id="fit-pro-4">умеете экономично и аккуратно водить</li>
+          <li id="fit-pro-5">готовы к работе в рейсах по несколько недель</li>
          </ul>
         </div>
         <div class="bg-slate-800/80 border border-rose-500/50 rounded-2xl p-4 flex flex-col gap-2">
          <div class="flex items-center gap-2 mb-1"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-400 text-slate-900 text-sm font-bold">–</span>
-          <p class="font-semibold">Не подойдёт, если:</p>
+          <p id="fit-unsuitable-heading" class="font-semibold">Не подойдёт, если:</p>
          </div>
          <ul class="list-disc list-inside space-y-1 text-slate-100">
-          <li>нет категории C+E или загранпаспорта</li>
-          <li>нет готовности выезжать в Европу</li>
-          <li>рассчитываете на «серые» схемы или не хотите официального оформления</li>
-          <li>не готовы соблюдать графики и правила компании</li>
+          <li id="fit-con-1">нет категории C+E или загранпаспорта</li>
+          <li id="fit-con-2">нет готовности выезжать в Европу</li>
+          <li id="fit-con-3">рассчитываете на «серые» схемы или не хотите официального оформления</li>
+          <li id="fit-con-4">не готовы соблюдать графики и правила компании</li>
          </ul>
         </div>
        </div>
@@ -216,39 +220,39 @@
       <section id="terms" class="fade-up">
        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
         <h2 id="terms_heading" class="text-xl sm:text-2xl font-bold" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Условия работы и оплата</h2>
-        <p class="text-xs text-slate-300">Современный автопарк, прозрачные диеты и понятный расчёт дохода.</p>
+        <p id="terms-subtitle" class="text-xs text-slate-300">Современный автопарк, прозрачные диеты и понятный расчёт дохода.</p>
        </div>
        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm mb-5">
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Автопарк</h3>
-         <p class="text-slate-100">Новые Renault Euro 6, собственный сервис. Водитель не занимается ремонтом — всё через сервис и диспетчеров.</p>
+         <h3 id="terms-fleet-h" class="font-semibold mb-2">Автопарк</h3>
+         <p id="terms-fleet-p" class="text-slate-100">Новые Renault Euro 6, собственный сервис. Водитель не занимается ремонтом — всё через сервис и диспетчеров.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Маршруты и пробег</h3>
-         <p class="text-slate-100">Рейсы по всей Европе, средний пробег около 12 000 км в месяц.</p>
+         <h3 id="terms-routes-h" class="font-semibold mb-2">Маршруты и пробег</h3>
+         <p id="terms-routes-p" class="text-slate-100">Рейсы по всей Европе, средний пробег около 12 000 км в месяц.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Прицепы</h3>
-         <p class="text-slate-100">Рефрижератор, тент, самосвал, бочка — подбираем под опыт и пожелания водителя.</p>
+         <h3 id="terms-trailers-h" class="font-semibold mb-2">Прицепы</h3>
+         <p id="terms-trailers-p" class="text-slate-100">Рефрижератор, тент, самосвал, бочка — подбираем под опыт и пожелания водителя.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Диеты</h3>
-         <p class="text-slate-100">Стандартная диета — 90 € в день. При пробеге свыше 12 000 км — 100 € в день.</p>
+         <h3 id="terms-diets-h" class="font-semibold mb-2">Диеты</h3>
+         <p id="terms-diets-p" class="text-slate-100">Стандартная диета — 90 € в день. При пробеге свыше 12 000 км — 100 € в день.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Расход топлива</h3>
-         <p class="text-slate-100">Норма 28–30 л, фактический расход 22–23 л при экономичном вождении.</p>
+         <h3 id="terms-fuel-h" class="font-semibold mb-2">Расход топлива</h3>
+         <p id="terms-fuel-p" class="text-slate-100">Норма 28–30 л, фактический расход 22–23 л при экономичном вождении.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Парковка и отпуск</h3>
-         <p class="text-slate-100">Парковка оплачивается только под товар. Ежегодный оплачиваемый отпуск — 25 календарных дней.</p>
+         <h3 id="terms-parking-h" class="font-semibold mb-2">Парковка и отпуск</h3>
+         <p id="terms-parking-p" class="text-slate-100">Парковка оплачивается только под товар. Ежегодный оплачиваемый отпуск — 25 календарных дней.</p>
         </article>
        </div>
        <div class="bg-slate-800/80 border border-cyan-500/60 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
         <div>
-         <p class="font-semibold mb-1">Пример дохода водителя</p>
-         <p class="text-slate-100">При среднем пробеге и стандартных условиях водитель получает <span class="font-semibold text-cyan-300">около 2500–2700 € в месяц</span> «чистыми».</p>
-        </div><button id="btn-terms-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-900 shadow-md hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Уточнить расчёт под ваш опыт </button>
+         <p id="terms-income-heading" class="font-semibold mb-1">Пример дохода водителя</p>
+         <p class="text-slate-100"><span id="terms-income-text">При среднем пробеге и стандартных условиях водитель получает</span> <span id="terms-income-amount" class="font-semibold text-cyan-300">около 2500–2700 € в месяц</span> <span id="terms-income-net">«чистыми».</span></p>
+        </div><button id="btn-terms-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-900 shadow-md hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-terms-calc">Уточнить расчёт под ваш опыт</span></button>
        </div>
       </section><!-- Документы и оформление -->
       <section id="docs" class="fade-up">
@@ -257,23 +261,23 @@
        </div>
        <div class="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-4 text-sm">
         <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-2">Что потребуется для старта</h3>
+         <h3 id="docs-required-h" class="font-semibold mb-2">Что потребуется для старта</h3>
          <ul class="list-disc list-inside space-y-1 text-slate-100">
-          <li>Загранпаспорт</li>
-          <li>Права с двух сторон (категория C+E)</li>
-          <li>Чип-карта водителя</li>
-          <li>Код 95</li>
-          <li>Прописка латиницей с индексом</li>
-          <li>Семейное положение</li>
-          <li>Адрес для договора</li>
+          <li id="docs-passport">Загранпаспорт</li>
+          <li id="docs-license">Права с двух сторон (категория C+E)</li>
+          <li id="docs-card">Чип-карта водителя</li>
+          <li id="docs-code95">Код 95</li>
+          <li id="docs-address">Прописка латиницей с индексом</li>
+          <li id="docs-marital">Семейное положение</li>
+          <li id="docs-contract">Адрес для договора</li>
          </ul>
         </div>
         <div class="flex flex-col gap-3">
          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-          <h3 class="font-semibold mb-2">Сроки оформления</h3>
-          <p class="text-slate-100 mb-2">Оформление идёт через народные визы в Словакию. Полный процесс подготовки документов, подачи и получения визы/ВНЖ занимает <span class="font-semibold text-cyan-300">примерно 2–3 месяца</span>.</p>
-          <p class="text-xs text-slate-300">Мы сопровождаем вас на всех этапах: от сбора пакета документов до выезда на первый рейс.</p>
-         </div><button id="btn-docs-taplink" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-800 text-cyan-200 border border-cyan-500/60 hover:bg-slate-700 transition-colors" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Подробнее о пакетах и стоимости </button>
+          <h3 id="docs-timeline-h" class="font-semibold mb-2">Сроки оформления</h3>
+          <p class="text-slate-100 mb-2"><span id="docs-timeline-p1">Оформление идёт через народные визы в Словакию. Полный процесс подготовки документов, подачи и получения визы/ВНЖ занимает</span> <span id="docs-timeline-duration" class="font-semibold text-cyan-300">примерно 2–3 месяца</span>.</p>
+          <p id="docs-timeline-p2" class="text-xs text-slate-300">Мы сопровождаем вас на всех этапах: от сбора пакета документов до выезда на первый рейс.</p>
+         </div><button id="btn-docs-taplink" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-800 text-cyan-200 border border-cyan-500/60 hover:bg-slate-700 transition-colors" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-docs-packages">Подробнее о пакетах и стоимости</span></button>
         </div>
        </div>
       </section><!-- Как мы работаем -->
@@ -282,68 +286,68 @@
        <ol class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">1</span>
-          <p class="font-semibold">Заявка</p>
-         </div><p>Оставляете заявку через анкету или пишете нам в мессенджер.</p></li>
+          <p id="process-step1-h" class="font-semibold">Заявка</p>
+         </div><p id="process-step1-p">Оставляете заявку через анкету или пишете нам в мессенджер.</p></li>
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">2</span>
-          <p class="font-semibold">Проверка</p>
-         </div><p>Проверяем ваши документы и опыт, общаемся в Telegram, отвечаем на вопросы.</p></li>
+          <p id="process-step2-h" class="font-semibold">Проверка</p>
+         </div><p id="process-step2-p">Проверяем ваши документы и опыт, общаемся в Telegram, отвечаем на вопросы.</p></li>
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">3</span>
-          <p class="font-semibold">Подбор условий</p>
-         </div><p>Подбираем оптимальные маршруты, тип прицепа и график под ваш опыт и пожелания.</p></li>
+          <p id="process-step3-h" class="font-semibold">Подбор условий</p>
+         </div><p id="process-step3-p">Подбираем оптимальные маршруты, тип прицепа и график под ваш опыт и пожелания.</p></li>
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">4</span>
-          <p class="font-semibold">Документы</p>
-         </div><p>Готовим пакет документов и подаём на визу/ВНЖ в Словакии.</p></li>
+          <p id="process-step4-h" class="font-semibold">Документы</p>
+         </div><p id="process-step4-p">Готовим пакет документов и подаём на визу/ВНЖ в Словакии.</p></li>
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">5</span>
-          <p class="font-semibold">Виза/ВНЖ</p>
-         </div><p>Получаете визу или ВНЖ, согласуем дату выезда и старт работы.</p></li>
+          <p id="process-step5-h" class="font-semibold">Виза/ВНЖ</p>
+         </div><p id="process-step5-p">Получаете визу или ВНЖ, согласуем дату выезда и старт работы.</p></li>
         <li class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4 flex flex-col gap-1">
          <div class="flex items-center gap-2 mb-1"><span class="w-7 h-7 rounded-full bg-cyan-500 text-slate-900 flex items-center justify-center text-sm font-bold">6</span>
-          <p class="font-semibold">Выезд и работа</p>
-         </div><p>Приезжаете, проходите вводный брифинг и выходите на линию на своей машине.</p></li>
+          <p id="process-step6-h" class="font-semibold">Выезд и работа</p>
+         </div><p id="process-step6-p">Приезжаете, проходите вводный брифинг и выходите на линию на своей машине.</p></li>
        </ol>
       </section><!-- Почему нам доверяют -->
       <section id="trust" class="fade-up">
        <h2 id="trust_heading" class="text-xl sm:text-2xl font-bold mb-4" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Почему нам доверяют водители</h2>
        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-1">Официальное оформление в ЕС</h3>
-         <p class="text-slate-100">Работа через словацкую компанию с прозрачными договорами и понятной системой оплаты.</p>
+         <h3 id="trust-official-h" class="font-semibold mb-1">Официальное оформление в ЕС</h3>
+         <p id="trust-official-p" class="text-slate-100">Работа через словацкую компанию с прозрачными договорами и понятной системой оплаты.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-1">Прозрачный доход и диеты</h3>
-         <p class="text-slate-100">Чётко фиксированные ставки и диеты — без скрытых удержаний и «сюрпризов».</p>
+         <h3 id="trust-income-h" class="font-semibold mb-1">Прозрачный доход и диеты</h3>
+         <p id="trust-income-p" class="text-slate-100">Чётко фиксированные ставки и диеты — без скрытых удержаний и «сюрпризов».</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-1">Современный автопарк</h3>
-         <p class="text-slate-100">Комфортные Renault Euro 6, свой сервис и техподдержка в рейсе.</p>
+         <h3 id="trust-fleet-h" class="font-semibold mb-1">Современный автопарк</h3>
+         <p id="trust-fleet-p" class="text-slate-100">Комфортные Renault Euro 6, свой сервис и техподдержка в рейсе.</p>
         </article>
         <article class="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
-         <h3 class="font-semibold mb-1">Поддержка до и после выезда</h3>
-         <p class="text-slate-100">Помогаем с документами, адаптацией в новой стране и решением бытовых вопросов.</p>
+         <h3 id="trust-support-h" class="font-semibold mb-1">Поддержка до и после выезда</h3>
+         <p id="trust-support-p" class="text-slate-100">Помогаем с документами, адаптацией в новой стране и решением бытовых вопросов.</p>
         </article>
        </div>
       </section><!-- FAQ -->
       <section id="faq" class="fade-up">
        <h2 id="faq_heading" class="text-xl sm:text-2xl font-bold mb-4" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Частые вопросы</h2>
        <div class="space-y-3 text-sm">
-        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary class="cursor-pointer font-semibold text-slate-50"> Есть ли риск «кидалава»? </summary>
-         <p class="mt-2 text-slate-100">Мы работаем официально через словацкую компанию, с оформлением договоров и виз. Условия фиксируются на бумаге, а весь процесс — прозрачен и понятен.</p>
+        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary id="faq-q1" class="cursor-pointer font-semibold text-slate-50"> Есть ли риск «кидалава»? </summary>
+         <p id="faq-a1" class="mt-2 text-slate-100">Мы работаем официально через словацкую компанию, с оформлением договоров и виз. Условия фиксируются на бумаге, а весь процесс — прозрачен и понятен.</p>
         </details>
-        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary class="cursor-pointer font-semibold text-slate-50"> Что если мне откажут в визе? </summary>
-         <p class="mt-2 text-slate-100">Мы заранее проверяем ваши документы и шансы. В случае отказа помогаем разобраться в причинах и при возможности подать документы повторно.</p>
+        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary id="faq-q2" class="cursor-pointer font-semibold text-slate-50"> Что если мне откажут в визе? </summary>
+         <p id="faq-a2" class="mt-2 text-slate-100">Мы заранее проверяем ваши документы и шансы. В случае отказа помогаем разобраться в причинах и при возможности подать документы повторно.</p>
         </details>
-        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary class="cursor-pointer font-semibold text-slate-50"> Нужен ли язык? </summary>
-         <p class="mt-2 text-slate-100">Базовый английский или немецкий будет плюсом, но не всегда обязателен. Главное — опыт, аккуратность и готовность обучаться.</p>
+        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary id="faq-q3" class="cursor-pointer font-semibold text-slate-50"> Нужен ли язык? </summary>
+         <p id="faq-a3" class="mt-2 text-slate-100">Базовый английский или немецкий будет плюсом, но не всегда обязателен. Главное — опыт, аккуратность и готовность обучаться.</p>
         </details>
-        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary class="cursor-pointer font-semibold text-slate-50"> Что с жильём? </summary>
-         <p class="mt-2 text-slate-100">Помогаем подобрать варианты жилья рядом с базой или по маршруту. Подскажем надёжных арендодателей и ориентиры по ценам.</p>
+        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary id="faq-q4" class="cursor-pointer font-semibold text-slate-50"> Что с жильём? </summary>
+         <p id="faq-a4" class="mt-2 text-slate-100">Помогаем подобрать варианты жилья рядом с базой или по маршруту. Подскажем надёжных арендодателей и ориентиры по ценам.</p>
         </details>
-        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary class="cursor-pointer font-semibold text-slate-50"> Можно ли перевезти семью позже? </summary>
-         <p class="mt-2 text-slate-100">Да, такая возможность есть. После выхода на стабильный доход и оформления статуса поможем с консультацией по переезду семьи.</p>
+        <details class="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-3"><summary id="faq-q5" class="cursor-pointer font-semibold text-slate-50"> Можно ли перевезти семью позже? </summary>
+         <p id="faq-a5" class="mt-2 text-slate-100">Да, такая возможность есть. После выхода на стабильный доход и оформления статуса поможем с консультацией по переезду семьи.</p>
         </details>
        </div>
       </section><!-- Финальный CTA -->
@@ -353,9 +357,9 @@
          <h2 id="final_heading" class="text-xl sm:text-2xl font-bold mb-1" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 24px;">Готовы рассмотреть работу в Европе?</h2>
          <p id="final_subtitle" class="text-slate-100" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">Оставьте короткую анкету или напишите в Telegram — ответим на вопросы и оценим ваши шансы на трудоустройство.</p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3"><button id="btn-final-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 shadow-lg hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Заполнить анкету </button> <button id="btn-final-telegram" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-900 text-cyan-200 border border-cyan-500/60 hover:bg-slate-800 transition-colors w-full sm:w-auto" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Задать вопрос в Telegram </button>
+        <div class="flex flex-col sm:flex-row gap-3"><button type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 shadow-lg hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-final-form">Заполнить анкету</span></button> <button type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-900 text-cyan-200 border border-cyan-500/60 hover:bg-slate-800 transition-colors w-full sm:w-auto" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-final-telegram">Задать вопрос в Telegram</span></button>
         </div>
-        <p class="text-[11px] text-slate-400">Отправляя заявку, вы даёте согласие на обработку своих данных для подбора вакансии. Без спама и навязчивых звонков.</p>
+        <p id="final-privacy" class="text-[11px] text-slate-400">Отправляя заявку, вы даёте согласие на обработку своих данных для подбора вакансии. Без спама и навязчивых звонков.</p>
        </div>
       </section><!-- "Служебная" панель статуса -->
       <section class="mt-2 text-[11px] text-slate-500">
@@ -950,7 +954,82 @@
         "feature-5": "Сопровождение при оформлении документов и подготовке к выезду",
         "btn-form-text": "Заполнить анкету за 3 минуты",
         "btn-messenger-text": "Написать в WhatsApp/Telegram",
-        "hero-help-text": "Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы."
+        "hero-help-text": "Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы.",
+        "fit-suitable-heading": "Вам подойдёт, если:",
+        "fit-pro-1": "есть категория C+E и действующие права",
+        "fit-pro-2": "опыт международных перевозок или по Европе приветствуется",
+        "fit-pro-3": "вы ответственны и пунктуальны",
+        "fit-pro-4": "умеете экономично и аккуратно водить",
+        "fit-pro-5": "готовы к работе в рейсах по несколько недель",
+        "fit-unsuitable-heading": "Не подойдёт, если:",
+        "fit-con-1": "нет категории C+E или загранпаспорта",
+        "fit-con-2": "нет готовности выезжать в Европу",
+        "fit-con-3": "рассчитываете на «серые» схемы или не хотите официального оформления",
+        "fit-con-4": "не готовы соблюдать графики и правила компании",
+        "terms-subtitle": "Современный автопарк, прозрачные диеты и понятный расчёт дохода.",
+        "terms-fleet-h": "Автопарк",
+        "terms-fleet-p": "Новые Renault Euro 6, собственный сервис. Водитель не занимается ремонтом — всё через сервис и диспетчеров.",
+        "terms-routes-h": "Маршруты и пробег",
+        "terms-routes-p": "Рейсы по всей Европе, средний пробег около 12 000 км в месяц.",
+        "terms-trailers-h": "Прицепы",
+        "terms-trailers-p": "Рефрижератор, тент, самосвал, бочка — подбираем под опыт и пожелания водителя.",
+        "terms-diets-h": "Диеты",
+        "terms-diets-p": "Стандартная диета — 90 € в день. При пробеге свыше 12 000 км — 100 € в день.",
+        "terms-fuel-h": "Расход топлива",
+        "terms-fuel-p": "Норма 28–30 л, фактический расход 22–23 л при экономичном вождении.",
+        "terms-parking-h": "Парковка и отпуск",
+        "terms-parking-p": "Парковка оплачивается только под товар. Ежегодный оплачиваемый отпуск — 25 календарных дней.",
+        "terms-income-heading": "Пример дохода водителя",
+        "terms-income-text": "При среднем пробеге и стандартных условиях водитель получает",
+        "terms-income-amount": "около 2500–2700 € в месяц",
+        "terms-income-net": "«чистыми».",
+        "btn-terms-calc": "Уточнить расчёт под ваш опыт",
+        "docs-required-h": "Что потребуется для старта",
+        "docs-passport": "Загранпаспорт",
+        "docs-license": "Права с двух сторон (категория C+E)",
+        "docs-card": "Чип-карта водителя",
+        "docs-code95": "Код 95",
+        "docs-address": "Прописка латиницей с индексом",
+        "docs-marital": "Семейное положение",
+        "docs-contract": "Адрес для договора",
+        "docs-timeline-h": "Сроки оформления",
+        "docs-timeline-p1": "Оформление идёт через народные визы в Словакию. Полный процесс подготовки документов, подачи и получения визы/ВНЖ занимает",
+        "docs-timeline-duration": "примерно 2–3 месяца",
+        "docs-timeline-p2": "Мы сопровождаем вас на всех этапах: от сбора пакета документов до выезда на первый рейс.",
+        "btn-docs-packages": "Подробнее о пакетах и стоимости",
+        "process-step1-h": "Заявка",
+        "process-step1-p": "Оставляете заявку через анкету или пишете нам в мессенджер.",
+        "process-step2-h": "Проверка",
+        "process-step2-p": "Проверяем ваши документы и опыт, общаемся в Telegram, отвечаем на вопросы.",
+        "process-step3-h": "Подбор условий",
+        "process-step3-p": "Подбираем оптимальные маршруты, тип прицепа и график под ваш опыт и пожелания.",
+        "process-step4-h": "Документы",
+        "process-step4-p": "Готовим пакет документов и подаём на визу/ВНЖ в Словакии.",
+        "process-step5-h": "Виза/ВНЖ",
+        "process-step5-p": "Получаете визу или ВНЖ, согласуем дату выезда и старт работы.",
+        "process-step6-h": "Выезд и работа",
+        "process-step6-p": "Приезжаете, проходите вводный брифинг и выходите на линию на своей машине.",
+        "trust-official-h": "Официальное оформление в ЕС",
+        "trust-official-p": "Работа через словацкую компанию с прозрачными договорами и понятной системой оплаты.",
+        "trust-income-h": "Прозрачный доход и диеты",
+        "trust-income-p": "Чётко фиксированные ставки и диеты — без скрытых удержаний и «сюрпризов».",
+        "trust-fleet-h": "Современный автопарк",
+        "trust-fleet-p": "Комфортные Renault Euro 6, свой сервис и техподдержка в рейсе.",
+        "trust-support-h": "Поддержка до и после выезда",
+        "trust-support-p": "Помогаем с документами, адаптацией в новой стране и решением бытовых вопросов.",
+        "faq-q1": "Есть ли риск «кидалава»?",
+        "faq-a1": "Мы работаем официально через словацкую компанию, с оформлением договоров и виз. Условия фиксируются на бумаге, а весь процесс — прозрачен и понятен.",
+        "faq-q2": "Что если мне откажут в визе?",
+        "faq-a2": "Мы заранее проверяем ваши документы и шансы. В случае отказа помогаем разобраться в причинах и при возможности подать документы повторно.",
+        "faq-q3": "Нужен ли язык?",
+        "faq-a3": "Базовый английский или немецкий будет плюсом, но не всегда обязателен. Главное — опыт, аккуратность и готовность обучаться.",
+        "faq-q4": "Что с жильём?",
+        "faq-a4": "Помогаем подобрать варианты жилья рядом с базой или по маршруту. Подскажем надёжных арендодателей и ориентиры по ценам.",
+        "faq-q5": "Можно ли перевезти семью позже?",
+        "faq-a5": "Да, такая возможность есть. После выхода на стабильный доход и оформления статуса поможем с консультацией по переезду семьи.",
+        "btn-final-form": "Заполнить анкету",
+        "btn-final-telegram": "Задать вопрос в Telegram",
+        "final-privacy": "Отправляя заявку, вы даёте согласие на обработку своих данных для подбора вакансии. Без спама и навязчивых звонков."
       },
       uk: {
         siteLabel: "Вакансія",
@@ -975,7 +1054,82 @@
         "feature-5": "Супровід при оформленні документів та підготовці до виїзду",
         "btn-form-text": "Заповнити анкету за 3 хвилини",
         "btn-messenger-text": "Написати в WhatsApp/Telegram",
-        "hero-help-text": "Відповімо на питання, допоможемо оцінити ваші шанси та підберемо комфортні умови роботи."
+        "hero-help-text": "Відповімо на питання, допоможемо оцінити ваші шанси та підберемо комфортні умови роботи.",
+        "fit-suitable-heading": "Вам підійде, якщо:",
+        "fit-pro-1": "є категорія C+E та дійсні права",
+        "fit-pro-2": "досвід міжнародних перевезень або по Європі вітається",
+        "fit-pro-3": "ви відповідальні та пунктуальні",
+        "fit-pro-4": "вмієте економно та акуратно водити",
+        "fit-pro-5": "готові до роботи в рейсах по декілька тижнів",
+        "fit-unsuitable-heading": "Не підійде, якщо:",
+        "fit-con-1": "немає категорії C+E або закордонного паспорта",
+        "fit-con-2": "немає готовності виїжджати до Європи",
+        "fit-con-3": "розраховуєте на «сірі» схеми або не хочете офіційного оформлення",
+        "fit-con-4": "не готові дотримуватися графіків та правил компанії",
+        "terms-subtitle": "Сучасний автопарк, прозорі дієти та зрозумілий розрахунок доходу.",
+        "terms-fleet-h": "Автопарк",
+        "terms-fleet-p": "Нові Renault Euro 6, власний сервіс. Водій не займається ремонтом — все через сервіс та диспетчерів.",
+        "terms-routes-h": "Маршрути та пробіг",
+        "terms-routes-p": "Рейси по всій Європі, середній пробіг близько 12 000 км на місяць.",
+        "terms-trailers-h": "Причепи",
+        "terms-trailers-p": "Рефрижератор, тент, самоскид, бочка — підбираємо під досвід та побажання водія.",
+        "terms-diets-h": "Дієти",
+        "terms-diets-p": "Стандартна дієта — 90 € на день. При пробігу понад 12 000 км — 100 € на день.",
+        "terms-fuel-h": "Витрата палива",
+        "terms-fuel-p": "Норма 28–30 л, фактична витрата 22–23 л при економному водінні.",
+        "terms-parking-h": "Паркування та відпустка",
+        "terms-parking-p": "Паркування оплачується лише під товар. Щорічна оплачувана відпустка — 25 календарних днів.",
+        "terms-income-heading": "Приклад доходу водія",
+        "terms-income-text": "При середньому пробігу та стандартних умовах водій отримує",
+        "terms-income-amount": "близько 2500–2700 € на місяць",
+        "terms-income-net": "«чистими».",
+        "btn-terms-calc": "Уточнити розрахунок під ваш досвід",
+        "docs-required-h": "Що знадобиться для старту",
+        "docs-passport": "Закордонний паспорт",
+        "docs-license": "Права з двох сторін (категорія C+E)",
+        "docs-card": "Чіп-карта водія",
+        "docs-code95": "Код 95",
+        "docs-address": "Прописка латиницею з індексом",
+        "docs-marital": "Сімейний стан",
+        "docs-contract": "Адреса для договору",
+        "docs-timeline-h": "Терміни оформлення",
+        "docs-timeline-p1": "Оформлення йде через народні візи до Словаччини. Повний процес підготовки документів, подачі та отримання візи/ПМП займає",
+        "docs-timeline-duration": "приблизно 2–3 місяці",
+        "docs-timeline-p2": "Ми супроводжуємо вас на всіх етапах: від збору пакету документів до виїзду на перший рейс.",
+        "btn-docs-packages": "Детальніше про пакети та вартість",
+        "process-step1-h": "Заявка",
+        "process-step1-p": "Залишаєте заявку через анкету або пишете нам у месенджер.",
+        "process-step2-h": "Перевірка",
+        "process-step2-p": "Перевіряємо ваші документи та досвід, спілкуємося в Telegram, відповідаємо на питання.",
+        "process-step3-h": "Підбір умов",
+        "process-step3-p": "Підбираємо оптимальні маршрути, тип причепа та графік під ваш досвід та побажання.",
+        "process-step4-h": "Документи",
+        "process-step4-p": "Готуємо пакет документів та подаємо на візу/ПМП у Словаччині.",
+        "process-step5-h": "Віза/ПМП",
+        "process-step5-p": "Отримуєте візу або ПМП, узгоджуємо дату виїзду та старт роботи.",
+        "process-step6-h": "Виїзд та робота",
+        "process-step6-p": "Приїжджаєте, проходите вступний брифінг та виходите на лінію на своїй машині.",
+        "trust-official-h": "Офіційне оформлення в ЄС",
+        "trust-official-p": "Робота через словацьку компанію з прозорими договорами та зрозумілою системою оплати.",
+        "trust-income-h": "Прозорий дохід та дієти",
+        "trust-income-p": "Чітко фіксовані ставки та дієти — без прихованих утримань та «сюрпризів».",
+        "trust-fleet-h": "Сучасний автопарк",
+        "trust-fleet-p": "Комфортні Renault Euro 6, свій сервіс та техпідтримка в рейсі.",
+        "trust-support-h": "Підтримка до і після виїзду",
+        "trust-support-p": "Допомагаємо з документами, адаптацією в новій країні та вирішенням побутових питань.",
+        "faq-q1": "Чи є ризик «кидалова»?",
+        "faq-a1": "Ми працюємо офіційно через словацьку компанію, з оформленням договорів та віз. Умови фіксуються на папері, а весь процес — прозорий та зрозумілий.",
+        "faq-q2": "Що якщо мені відмовлять у візі?",
+        "faq-a2": "Ми заздалегідь перевіряємо ваші документи та шанси. У разі відмови допомагаємо розібратися в причинах та за можливості подати документи повторно.",
+        "faq-q3": "Чи потрібна мова?",
+        "faq-a3": "Базова англійська або німецька буде плюсом, але не завжди обов'язкова. Головне — досвід, акуратність та готовність навчатися.",
+        "faq-q4": "Що з житлом?",
+        "faq-a4": "Допомагаємо підібрати варіанти житла поруч з базою або по маршруту. Підкажемо надійних орендодавців та орієнтири за цінами.",
+        "faq-q5": "Чи можна перевезти сім'ю пізніше?",
+        "faq-a5": "Так, така можливість є. Після виходу на стабільний дохід та оформлення статусу допоможемо з консультацією щодо переїзду сім'ї.",
+        "btn-final-form": "Заповнити анкету",
+        "btn-final-telegram": "Задати питання в Telegram",
+        "final-privacy": "Надсилаючи заявку, ви даєте згоду на обробку своїх даних для підбору вакансії. Без спаму та нав'язливих дзвінків."
       },
       uz: {
         siteLabel: "Vakansiya",
@@ -1000,7 +1154,82 @@
         "feature-5": "Hujjatlarni rasmiylashtiruv va chiqishga tayyorgarlikda qo'llab-quvvatlash",
         "btn-form-text": "Anketani 3 daqiqada to'ldiring",
         "btn-messenger-text": "WhatsApp/Telegram'da yozing",
-        "hero-help-text": "Savollaringizga javob beramiz, imkoniyatlaringizni baholaymiz va qulay ish sharoitlarini tanlaymiz."
+        "hero-help-text": "Savollaringizga javob beramiz, imkoniyatlaringizni baholaymiz va qulay ish sharoitlarini tanlaymiz.",
+        "fit-suitable-heading": "Sizga mos keladi, agar:",
+        "fit-pro-1": "C+E toifasi va amal qiluvchi haydovchilik guvohnomasiga ega bo'lsangiz",
+        "fit-pro-2": "xalqaro yoki Yevropa bo'ylab tashish tajribangiz bo'lsa yaxshi",
+        "fit-pro-3": "mas'uliyatli va vaqtni qadrlaydigan bo'lsangiz",
+        "fit-pro-4": "tejamkor va ehtiyotkorlik bilan haydash qobiliyatiga ega bo'lsangiz",
+        "fit-pro-5": "bir necha haftalik safarlarda ishlashga tayyor bo'lsangiz",
+        "fit-unsuitable-heading": "Mos kelmaydi, agar:",
+        "fit-con-1": "C+E toifasi yoki xorijiy pasportingiz bo'lmasa",
+        "fit-con-2": "Yevropaga chiqishga tayyorligingiz bo'lmasa",
+        "fit-con-3": "norasmiy sxemalarni kutayotgan bo'lsangiz yoki rasmiy rasmiylashtirish istamagan bo'lsangiz",
+        "fit-con-4": "kompaniya jadvalidagi va qoidalariga rioya qilishga tayyor bo'lmasangiz",
+        "terms-subtitle": "Zamonaviy avtopark, shaffof kundalik to'lovlar va tushunarli daromad hisobi.",
+        "terms-fleet-h": "Avtopark",
+        "terms-fleet-p": "Yangi Renault Euro 6, o'z xizmati. Haydovchi ta'mirlash bilan shug'ullanmaydi — hammasis xizmat va dispetcherlar orqali.",
+        "terms-routes-h": "Marshrutlar va yurish",
+        "terms-routes-p": "Butun Yevropa bo'ylab safarlar, oyiga o'rtacha 12 000 km yurish.",
+        "terms-trailers-h": "Tirkamalar",
+        "terms-trailers-p": "Muzlatgich, tent, yuk mashinasi, sisterna — haydovchining tajribasi va istaklariga mos tanlaymiz.",
+        "terms-diets-h": "Kundalik to'lovlar",
+        "terms-diets-p": "Standart kundalik to'lov — 90 € kuniga. 12 000 km dan ortiq yurish bo'lsa — 100 € kuniga.",
+        "terms-fuel-h": "Yoqilg'i sarfi",
+        "terms-fuel-p": "Me'yor 28–30 l, tejamkor haydashda haqiqiy sarfi 22–23 l.",
+        "terms-parking-h": "To'xtash va ta'til",
+        "terms-parking-p": "To'xtash faqat yuk ostida to'lanadi. Yillik haq to'lanadigan ta'til — 25 kalendar kun.",
+        "terms-income-heading": "Haydovchi daromadi namunasi",
+        "terms-income-text": "O'rtacha yurish va standart sharoitlarda haydovchi oladi",
+        "terms-income-amount": "oyiga taxminan 2500–2700 €",
+        "terms-income-net": "«toza».",
+        "btn-terms-calc": "Tajribangizga mos hisob-kitobni aniqlash",
+        "docs-required-h": "Boshlash uchun kerak bo'ladi",
+        "docs-passport": "Xorijiy pasport",
+        "docs-license": "Ikkala tomondan guvohnoma (C+E toifasi)",
+        "docs-card": "Haydovchi chip kartasi",
+        "docs-code95": "Kod 95",
+        "docs-address": "Lotin yozuvida indeks bilan ro'yxatdan o'tish manzili",
+        "docs-marital": "Oilaviy holati",
+        "docs-contract": "Shartnoma uchun manzil",
+        "docs-timeline-h": "Rasmiylashtirish muddatlari",
+        "docs-timeline-p1": "Rasmiylashtirish Slovakiyaga xalq vizalari orqali amalga oshiriladi. Hujjatlarni tayyorlash, topshirish va viza/ruxsatnoma olishning to'liq jarayoni",
+        "docs-timeline-duration": "taxminan 2–3 oy",
+        "docs-timeline-p2": "davom etadi. Biz sizni barcha bosqichlarda qo'llab-quvvatlaymiz: hujjatlar to'plamini yig'ishdan birinchi safaringizgacha.",
+        "btn-docs-packages": "Paketlar va narxlar haqida batafsil",
+        "process-step1-h": "Ariza",
+        "process-step1-p": "Anketa orqali ariza qoldirasiz yoki bizga messenjerda yozasiz.",
+        "process-step2-h": "Tekshirish",
+        "process-step2-p": "Hujjatlaringiz va tajribangizni tekshiramiz, Telegramda muloqot qilamiz, savollaringizga javob beramiz.",
+        "process-step3-h": "Shartlarni tanlash",
+        "process-step3-p": "Tajribangiz va istaklaringizga mos optimal marshrutlar, tirkama turi va jadvallarni tanlaymiz.",
+        "process-step4-h": "Hujjatlar",
+        "process-step4-p": "Hujjatlar to'plamini tayyorlaymiz va Slovakiyada viza/ruxsatnomaga topshiramiz.",
+        "process-step5-h": "Viza/Ruxsatnoma",
+        "process-step5-p": "Viza yoki ruxsatnoma olasiz, chiqish sanasi va ish boshlanishini kelishamiz.",
+        "process-step6-h": "Chiqish va ish",
+        "process-step6-p": "Kelasiz, kirish brifingidan o'tasiz va o'z mashinangizda ishlashni boshlaysiz.",
+        "trust-official-h": "Yevroittifoqda rasmiy rasmiylashtirish",
+        "trust-official-p": "Shaffof shartnomalar va tushunarli to'lov tizimi bilan Slovak kompaniyasi orqali ish.",
+        "trust-income-h": "Shaffof daromad va kundalik to'lovlar",
+        "trust-income-p": "Aniq belgilangan stavkalar va kundalik to'lovlar — yashirin ushlanmalar va «syurprizlar»siz.",
+        "trust-fleet-h": "Zamonaviy avtopark",
+        "trust-fleet-p": "Qulay Renault Euro 6, o'z xizmati va safarda texnik yordam.",
+        "trust-support-h": "Chiqishdan oldin va keyin qo'llab-quvvatlash",
+        "trust-support-p": "Hujjatlar, yangi mamlakatda moslashish va maishiy masalalarni hal qilishda yordam beramiz.",
+        "faq-q1": "«Aldanish» xavfi bormi?",
+        "faq-a1": "Biz Slovak kompaniyasi orqali rasmiy ravishda, shartnomalar va vizalarni rasmiylashtirib ishlaymiz. Shartlar qog'ozda mustahkamlanadi, va butun jarayon shaffof va tushunarli.",
+        "faq-q2": "Agar vizani rad etishsa nima bo'ladi?",
+        "faq-a2": "Biz hujjatlaringiz va imkoniyatlaringizni oldindan tekshiramiz. Rad etish holatida sabablarni aniqlashda yordam beramiz va imkon bo'lsa, hujjatlarni qayta topshirishga yordam beramiz.",
+        "faq-q3": "Til kerakmi?",
+        "faq-a3": "Asosiy ingliz yoki nemis tili afzallik bo'ladi, lekin har doim ham shart emas. Asosiysi — tajriba, ehtiyotkorlik va o'rganishga tayyorlik.",
+        "faq-q4": "Uy-joy bilan nima?",
+        "faq-a4": "Baza yaqinida yoki marshrut bo'ylab turar joy variantlarini tanlashda yordam beramiz. Ishonchli uy-joy beruvchilar va narxlar bo'yicha yo'l-yo'riq beramiz.",
+        "faq-q5": "Oilani keyinroq ko'chirish mumkinmi?",
+        "faq-a5": "Ha, bunday imkoniyat bor. Barqaror daromadga chiqib, maqom rasmiylashtirgandan keyin oilangizni ko'chirishda maslahat berishga yordam beramiz.",
+        "btn-final-form": "Anketani to'ldirish",
+        "btn-final-telegram": "Telegramda savol berish",
+        "final-privacy": "Ariza yuborish orqali siz o'z ma'lumotlaringizni vakansiya tanlash uchun qayta ishlashga rozilik berasiz. Spam va bezovta qiluvchi qo'ng'iroqlarsiz."
       },
       tj: {
         siteLabel: "Вакансия",
@@ -1025,7 +1254,82 @@
         "feature-5": "Пуштибонӣ ҳангоми расмикунонии ҳуҷҷатҳо ва омодагӣ ба баромад",
         "btn-form-text": "Анкетаро дар 3 дақиқа пур кунед",
         "btn-messenger-text": "Дар WhatsApp/Telegram нависед",
-        "hero-help-text": "Ба саволҳо ҷавоб медиҳем, имкониятҳои шуморо арзёбӣ мекунем ва шароити кории қулай мепардозем."
+        "hero-help-text": "Ба саволҳо ҷавоб медиҳем, имкониятҳои шуморо арзёбӣ мекунем ва шароити кории қулай мепардозем.",
+        "fit-suitable-heading": "Барои шумо мувофиқ аст, агар:",
+        "fit-pro-1": "категорияи C+E ва шиноснома дошта бошед",
+        "fit-pro-2": "таҷрибаи интиқолоти байналмилалӣ ё дар Аврупо қадр карда мешавад",
+        "fit-pro-3": "шумо масъулиятнок ва вақтшинос бошед",
+        "fit-pro-4": "тавонед иқтисодӣ ва эҳтиётона ронандагӣ кунед",
+        "fit-pro-5": "барои кор дар сафарҳои якчанд ҳафтагӣ омода бошед",
+        "fit-unsuitable-heading": "Мувофиқ нест, агар:",
+        "fit-con-1": "категорияи C+E ё шиносномаи хориҷӣ надошта бошед",
+        "fit-con-2": "омодагии рафтан ба Аврупо надошта бошед",
+        "fit-con-3": "ба схемаҳои «хокистарӣ» умедвор бошед ё расмӣ кардан нахоҳед",
+        "fit-con-4": "ба риоя кардани ҷадвал ва қоидаҳои ширкат омода набошед",
+        "terms-subtitle": "Автопарки муосир, нафақаҳои шаффоф ва ҳисоби фаҳмо аз даромад.",
+        "terms-fleet-h": "Автопарк",
+        "terms-fleet-p": "Renault Euro 6-и нав, хидмати худӣ. Ронанда бо таъмир сару кор надорад — ҳама чиз тавассути хидмат ва диспетчерҳо.",
+        "terms-routes-h": "Масирҳо ва масофа",
+        "terms-routes-p": "Сафарҳо дар тамоми Аврупо, масофаи миёна тақрибан 12 000 км дар моҳ.",
+        "terms-trailers-h": "Тиркашҳо",
+        "terms-trailers-p": "Яхдонча, тент, тағор, бочка — мувофиқи таҷриба ва хоҳишҳои ронанда интихоб мекунем.",
+        "terms-diets-h": "Нафақаҳо",
+        "terms-diets-p": "Нафақаи стандартӣ — 90 € дар рӯз. Дар масофаи зиёда аз 12 000 км — 100 € дар рӯз.",
+        "terms-fuel-h": "Сарфи сӯзишворӣ",
+        "terms-fuel-p": "Меъёр 28–30 л, сарфи воқеӣ 22–23 л бо ронандагии иқтисодӣ.",
+        "terms-parking-h": "Истодагоҳ ва таътил",
+        "terms-parking-p": "Истодагоҳ танҳо зери бор пардохта мешавад. Таътили солонаи пулакӣ — 25 рӯзи тақвимӣ.",
+        "terms-income-heading": "Мисоли даромади ронанда",
+        "terms-income-text": "Бо масофаи миёна ва шароитҳои стандартӣ ронанда мегирад",
+        "terms-income-amount": "тақрибан 2500–2700 € дар моҳ",
+        "terms-income-net": "«тоза».",
+        "btn-terms-calc": "Муайян кардани ҳисоб мувофиқи таҷрибаи шумо",
+        "docs-required-h": "Чӣ барои оғоз лозим аст",
+        "docs-passport": "Шиносномаи хориҷӣ",
+        "docs-license": "Шиноснома аз ду тараф (категорияи C+E)",
+        "docs-card": "Корти чипии ронанда",
+        "docs-code95": "Рамзи 95",
+        "docs-address": "Сабти ном бо ҳарфҳои лотинӣ бо индекс",
+        "docs-marital": "Ҳолати оилавӣ",
+        "docs-contract": "Суроға барои шартнома",
+        "docs-timeline-h": "Мӯҳлати расмӣ кардан",
+        "docs-timeline-p1": "Расмӣ кардан тавассути визаҳои халқӣ ба Словакия мегузарад. Раванди пурраи омода кардани ҳуҷҷатҳо, пешниҳод ва гирифтани виза/иҷозатнома",
+        "docs-timeline-duration": "тақрибан 2–3 моҳ",
+        "docs-timeline-p2": "давом мекунад. Мо шуморо дар ҳамаи марҳилаҳо дастгирӣ мекунем: аз ҷамъоварии ҳуҷҷатҳо то баромади ба сафари аввалин.",
+        "btn-docs-packages": "Муфассалтар дар бораи бастаҳо ва нарх",
+        "process-step1-h": "Дархост",
+        "process-step1-p": "Дархост тавассути анкета мегузоред ё ба мо дар мессенҷер менависед.",
+        "process-step2-h": "Санҷиш",
+        "process-step2-p": "Ҳуҷҷатҳо ва таҷрибаатонро месанҷем, дар Telegram муошират мекунем, ба саволҳо ҷавоб медиҳем.",
+        "process-step3-h": "Интихоби шароитҳо",
+        "process-step3-p": "Масирҳои оптималӣ, намуди тиркаш ва ҷадвалро мувофиқи таҷриба ва хоҳишҳои шумо интихоб мекунем.",
+        "process-step4-h": "Ҳуҷҷатҳо",
+        "process-step4-p": "Бастаи ҳуҷҷатҳоро омода мекунем ва барои виза/иҷозатнома дар Словакия пешниҳод мекунем.",
+        "process-step5-h": "Виза/Иҷозатнома",
+        "process-step5-p": "Виза ё иҷозатнома мегиред, санаи баромад ва оғози корро мувофиқа мекунем.",
+        "process-step6-h": "Баромад ва кор",
+        "process-step6-p": "Меоед, брифинги ибтидоиро мегузаред ва бо мошини худ ба кор мебароед.",
+        "trust-official-h": "Расмӣ кардани расмӣ дар ИА",
+        "trust-official-p": "Кор тавассути ширкати словакӣ бо шартномаҳои шаффоф ва низоми фаҳмои пардохт.",
+        "trust-income-h": "Даромади шаффоф ва нафақаҳо",
+        "trust-income-p": "Ставкаҳо ва нафақаҳои дақиқ муқарраршуда — бе кӯсурҳои пинҳонӣ ва «сюрпризҳо».",
+        "trust-fleet-h": "Автопарки муосир",
+        "trust-fleet-p": "Renault Euro 6-и қулай, хидмати худӣ ва дастгирии техникӣ дар сафар.",
+        "trust-support-h": "Дастгирӣ пеш ва баъд аз баромад",
+        "trust-support-p": "Бо ҳуҷҷатҳо, мутобиқшавӣ дар кишвари нав ва ҳалли масоили маишӣ кӯмак мекунем.",
+        "faq-q1": "Оё хатари «фиребгарӣ» ҳаст?",
+        "faq-a1": "Мо расман тавассути ширкати словакӣ кор мекунем, бо расмӣ кардани шартномаҳо ва визаҳо. Шароитҳо дар коғаз сабт мешаванд ва тамоми раванд шаффоф ва фаҳмо аст.",
+        "faq-q2": "Агар ба ман виза рад кунанд, чӣ хоҳад шуд?",
+        "faq-a2": "Мо пешакӣ ҳуҷҷатҳо ва имконияти шуморо месанҷем. Дар сурати рад кӯмак мекунем, ки сабабҳоро дарёбед ва агар имкон бошад, ҳуҷҷатҳоро дубора пешниҳод кунед.",
+        "faq-q3": "Оё забон лозим аст?",
+        "faq-a3": "Забони англисӣ ё олмонии асосӣ афзалият дорад, вале ҳамеша ҳатмӣ нест. Асосӣ — таҷриба, эҳтиёт ва омодагии омӯхтан.",
+        "faq-q4": "Бо манзил чӣ?",
+        "faq-a4": "Бо интихоби варианти манзил наздики база ё дар масир кӯмак мекунем. Соҳибхонаҳои боэътимод ва роҳнамои нархҳоро меорем.",
+        "faq-q5": "Оё баъдтар хонаводаро кӯчонидан мумкин аст?",
+        "faq-a5": "Бале, чунин имконият ҳаст. Баъд аз баровардани даромади устувор ва расмӣ кардани мақом бо маслиҳат оид ба кӯчи хонавода кӯмак мекунем.",
+        "btn-final-form": "Пур кардани анкета",
+        "btn-final-telegram": "Савол дар Telegram",
+        "final-privacy": "Бо фиристодани дархост шумо ба коркарди маълумоти худ барои интихоби вакансия розигӣ медиҳед. Бе спам ва занги ҳуҷумкорона."
       },
       tk: {
         siteLabel: "Waka Yeri",
@@ -1050,7 +1354,82 @@
         "feature-5": "Resminamalary resmileşdirmekde we çykyşa taýynlykda goldaw",
         "btn-form-text": "Anketany 3 minutda dolduryň",
         "btn-messenger-text": "WhatsApp/Telegram-da ýazyň",
-        "hero-help-text": "Soraglara jogap bereris, mümkinçilikleriňizi bahalandyrarys we amatly iş şertlerini saýlarys."
+        "hero-help-text": "Soraglara jogap bereris, mümkinçilikleriňizi bahalandyrarys we amatly iş şertlerini saýlarys.",
+        "fit-suitable-heading": "Size laýyk gelýär, eger:",
+        "fit-pro-1": "C+E kategoriýaňyz we hereket edýän şahadatnamaňyz bar bolsa",
+        "fit-pro-2": "halkara ýa-da Ýewropa boýunça daşamak tejribiňiz bar bolsa gowy",
+        "fit-pro-3": "siz jogapkärli we wagtlaýyn bolsaňyz",
+        "fit-pro-4": "tygşytly we seresaplylyk bilen sürüp bilýän bolsaňyz",
+        "fit-pro-5": "birnäçe hepdelik saparlar bilen işlemäge taýyn bolsaňyz",
+        "fit-unsuitable-heading": "Laýyk gelmeýär, eger:",
+        "fit-con-1": "C+E kategoriýaňyz ýa-da daşary ýurt pasportyňyz ýok bolsa",
+        "fit-con-2": "Ýewropa gitmäge taýynlygyňyz ýok bolsa",
+        "fit-con-3": "«çal» shemalaryna umyt edýän bolsaňyz ýa-da resmi resmileşdirmek islemeýän bolsaňyz",
+        "fit-con-4": "kompaniýanyň tertibine we kadalaryna eýermäge taýyn däl bolsaňyz",
+        "terms-subtitle": "Döwrebap awtopark, aýdyň gündelik tölegler we düşnükli girdejä hasaplamasy.",
+        "terms-fleet-h": "Awtopark",
+        "terms-fleet-p": "Täze Renault Euro 6, öz hyzmaty. Sürüji abatlaýyş bilen meşgullanmaýar — ählisi hyzmat we dispetçerler arkaly.",
+        "terms-routes-h": "Ugurlar we ýoly",
+        "terms-routes-p": "Tutuş Ýewropa boýunça saparlar, ortaça aýda 12 000 km ýol.",
+        "terms-trailers-h": "Tirkegiler",
+        "terms-trailers-p": "Sowadyjy, tent, ýük awtoulagy, sisterna — sürüjiniň tejribesine we islegine görä saýlaýarys.",
+        "terms-diets-h": "Gündelik tölegler",
+        "terms-diets-p": "Adaty gündelik töleg — günde 90 €. 12 000 km-den gowrak ýol edilende — günde 100 €.",
+        "terms-fuel-h": "Ýangyç sarp edilişi",
+        "terms-fuel-p": "Kadaly 28–30 l, tygşytly sürüşde hakyky sarp 22–23 l.",
+        "terms-parking-h": "Duralga we dynç alyş",
+        "terms-parking-p": "Duralga diňe ýük astynda tölenilýär. Ýyllyk hak alynýan dynç alyş — 25 kalendar güni.",
+        "terms-income-heading": "Sürüjiniň girdejiniň mysaly",
+        "terms-income-text": "Ortaça ýol we adaty şertlerde sürüji alýar",
+        "terms-income-amount": "aýda takmynan 2500–2700 €",
+        "terms-income-net": "«arassa».",
+        "btn-terms-calc": "Tejribiňize görä hasaplamany anyklaň",
+        "docs-required-h": "Başlamak üçin gerek bolar",
+        "docs-passport": "Daşary ýurt pasporty",
+        "docs-license": "Iki tarapdan şahadatnama (C+E kategoriýasy)",
+        "docs-card": "Sürüjiniň çip karty",
+        "docs-code95": "Kod 95",
+        "docs-address": "Latyn ýazuwy bilen indeksli hasaba alyş salgysy",
+        "docs-marital": "Maşgala ýagdaýy",
+        "docs-contract": "Şertnama üçin salgy",
+        "docs-timeline-h": "Resmileşdirme möhletleri",
+        "docs-timeline-p1": "Resmileşdirme Slowakiýa halk wizalary arkaly geçirilýär. Resminamalary taýýarlamagyň, tabşyrmagyň we wiza/rugsat almagyň doly prosesi",
+        "docs-timeline-duration": "takmynan 2–3 aý",
+        "docs-timeline-p2": "dowam edýär. Biz siziň ähli etaplarda goldaw berýäris: resminamalary ýygnamakdan ilkinji saparyňyza çenli.",
+        "btn-docs-packages": "Paketler we bahalar barada giňişleýin",
+        "process-step1-h": "Ýüz tutma",
+        "process-step1-p": "Anketadan ýüz tutma galdyrýarsyňyz ýa-da bize messenjerden ýazýarsyňyz.",
+        "process-step2-h": "Barlag",
+        "process-step2-p": "Resminamalaryňyzy we tejribiňizi barlaýarys, Telegramda aragatnaşyk edýäris, soraglara jogap berýäris.",
+        "process-step3-h": "Şertleri saýlamak",
+        "process-step3-p": "Tejribiňize we islegiňize görä oňaýly ugurlary, tirkeg görnüşini we tertibi saýlaýarys.",
+        "process-step4-h": "Resminamalar",
+        "process-step4-p": "Resminamalaryň toplumyny taýýarlaýarys we Slowakiýada wiza/rugsat üçin tabşyrýarys.",
+        "process-step5-h": "Wiza/Rugsat",
+        "process-step5-p": "Wiza ýa-da rugsat alýarsyňyz, gidiş senesini we işiň başlanmagyny ylalaşýarys.",
+        "process-step6-h": "Gidiş we iş",
+        "process-step6-p": "Gelýärsiňiz, giriş brifinginden geçýärsiňiz we öz maşynyňyzda işe başlaýarsyňyz.",
+        "trust-official-h": "EUB-de resmi resmileşdirme",
+        "trust-official-p": "Aýdyň şertnamalar we düşnükli töleg ulgamy bilen slowak kompaniýasynyň üsti bilen iş.",
+        "trust-income-h": "Aýdyň girdejä we gündelik tölegler",
+        "trust-income-p": "Kesgitlenen nyrh we gündelik tölegler — gizlin aýyrmalar we «geň zatlar» ýok.",
+        "trust-fleet-h": "Döwrebap awtopark",
+        "trust-fleet-p": "Amatly Renault Euro 6, öz hyzmaty we saparda tehniki goldaw.",
+        "trust-support-h": "Gitmezden öň we soň goldaw",
+        "trust-support-p": "Resminamalar, täze ýurtda uýgunlaşmak we gündelik meseleleri çözmekde kömek edýäris.",
+        "faq-q1": "«Aldaw» howpy barmy?",
+        "faq-a1": "Biz slowak kompaniýasynyň üsti bilen resmi taýdan işleýäris, şertnamalary we wizalary resmileşdirýäris. Şertler kagyzda bellenendir we tutuş proses aýdyň we düşnükli.",
+        "faq-q2": "Maňa wiza ret edilse näme bolar?",
+        "faq-a2": "Biz öňünden resminamalaryňyzy we mümkinçiligiňizi barlaýarys. Ret edilse sebäplerini anyklamakda kömek edýäris we mümkinçilik bar bolsa, resminalary gaýtadan tabşyrmaga kömek edýäris.",
+        "faq-q3": "Dil gerekmi?",
+        "faq-a3": "Esasy iňlis ýa-da nemes dili artykmaçlyk bolar, emma hemişe hökmany däl. Esasy zat — tejribe, seresaply we öwrenmäge taýynlyk.",
+        "faq-q4": "Ýaşaýyş jaýy bilen näme?",
+        "faq-a4": "Baza ýakynyndaky ýa-da ugur boýunça ýaşaýyş jaýy wariantlaryny saýlamakda kömek edýäris. Ygtybarly kärendeçileri we bahalary görkezeris.",
+        "faq-q5": "Maşgalany soň göçürip bolýarmy?",
+        "faq-a5": "Hawa, şeýle mümkinçilik bar. Durnukly girdejä çykanyňyzdan we statusy resmileşdireniňizden soň maşgalany göçürmek barada maslahat bermekde kömek ederis.",
+        "btn-final-form": "Anketa doldurmak",
+        "btn-final-telegram": "Telegramda sorag bermek",
+        "final-privacy": "Ýüz tutma ibermek bilen siz maglumatyňyzy iş orunyny saýlamak üçin gaýtadan işlemäge razyçylyk berýärsiňiz. Spam we zyňňyrdawuk jaňlar ýok."
       },
       kz: {
         siteLabel: "Вакансия",
@@ -1075,7 +1454,82 @@
         "feature-5": "Құжаттарды ресімдеу және шығуға дайындық кезінде қолдау",
         "btn-form-text": "Сауалнаманы 3 минутта толтырыңыз",
         "btn-messenger-text": "WhatsApp/Telegram-ға жазыңыз",
-        "hero-help-text": "Сұрақтарға жауап береміз, мүмкіндіктеріңізді бағалаймыз және ыңғайлы жұмыс жағдайларын таңдаймыз."
+        "hero-help-text": "Сұрақтарға жауап береміз, мүмкіндіктеріңізді бағалаймыз және ыңғайлы жұмыс жағдайларын таңдаймыз.",
+        "fit-suitable-heading": "Сізге жарайды, егер:",
+        "fit-pro-1": "C+E санаты мен жарамды құжаттарыңыз болса",
+        "fit-pro-2": "халықаралық немесе Еуропа бойынша тасымалдау тәжірибеңіз болса құпталады",
+        "fit-pro-3": "сіз жауапты және уақыт сақтайтын болсаңыз",
+        "fit-pro-4": "үнемді және ұқыпты жүре білсеңіз",
+        "fit-pro-5": "бірнеше апта бойы рейстерде жұмыс істеуге дайын болсаңыз",
+        "fit-unsuitable-heading": "Жарамайды, егер:",
+        "fit-con-1": "C+E санатыңыз немесе шетел паспортыңыз болмаса",
+        "fit-con-2": "Еуропаға шығуға дайындығыңыз болмаса",
+        "fit-con-3": "«сұр» схемаларға үміттенсеңіз немесе ресми рәсімдеуді қаламасаңыз",
+        "fit-con-4": "компанияның кестесі мен ережелерін сақтауға дайын болмасаңыз",
+        "terms-subtitle": "Заманауи автопарк, мөлдір диеталар және түсінікті табыс есебі.",
+        "terms-fleet-h": "Автопарк",
+        "terms-fleet-p": "Жаңа Renault Euro 6, өз сервисі. Жүргізуші жөндеумен айналыспайды — бәрі сервис пен диспетчерлер арқылы.",
+        "terms-routes-h": "Бағыттар және жүріс",
+        "terms-routes-p": "Бүкіл Еуропа бойынша рейстер, орташа айына 12 000 км жүріс.",
+        "terms-trailers-h": "Тіркемелер",
+        "terms-trailers-p": "Рефрижератор, тент, самосвал, бочка — жүргізушінің тәжірибесі мен тілегіне қарай таңдаймыз.",
+        "terms-diets-h": "Диеталар",
+        "terms-diets-p": "Стандартты диета — күніне 90 €. 12 000 км-ден асса — күніне 100 €.",
+        "terms-fuel-h": "Отын шығыны",
+        "terms-fuel-p": "Норма 28–30 л, үнемді жүргізгенде нақты шығын 22–23 л.",
+        "terms-parking-h": "Тұрақ және демалыс",
+        "terms-parking-p": "Тұрақ тек жүк астында төленеді. Жылдық ақылы демалыс — 25 күнтізбелік күн.",
+        "terms-income-heading": "Жүргізуші табысының мысалы",
+        "terms-income-text": "Орташа жүріс пен стандартты жағдайларда жүргізуші алады",
+        "terms-income-amount": "айына шамамен 2500–2700 €",
+        "terms-income-net": "«таза».",
+        "btn-terms-calc": "Тәжірибеңізге қарай есепті нақтылау",
+        "docs-required-h": "Бастау үшін не керек",
+        "docs-passport": "Шетел паспорты",
+        "docs-license": "Екі жағынан құжаттар (C+E санаты)",
+        "docs-card": "Жүргізушінің чип-картасы",
+        "docs-code95": "Код 95",
+        "docs-address": "Индекспен латын қаріпімен тіркелген мекенжай",
+        "docs-marital": "Отбасылық жағдайы",
+        "docs-contract": "Келісімшарт үшін мекенжай",
+        "docs-timeline-h": "Рәсімдеу мерзімдері",
+        "docs-timeline-p1": "Рәсімдеу Словакияға халықтық визалар арқылы жүреді. Құжаттарды дайындаудың, беру мен виза/тұруға рұқсат алудың толық процесі",
+        "docs-timeline-duration": "шамамен 2–3 ай",
+        "docs-timeline-p2": "алады. Біз сізді барлық кезеңдерде қолдаймыз: құжаттар жинауынан бастап алғашқы рейске шығуға дейін.",
+        "btn-docs-packages": "Пакеттер мен құны туралы толығырақ",
+        "process-step1-h": "Өтініш",
+        "process-step1-p": "Сауалнама арқылы өтініш қалдырасыз немесе бізге мессенджерде жазасыз.",
+        "process-step2-h": "Тексеру",
+        "process-step2-p": "Құжаттарыңыз бен тәжірибеңізді тексереміз, Telegram-да қарым-қатынас жасаймыз, сұрақтарға жауап береміз.",
+        "process-step3-h": "Жағдайларды таңдау",
+        "process-step3-p": "Тәжірибеңіз бен тілегіңізге қарай оңтайлы бағыттарды, тіркеме түрін және кестені таңдаймыз.",
+        "process-step4-h": "Құжаттар",
+        "process-step4-p": "Құжаттар пакетін дайындаймыз және Словакияда виза/тұруға рұқсатқа береміз.",
+        "process-step5-h": "Виза/ТРР",
+        "process-step5-p": "Виза немесе ТРР аласыз, шығу күні мен жұмыс бастауды келісеміз.",
+        "process-step6-h": "Шығу және жұмыс",
+        "process-step6-p": "Келесіз, кіріспе брифингтен өтесіз және өз машинаңызда жұмыс істеуге шығасыз.",
+        "trust-official-h": "ЕО-да ресми рәсімдеу",
+        "trust-official-p": "Мөлдір келісімшарттар мен түсінікті төлем жүйесімен словак компаниясы арқылы жұмыс.",
+        "trust-income-h": "Мөлдір табыс пен диеталар",
+        "trust-income-p": "Нақты бекітілген ставкалар мен диеталар — жасырын ұстап қалулар мен «сюрприздерсіз».",
+        "trust-fleet-h": "Заманауи автопарк",
+        "trust-fleet-p": "Жайлы Renault Euro 6, өз сервисі мен рейстегі техникалық қолдау.",
+        "trust-support-h": "Шығуға дейін және кейін қолдау",
+        "trust-support-p": "Құжаттармен, жаңа елде бейімделуімен және тұрмыстық мәселелерді шешуге көмектесеміз.",
+        "faq-q1": "«Алдау» қаупі бар ма?",
+        "faq-a1": "Біз словак компаниясы арқылы ресми түрде, келісімшарттар мен визаларды рәсімдей отырып жұмыс істейміз. Жағдайлар қағазға бекітіледі, ал бүкіл процесс — мөлдір және түсінікті.",
+        "faq-q2": "Маған визадан бас тартса не болады?",
+        "faq-a2": "Біз алдын ала құжаттарыңызды және мүмкіндіктеріңізді тексереміз. Бас тартылған жағдайда себептерін түсінуге көмектесеміз және мүмкіндік болса, құжаттарды қайта беруге көмектесеміз.",
+        "faq-q3": "Тіл керек пе?",
+        "faq-a3": "Базалық ағылшын немесе неміс тілі артықшылық болады, бірақ әрқашан міндетті емес. Басты — тәжірибе, ұқыптылық және үйренуге дайындық.",
+        "faq-q4": "Тұрғын үймен не?",
+        "faq-a4": "База жанында немесе бағыт бойынша тұрғын үй нұсқаларын таңдауға көмектесеміз. Сенімді жалға берушілерді және бағдарларды бағалар бойынша айтып береміз.",
+        "faq-q5": "Отбасын кейінірек көшіруге бола ма?",
+        "faq-a5": "Иә, мұндай мүмкіндік бар. Тұрақты табысқа шыққаннан және мәртебені рәсімдегеннен кейін отбасыңызды көшіру бойынша кеңес беруге көмектесеміз.",
+        "btn-final-form": "Сауалнаманы толтыру",
+        "btn-final-telegram": "Telegram-да сұрақ қою",
+        "final-privacy": "Өтініш жіберу арқылы сіз өз деректеріңізді вакансия таңдау үшін өңдеуге келісім бересіз. Спамсыз және мазасыз қоңыраулардан."
       },
       az: {
         siteLabel: "Vakansiya",
@@ -1100,7 +1554,82 @@
         "feature-5": "Sənədləri rəsmiləşdirərkən və çıxışa hazırlıqda dəstək",
         "btn-form-text": "Anketi 3 dəqiqəyə doldurun",
         "btn-messenger-text": "WhatsApp/Telegram-da yazın",
-        "hero-help-text": "Suallara cavab verəcəyik, imkanlarınızı qiymətləndirəcəyik və rahat iş şərtləri seçəcəyik."
+        "hero-help-text": "Suallara cavab verəcəyik, imkanlarınızı qiymətləndirəcəyik və rahat iş şərtləri seçəcəyik.",
+        "fit-suitable-heading": "Sizə uyğundur, əgər:",
+        "fit-pro-1": "C+E kateqoriyanız və qüvvədə olan sürücülük vəsiqəniz varsa",
+        "fit-pro-2": "beynəlxalq və ya Avropa üzrə daşıma təcrübəniz varsa alqışlanır",
+        "fit-pro-3": "məsuliyyətli və vaxtında olsanız",
+        "fit-pro-4": "qənaətcil və diqqətli sürməyi bacarırsınızsa",
+        "fit-pro-5": "bir neçə həftəlik reyslər üzrə işə hazırsınızsa",
+        "fit-unsuitable-heading": "Uyğun deyil, əgər:",
+        "fit-con-1": "C+E kateqoriyanız və ya xarici pasportunuz yoxdursa",
+        "fit-con-2": "Avropaya getməyə hazırlığınız yoxdursa",
+        "fit-con-3": "«boz» sxemlərə ümid edirsinizsə və ya rəsmi rəsmiləşdirmə istəmirsinizsə",
+        "fit-con-4": "şirkətin cədvəlinə və qaydalarına əməl etməyə hazır deyilsinizsə",
+        "terms-subtitle": "Müasir avtopark, şəffaf dieta və aydın gəlir hesablaması.",
+        "terms-fleet-h": "Avtopark",
+        "terms-fleet-p": "Yeni Renault Euro 6, öz servisi. Sürücü təmirlə məşğul olmur — hər şey servis və dispetçerlər vasitəsilə.",
+        "terms-routes-h": "Marşrutlar və yürüş",
+        "terms-routes-p": "Bütün Avropa üzrə reyslər, aylıq orta yürüş təqribən 12 000 km.",
+        "terms-trailers-h": "Qoşqular",
+        "terms-trailers-p": "Soyuducu, tent, yükqaldıran, çən — sürücünün təcrübəsinə və istəyinə uyğun seçirik.",
+        "terms-diets-h": "Dietalar",
+        "terms-diets-p": "Standart dieta — gündə 90 €. 12 000 km-dən artıq yürüşdə — gündə 100 €.",
+        "terms-fuel-h": "Yanacaq sərfi",
+        "terms-fuel-p": "Norma 28–30 l, qənaətcil sürüşdə faktiki sərfi 22–23 l.",
+        "terms-parking-h": "Dayanacaq və məzuniyyət",
+        "terms-parking-p": "Dayanacaq yalnız yük altında ödənilir. İllik ödənişli məzuniyyət — 25 təqvim günü.",
+        "terms-income-heading": "Sürücünün gəlir nümunəsi",
+        "terms-income-text": "Orta yürüş və standart şəraitlərdə sürücü alır",
+        "terms-income-amount": "aylıq təqribən 2500–2700 €",
+        "terms-income-net": "«təmiz».",
+        "btn-terms-calc": "Təcrübənizə uyğun hesablamayı dəqiqləşdirin",
+        "docs-required-h": "Başlamaq üçün nə lazımdır",
+        "docs-passport": "Xarici pasport",
+        "docs-license": "Hər iki tərəfdən vəsiqə (C+E kateqoriyası)",
+        "docs-card": "Sürücünün çip kartı",
+        "docs-code95": "Kod 95",
+        "docs-address": "Qeydiyyat ünvanı latın hərfləri ilə və indekslə",
+        "docs-marital": "Ailə vəziyyəti",
+        "docs-contract": "Müqavilə üçün ünvan",
+        "docs-timeline-h": "Rəsmiləşdirmə müddətləri",
+        "docs-timeline-p1": "Rəsmiləşdirmə Slovakiyaya xalq vizaları vasitəsilə gedir. Sənədlərin hazırlanması, təqdimi və viza/yaşayış icazəsi alınmasının tam prosesi",
+        "docs-timeline-duration": "təqribən 2–3 ay",
+        "docs-timeline-p2": "çəkir. Biz sizi bütün mərhələlərdə müşayiət edirik: sənəd toplusunun yığılmasından ilk reysə çıxışa qədər.",
+        "btn-docs-packages": "Paketlər və qiymətlər haqqında ətraflı",
+        "process-step1-h": "Müraciət",
+        "process-step1-p": "Anket vasitəsilə müraciət edirsiniz və ya bizə messencerdə yazırsınız.",
+        "process-step2-h": "Yoxlama",
+        "process-step2-p": "Sənədlərinizi və təcrübənizi yoxlayırıq, Telegram-da ünsiyyət qururuq, suallara cavab veririk.",
+        "process-step3-h": "Şərtlərin seçilməsi",
+        "process-step3-p": "Təcrübənizə və istəyinizə uyğun optimal marşrutları, qoşqu növünü və cədvəli seçirik.",
+        "process-step4-h": "Sənədlər",
+        "process-step4-p": "Sənəd paketini hazırlayırıq və Slovakiyada viza/yaşayış icazəsi üçün təqdim edirik.",
+        "process-step5-h": "Viza/Yaşayış icazəsi",
+        "process-step5-p": "Viza və ya yaşayış icazəsi alırsınız, çıxış tarixi və işə başlanma razılaşdırılır.",
+        "process-step6-h": "Çıxış və iş",
+        "process-step6-p": "Gəlirsiniz, giriş brifinqindən keçirsiniz və öz maşınınızda işə başlayırsınız.",
+        "trust-official-h": "Aİ-də rəsmi rəsmiləşdirmə",
+        "trust-official-p": "Şəffaf müqavilələr və aydın ödəniş sistemi ilə Slovak şirkəti vasitəsilə iş.",
+        "trust-income-h": "Şəffaf gəlir və dietalar",
+        "trust-income-p": "Aydın şəkildə təsbit edilmiş tarifələr və dietalar — gizli tutulmalar və «sürprizlər» olmadan.",
+        "trust-fleet-h": "Müasir avtopark",
+        "trust-fleet-p": "Rahat Renault Euro 6, öz servisi və reysdə texniki dəstək.",
+        "trust-support-h": "Çıxışdan əvvəl və sonra dəstək",
+        "trust-support-p": "Sənədlərlə, yeni ölkədə uyğunlaşma və məişət məsələlərinin həlli ilə kömək edirik.",
+        "faq-q1": "«Aldatma» riski varmı?",
+        "faq-a1": "Biz Slovak şirkəti vasitəsilə rəsmi şəkildə, müqavilələr və vizaların rəsmiləşdirilməsi ilə işləyirik. Şərtlər kağızda təsbit olunur və bütün proses şəffaf və aydındır.",
+        "faq-q2": "Əgər mənə vizadan imtina etsələr nə olar?",
+        "faq-a2": "Biz əvvəlcədən sənədlərinizi və şanslarınızı yoxlayırıq. İmtina halında səbəbləri anlamağa kömək edirik və mümkünsə, sənədləri təkrar təqdim etməyə kömək edirik.",
+        "faq-q3": "Dil lazımdırmı?",
+        "faq-a3": "Əsas ingilis və ya alman dili üstünlük olacaq, lakin həmişə mütləq deyil. Əsas — təcrübə, diqqətlilik və öyrənməyə hazırlıq.",
+        "faq-q4": "Yaşayış yeri ilə nə var?",
+        "faq-a4": "Baza yaxınlığında və ya marşrut üzrə yaşayış yeri variantları seçməyə kömək edirik. Etibarlı ev sahibləri və qiymət istiqamətləri göstəririk.",
+        "faq-q5": "Ailəni sonradan köçürmək olarmı?",
+        "faq-a5": "Bəli, belə imkan var. Sabit gəlirə çıxdıqdan və status rəsmiləşdirildikdən sonra ailənin köçürülməsi ilə bağlı məsləhət verməyə kömək edəcəyik.",
+        "btn-final-form": "Anketi doldurun",
+        "btn-final-telegram": "Telegram-da sual verin",
+        "final-privacy": "Müraciət göndərməklə siz məlumatlarınızın vakansiya seçimi üçün işlənməsinə razılıq verirsiniz. Spam və narahat edən zənglər olmadan."
       },
       ur: {
         siteLabel: "آسامی",
@@ -1125,7 +1654,82 @@
         "feature-5": "دستاویزات کی تکمیل اور روانگی کی تیاری میں مدد",
         "btn-form-text": "3 منٹ میں فارم بھریں",
         "btn-messenger-text": "WhatsApp/Telegram پر لکھیں",
-        "hero-help-text": "سوالات کے جوابات دیں گے، آپ کے امکانات کا اندازہ لگائیں گے اور آرام دہ کام کی شرائط منتخب کریں گے۔"
+        "hero-help-text": "سوالات کے جوابات دیں گے، آپ کے امکانات کا اندازہ لگائیں گے اور آرام دہ کام کی شرائط منتخب کریں گے۔",
+        "fit-suitable-heading": "آپ کے لیے موزوں ہے، اگر:",
+        "fit-pro-1": "آپ کے پاس C+E زمرہ اور فعال ڈرائیونگ لائسنس ہو",
+        "fit-pro-2": "بین الاقوامی یا یورپ میں نقل و حمل کا تجربہ قابل قدر ہے",
+        "fit-pro-3": "آپ ذمہ دار اور وقت کے پابند ہوں",
+        "fit-pro-4": "آپ اقتصادی اور محتاط انداز میں گاڑی چلا سکتے ہوں",
+        "fit-pro-5": "کئی ہفتوں تک سفر میں کام کرنے کے لیے تیار ہوں",
+        "fit-unsuitable-heading": "موزوں نہیں، اگر:",
+        "fit-con-1": "آپ کے پاس C+E زمرہ یا پاسپورٹ نہیں ہے",
+        "fit-con-2": "یورپ جانے کی تیاری نہیں ہے",
+        "fit-con-3": "\"غیر رسمی\" طریقوں کی توقع رکھتے ہیں یا سرکاری دستاویزات نہیں چاہتے",
+        "fit-con-4": "کمپنی کے شیڈول اور قوانین پر عمل کرنے کے لیے تیار نہیں ہیں",
+        "terms-subtitle": "جدید فلیٹ، شفاف یومیہ الاؤنس اور واضح آمدنی کا حساب۔",
+        "terms-fleet-h": "فلیٹ",
+        "terms-fleet-p": "نئے Renault Euro 6، اپنی سروس۔ ڈرائیور مرمت سے متعلق نہیں — سب کچھ سروس اور ڈسپیچرز کے ذریعے۔",
+        "terms-routes-h": "راستے اور فاصلہ",
+        "terms-routes-p": "پورے یورپ میں سفر، اوسطاً ماہانہ تقریباً 12,000 کلومیٹر۔",
+        "terms-trailers-h": "ٹریلرز",
+        "terms-trailers-p": "ریفریجریٹر، ٹینٹ، ڈمپر، ٹینک — ڈرائیور کے تجربے اور خواہشات کے مطابق منتخب کرتے ہیں۔",
+        "terms-diets-h": "یومیہ الاؤنس",
+        "terms-diets-p": "معیاری یومیہ الاؤنس — روزانہ 90 یورو۔ 12,000 کلومیٹر سے زیادہ فاصلے پر — روزانہ 100 یورو۔",
+        "terms-fuel-h": "ایندھن کی کھپت",
+        "terms-fuel-p": "معیار 28-30 لیٹر، اقتصادی ڈرائیونگ میں حقیقی کھپت 22-23 لیٹر۔",
+        "terms-parking-h": "پارکنگ اور چھٹی",
+        "terms-parking-p": "پارکنگ صرف سامان کے تحت ادا کی جاتی ہے۔ سالانہ بامعاوضہ چھٹی — 25 کیلنڈر دن۔",
+        "terms-income-heading": "ڈرائیور کی آمدنی کی مثال",
+        "terms-income-text": "اوسط فاصلے اور معیاری حالات میں ڈرائیور حاصل کرتا ہے",
+        "terms-income-amount": "ماہانہ تقریباً 2500-2700 یورو",
+        "terms-income-net": "\"صاف\"۔",
+        "btn-terms-calc": "اپنے تجربے کے مطابق حساب کی تصدیق کریں",
+        "docs-required-h": "شروع کرنے کے لیے کیا ضروری ہے",
+        "docs-passport": "پاسپورٹ",
+        "docs-license": "دونوں طرف سے لائسنس (زمرہ C+E)",
+        "docs-card": "ڈرائیور کا چپ کارڈ",
+        "docs-code95": "کوڈ 95",
+        "docs-address": "لاطینی حروف میں پوسٹل کوڈ کے ساتھ پتہ",
+        "docs-marital": "ازدواجی حیثیت",
+        "docs-contract": "معاہدے کے لیے پتہ",
+        "docs-timeline-h": "دستاویزات کی مدت",
+        "docs-timeline-p1": "دستاویزات سلوواکیہ کے لیے عوامی ویزوں کے ذریعے ہوتی ہے۔ دستاویزات کی تیاری، جمع کرانے اور ویزا/رہائشی اجازت حاصل کرنے کا مکمل عمل",
+        "docs-timeline-duration": "تقریباً 2-3 ماہ",
+        "docs-timeline-p2": "لیتا ہے۔ ہم آپ کو تمام مراحل میں ساتھ دیتے ہیں: دستاویزات جمع کرنے سے لے کر پہلے سفر تک۔",
+        "btn-docs-packages": "پیکجز اور قیمتوں کے بارے میں تفصیلات",
+        "process-step1-h": "درخواست",
+        "process-step1-p": "آپ فارم کے ذریعے درخواست دیتے ہیں یا ہمیں میسنجر میں لکھتے ہیں۔",
+        "process-step2-h": "تصدیق",
+        "process-step2-p": "ہم آپ کی دستاویزات اور تجربے کی جانچ کرتے ہیں، ٹیلیگرام میں بات چیت کرتے ہیں، سوالات کے جوابات دیتے ہیں۔",
+        "process-step3-h": "شرائط کا انتخاب",
+        "process-step3-p": "آپ کے تجربے اور خواہشات کے مطابق بہترین راستے، ٹریلر کی قسم اور شیڈول منتخب کرتے ہیں۔",
+        "process-step4-h": "دستاویزات",
+        "process-step4-p": "دستاویزات کا پیکج تیار کرتے ہیں اور سلوواکیہ میں ویزا/رہائشی اجازت کے لیے جمع کراتے ہیں۔",
+        "process-step5-h": "ویزا/رہائشی اجازت",
+        "process-step5-p": "آپ ویزا یا رہائشی اجازت حاصل کرتے ہیں، روانگی کی تاریخ اور کام کی شروعات پر اتفاق کرتے ہیں۔",
+        "process-step6-h": "روانگی اور کام",
+        "process-step6-p": "آپ آتے ہیں، تعارفی بریفنگ سے گزرتے ہیں اور اپنی گاڑی میں کام شروع کرتے ہیں۔",
+        "trust-official-h": "یورپی یونین میں سرکاری دستاویزات",
+        "trust-official-p": "شفاف معاہدوں اور واضح ادائیگی کے نظام کے ساتھ سلوواک کمپنی کے ذریعے کام۔",
+        "trust-income-h": "شفاف آمدنی اور یومیہ الاؤنس",
+        "trust-income-p": "واضح طور پر طے شدہ نرخ اور یومیہ الاؤنس — چھپی ہوئی کٹوتیوں اور \"حیرانیوں\" کے بغیر۔",
+        "trust-fleet-h": "جدید فلیٹ",
+        "trust-fleet-p": "آرام دہ Renault Euro 6، اپنی سروس اور سفر میں تکنیکی مدد۔",
+        "trust-support-h": "روانگی سے پہلے اور بعد میں مدد",
+        "trust-support-p": "دستاویزات، نئے ملک میں موافقت اور روزمرہ مسائل کے حل میں مدد کرتے ہیں۔",
+        "faq-q1": "کیا \"دھوکہ دہی\" کا خطرہ ہے؟",
+        "faq-a1": "ہم سلوواک کمپنی کے ذریعے سرکاری طور پر کام کرتے ہیں، معاہدوں اور ویزوں کی دستاویزات کے ساتھ۔ شرائط کاغذ پر طے کی جاتی ہیں، اور پورا عمل شفاف اور واضح ہے۔",
+        "faq-q2": "اگر مجھے ویزا سے انکار کر دیا جائے تو کیا ہوگا؟",
+        "faq-a2": "ہم پہلے سے آپ کی دستاویزات اور امکانات کی جانچ کرتے ہیں۔ انکار کی صورت میں وجوہات سمجھنے میں مدد کرتے ہیں اور اگر ممکن ہو تو دوبارہ دستاویزات جمع کرانے میں مدد کرتے ہیں۔",
+        "faq-q3": "کیا زبان ضروری ہے؟",
+        "faq-a3": "بنیادی انگریزی یا جرمن ایک فائدہ ہوگا، لیکن ہمیشہ لازمی نہیں۔ اہم بات — تجربہ، احتیاط اور سیکھنے کی تیاری۔",
+        "faq-q4": "رہائش کے بارے میں کیا؟",
+        "faq-a4": "بیس کے قریب یا راستے میں رہائش کے اختیارات منتخب کرنے میں مدد کرتے ہیں۔ قابل اعتماد مالکان اور قیمتوں کے بارے میں رہنمائی فراہم کریں گے۔",
+        "faq-q5": "کیا بعد میں خاندان کو منتقل کیا جا سکتا ہے؟",
+        "faq-a5": "جی ہاں، ایسا امکان ہے۔ مستحکم آمدنی اور حیثیت کی دستاویزات کے بعد خاندان کی منتقلی کے بارے میں مشاورت میں مدد کریں گے۔",
+        "btn-final-form": "فارم بھریں",
+        "btn-final-telegram": "ٹیلیگرام میں سوال پوچھیں",
+        "final-privacy": "درخواست بھیج کر، آپ ملازمت کی تلاش کے لیے اپنے ڈیٹا کی پروسیسنگ پر رضامندی دیتے ہیں۔ سپیم اور پریشان کن کالوں کے بغیر۔"
       },
       tr: {
         siteLabel: "İş İlanı",
@@ -1150,7 +1754,82 @@
         "feature-5": "Belgelerin tamamlanması ve çıkışa hazırlıkta destek",
         "btn-form-text": "Formu 3 dakikada doldurun",
         "btn-messenger-text": "WhatsApp/Telegram'da yazın",
-        "hero-help-text": "Soruları yanıtlayacağız, şanslarınızı değerlendireceğiz ve rahat çalışma koşulları seçeceğiz."
+        "hero-help-text": "Soruları yanıtlayacağız, şanslarınızı değerlendireceğiz ve rahat çalışma koşulları seçeceğiz.",
+        "fit-suitable-heading": "Size uygunsa:",
+        "fit-pro-1": "C+E kategoriniz ve geçerli ehliyetiniz varsa",
+        "fit-pro-2": "uluslararası veya Avrupa genelinde taşımacılık deneyiminiz varsa memnuniyetle karşılanır",
+        "fit-pro-3": "sorumlu ve dakik iseniz",
+        "fit-pro-4": "ekonomik ve dikkatli sürüş beceriniz varsa",
+        "fit-pro-5": "birkaç haftalık seferler için çalışmaya hazırsanız",
+        "fit-unsuitable-heading": "Uygun değilse:",
+        "fit-con-1": "C+E kategoriniz veya pasaportunuz yoksa",
+        "fit-con-2": "Avrupa'ya gitmeye hazır değilseniz",
+        "fit-con-3": "\"gri\" şemalara güveniyorsanız veya resmi kayıt istemiyorsanız",
+        "fit-con-4": "şirketin programına ve kurallarına uymaya hazır değilseniz",
+        "terms-subtitle": "Modern araç filosu, şeffaf yevmiyeler ve net gelir hesaplaması.",
+        "terms-fleet-h": "Araç Filosu",
+        "terms-fleet-p": "Yeni Renault Euro 6, kendi servisimiz. Sürücü onarımla uğraşmaz — her şey servis ve sevk görevlileri aracılığıyla.",
+        "terms-routes-h": "Rotalar ve kilometre",
+        "terms-routes-p": "Tüm Avrupa genelinde seferler, ortalama aylık yaklaşık 12.000 km.",
+        "terms-trailers-h": "Römorklar",
+        "terms-trailers-p": "Frigorifik, tenteli, damperli, tanker — sürücünün deneyimi ve tercihine göre seçilir.",
+        "terms-diets-h": "Yevmiyeler",
+        "terms-diets-p": "Standart yevmiye — günlük 90 €. 12.000 km'nin üzerinde — günlük 100 €.",
+        "terms-fuel-h": "Yakıt tüketimi",
+        "terms-fuel-p": "Normal 28–30 lt, ekonomik sürüşte gerçek tüketim 22–23 lt.",
+        "terms-parking-h": "Park ve izin",
+        "terms-parking-p": "Park yalnızca yük altında ödenir. Yıllık ücretli izin — 25 takvim günü.",
+        "terms-income-heading": "Sürücü gelir örneği",
+        "terms-income-text": "Ortalama kilometre ve standart koşullarda sürücü alır",
+        "terms-income-amount": "aylık yaklaşık 2500–2700 €",
+        "terms-income-net": "\"net\".",
+        "btn-terms-calc": "Deneyiminize göre hesaplamayı netleştirin",
+        "docs-required-h": "Başlamak için gerekenler",
+        "docs-passport": "Pasaport",
+        "docs-license": "Her iki taraftan ehliyet (C+E kategorisi)",
+        "docs-card": "Sürücü çip kartı",
+        "docs-code95": "Kod 95",
+        "docs-address": "Latin harfleri ve posta kodu ile kayıtlı adres",
+        "docs-marital": "Medeni durum",
+        "docs-contract": "Sözleşme için adres",
+        "docs-timeline-h": "İşlem süreleri",
+        "docs-timeline-p1": "İşlemler Slovakya'ya halk vizaları aracılığıyla yapılır. Belgelerin hazırlanması, sunulması ve vize/oturma izni alınmasının tam süreci",
+        "docs-timeline-duration": "yaklaşık 2–3 ay",
+        "docs-timeline-p2": "sürer. Sizi tüm aşamalarda destekliyoruz: belge toplama sürecinden ilk sefere kadar.",
+        "btn-docs-packages": "Paketler ve fiyatlar hakkında detaylar",
+        "process-step1-h": "Başvuru",
+        "process-step1-p": "Form aracılığıyla başvuru yaparsınız veya mesajlaşma uygulamasından bize yazarsınız.",
+        "process-step2-h": "Kontrol",
+        "process-step2-p": "Belgelerinizi ve deneyiminizi kontrol ediyoruz, Telegram'da iletişim kuruyoruz, soruları yanıtlıyoruz.",
+        "process-step3-h": "Koşulların seçimi",
+        "process-step3-p": "Deneyiminiz ve tercihlerinize göre en uygun rotaları, römork tipini ve programı seçiyoruz.",
+        "process-step4-h": "Belgeler",
+        "process-step4-p": "Belge paketini hazırlıyoruz ve Slovakya'da vize/oturma izni için sunuyoruz.",
+        "process-step5-h": "Vize/Oturma izni",
+        "process-step5-p": "Vize veya oturma izni alırsınız, hareket tarihi ve işe başlama konusunda anlaşırız.",
+        "process-step6-h": "Hareket ve iş",
+        "process-step6-p": "Gelirsiniz, giriş brifinginden geçersiniz ve kendi aracınızda işe başlarsınız.",
+        "trust-official-h": "AB'de resmi kayıt",
+        "trust-official-p": "Şeffaf sözleşmeler ve net ödeme sistemi ile Slovak şirketi aracılığıyla çalışma.",
+        "trust-income-h": "Şeffaf gelir ve yevmiyeler",
+        "trust-income-p": "Net şekilde belirlenen oranlar ve yevmiyeler — gizli kesintiler ve \"sürprizler\" olmadan.",
+        "trust-fleet-h": "Modern araç filosu",
+        "trust-fleet-p": "Konforlu Renault Euro 6, kendi servisimiz ve seferde teknik destek.",
+        "trust-support-h": "Hareket öncesi ve sonrası destek",
+        "trust-support-p": "Belgelerle, yeni ülkede uyum sağlama ve günlük sorunların çözümünde yardımcı oluyoruz.",
+        "faq-q1": "\"Dolandırılma\" riski var mı?",
+        "faq-a1": "Slovak şirketi aracılığıyla resmi olarak, sözleşmelerin ve vizelerin düzenlenmesiyle çalışıyoruz. Koşullar kağıt üzerinde sabittir ve tüm süreç şeffaf ve nettir.",
+        "faq-q2": "Vize reddedilirse ne olur?",
+        "faq-a2": "Belgelerinizi ve şanslarınızı önceden kontrol ediyoruz. Red durumunda sebepleri anlamaya yardımcı oluyoruz ve mümkünse belgeleri tekrar sunmaya yardımcı oluyoruz.",
+        "faq-q3": "Dil gerekli mi?",
+        "faq-a3": "Temel İngilizce veya Almanca bir avantaj olacaktır, ancak her zaman zorunlu değildir. Önemli olan — deneyim, dikkat ve öğrenmeye hazırlık.",
+        "faq-q4": "Konaklama ile ilgili ne var?",
+        "faq-a4": "Üs yakınında veya güzergah üzerinde konaklama seçenekleri seçmeye yardımcı oluyoruz. Güvenilir ev sahipleri ve fiyatlar hakkında yönlendirmeler sağlıyoruz.",
+        "faq-q5": "Aileyi sonra taşımak mümkün mü?",
+        "faq-a5": "Evet, böyle bir olasılık var. Sabit gelire ulaştıktan ve statü düzenlendikten sonra ailenin taşınması hakkında danışmanlıkta yardımcı olacağız.",
+        "btn-final-form": "Formu doldurun",
+        "btn-final-telegram": "Telegram'da soru sorun",
+        "final-privacy": "Başvuru göndererek, iş arama için verilerinizin işlenmesine onay veriyorsunuz. Spam ve rahatsız edici aramalar olmadan."
       },
       en: {
         siteLabel: "Vacancy",
@@ -1175,7 +1854,82 @@
         "feature-5": "Support with document processing and departure preparation",
         "btn-form-text": "Fill out the form in 3 minutes",
         "btn-messenger-text": "Write on WhatsApp/Telegram",
-        "hero-help-text": "We'll answer your questions, assess your chances and help you find comfortable working conditions."
+        "hero-help-text": "We'll answer your questions, assess your chances and help you find comfortable working conditions.",
+        "fit-suitable-heading": "Suitable for you if:",
+        "fit-pro-1": "you have a C+E category license and valid documents",
+        "fit-pro-2": "international or European transport experience is welcomed",
+        "fit-pro-3": "you are responsible and punctual",
+        "fit-pro-4": "you can drive economically and carefully",
+        "fit-pro-5": "you are ready to work on trips for several weeks",
+        "fit-unsuitable-heading": "Not suitable if:",
+        "fit-con-1": "you don't have a C+E category license or passport",
+        "fit-con-2": "you're not ready to travel to Europe",
+        "fit-con-3": "you expect \"gray\" schemes or don't want official registration",
+        "fit-con-4": "you're not ready to follow the company's schedule and rules",
+        "terms-subtitle": "Modern fleet, transparent per diems, and clear income calculation.",
+        "terms-fleet-h": "Fleet",
+        "terms-fleet-p": "New Renault Euro 6, our own service. The driver doesn't handle repairs — everything goes through service and dispatchers.",
+        "terms-routes-h": "Routes and mileage",
+        "terms-routes-p": "Trips across all of Europe, average mileage about 12,000 km per month.",
+        "terms-trailers-h": "Trailers",
+        "terms-trailers-p": "Refrigerated, tented, dump truck, tanker — we match based on driver's experience and preferences.",
+        "terms-diets-h": "Per diems",
+        "terms-diets-p": "Standard per diem — €90 per day. With mileage over 12,000 km — €100 per day.",
+        "terms-fuel-h": "Fuel consumption",
+        "terms-fuel-p": "Standard 28–30 liters, actual consumption 22–23 liters with economical driving.",
+        "terms-parking-h": "Parking and vacation",
+        "terms-parking-p": "Parking is paid only when loaded. Annual paid vacation — 25 calendar days.",
+        "terms-income-heading": "Driver income example",
+        "terms-income-text": "With average mileage and standard conditions, the driver receives",
+        "terms-income-amount": "approximately €2500–2700 per month",
+        "terms-income-net": "\"net\".",
+        "btn-terms-calc": "Clarify calculation for your experience",
+        "docs-required-h": "What you'll need to start",
+        "docs-passport": "Passport",
+        "docs-license": "License from both sides (C+E category)",
+        "docs-card": "Driver chip card",
+        "docs-code95": "Code 95",
+        "docs-address": "Registered address in Latin letters with postal code",
+        "docs-marital": "Marital status",
+        "docs-contract": "Address for contract",
+        "docs-timeline-h": "Processing timelines",
+        "docs-timeline-p1": "Processing goes through national visas to Slovakia. The complete process of document preparation, submission, and obtaining a visa/residence permit takes",
+        "docs-timeline-duration": "approximately 2–3 months",
+        "docs-timeline-p2": "We support you at all stages: from collecting the document package to departure on your first trip.",
+        "btn-docs-packages": "More about packages and pricing",
+        "process-step1-h": "Application",
+        "process-step1-p": "You submit an application through the form or write to us via messenger.",
+        "process-step2-h": "Verification",
+        "process-step2-p": "We check your documents and experience, communicate via Telegram, answer questions.",
+        "process-step3-h": "Matching conditions",
+        "process-step3-p": "We select optimal routes, trailer type, and schedule based on your experience and preferences.",
+        "process-step4-h": "Documents",
+        "process-step4-p": "We prepare the document package and submit for visa/residence permit in Slovakia.",
+        "process-step5-h": "Visa/Residence permit",
+        "process-step5-p": "You receive a visa or residence permit, we agree on departure date and work start.",
+        "process-step6-h": "Departure and work",
+        "process-step6-p": "You arrive, go through introductory briefing and start working on your vehicle.",
+        "trust-official-h": "Official registration in the EU",
+        "trust-official-p": "Work through a Slovak company with transparent contracts and clear payment system.",
+        "trust-income-h": "Transparent income and per diems",
+        "trust-income-p": "Clearly fixed rates and per diems — no hidden deductions or \"surprises\".",
+        "trust-fleet-h": "Modern fleet",
+        "trust-fleet-p": "Comfortable Renault Euro 6, our own service and technical support on the road.",
+        "trust-support-h": "Support before and after departure",
+        "trust-support-p": "We help with documents, adaptation in the new country, and solving everyday issues.",
+        "faq-q1": "Is there a risk of \"being scammed\"?",
+        "faq-a1": "We work officially through a Slovak company, with contract and visa registration. Conditions are fixed on paper, and the entire process is transparent and clear.",
+        "faq-q2": "What if my visa is denied?",
+        "faq-a2": "We check your documents and chances in advance. In case of refusal, we help understand the reasons and, if possible, resubmit documents.",
+        "faq-q3": "Is language required?",
+        "faq-a3": "Basic English or German would be a plus, but not always mandatory. The main thing is experience, carefulness, and willingness to learn.",
+        "faq-q4": "What about housing?",
+        "faq-a4": "We help select housing options near the base or along the route. We'll suggest reliable landlords and price guidelines.",
+        "faq-q5": "Can I bring my family later?",
+        "faq-a5": "Yes, such an option exists. After reaching stable income and status registration, we'll help with consultation on family relocation.",
+        "btn-final-form": "Fill out the form",
+        "btn-final-telegram": "Ask a question on Telegram",
+        "final-privacy": "By submitting an application, you consent to the processing of your data for job selection. No spam or intrusive calls."
       }
     };
 
@@ -1271,6 +2025,177 @@
       if (btnFormText) btnFormText.textContent = trans['btn-form-text'];
       if (btnMessengerText) btnMessengerText.textContent = trans['btn-messenger-text'];
       if (heroHelpText) heroHelpText.textContent = trans['hero-help-text'];
+
+      // FIT SECTION - Who is suitable
+      const fitSuitableHeading = document.getElementById('fit-suitable-heading');
+      const fitPro1 = document.getElementById('fit-pro-1');
+      const fitPro2 = document.getElementById('fit-pro-2');
+      const fitPro3 = document.getElementById('fit-pro-3');
+      const fitPro4 = document.getElementById('fit-pro-4');
+      const fitPro5 = document.getElementById('fit-pro-5');
+      const fitUnsuitableHeading = document.getElementById('fit-unsuitable-heading');
+      const fitCon1 = document.getElementById('fit-con-1');
+      const fitCon2 = document.getElementById('fit-con-2');
+      const fitCon3 = document.getElementById('fit-con-3');
+      const fitCon4 = document.getElementById('fit-con-4');
+
+      if (fitSuitableHeading) fitSuitableHeading.textContent = trans['fit-suitable-heading'];
+      if (fitPro1) fitPro1.textContent = trans['fit-pro-1'];
+      if (fitPro2) fitPro2.textContent = trans['fit-pro-2'];
+      if (fitPro3) fitPro3.textContent = trans['fit-pro-3'];
+      if (fitPro4) fitPro4.textContent = trans['fit-pro-4'];
+      if (fitPro5) fitPro5.textContent = trans['fit-pro-5'];
+      if (fitUnsuitableHeading) fitUnsuitableHeading.textContent = trans['fit-unsuitable-heading'];
+      if (fitCon1) fitCon1.textContent = trans['fit-con-1'];
+      if (fitCon2) fitCon2.textContent = trans['fit-con-2'];
+      if (fitCon3) fitCon3.textContent = trans['fit-con-3'];
+      if (fitCon4) fitCon4.textContent = trans['fit-con-4'];
+
+      // TERMS SECTION - Working conditions
+      const termsSubtitle = document.getElementById('terms-subtitle');
+      const termsFleetH = document.getElementById('terms-fleet-h');
+      const termsFleetP = document.getElementById('terms-fleet-p');
+      const termsRoutesH = document.getElementById('terms-routes-h');
+      const termsRoutesP = document.getElementById('terms-routes-p');
+      const termsTrailersH = document.getElementById('terms-trailers-h');
+      const termsTrailersP = document.getElementById('terms-trailers-p');
+      const termsDietsH = document.getElementById('terms-diets-h');
+      const termsDietsP = document.getElementById('terms-diets-p');
+      const termsFuelH = document.getElementById('terms-fuel-h');
+      const termsFuelP = document.getElementById('terms-fuel-p');
+      const termsParkingH = document.getElementById('terms-parking-h');
+      const termsParkingP = document.getElementById('terms-parking-p');
+      const termsIncomeHeading = document.getElementById('terms-income-heading');
+      const termsIncomeText = document.getElementById('terms-income-text');
+      const termsIncomeAmount = document.getElementById('terms-income-amount');
+      const termsIncomeNet = document.getElementById('terms-income-net');
+      const btnTermsCalc = document.getElementById('btn-terms-calc');
+
+      if (termsSubtitle) termsSubtitle.textContent = trans['terms-subtitle'];
+      if (termsFleetH) termsFleetH.textContent = trans['terms-fleet-h'];
+      if (termsFleetP) termsFleetP.textContent = trans['terms-fleet-p'];
+      if (termsRoutesH) termsRoutesH.textContent = trans['terms-routes-h'];
+      if (termsRoutesP) termsRoutesP.textContent = trans['terms-routes-p'];
+      if (termsTrailersH) termsTrailersH.textContent = trans['terms-trailers-h'];
+      if (termsTrailersP) termsTrailersP.textContent = trans['terms-trailers-p'];
+      if (termsDietsH) termsDietsH.textContent = trans['terms-diets-h'];
+      if (termsDietsP) termsDietsP.textContent = trans['terms-diets-p'];
+      if (termsFuelH) termsFuelH.textContent = trans['terms-fuel-h'];
+      if (termsFuelP) termsFuelP.textContent = trans['terms-fuel-p'];
+      if (termsParkingH) termsParkingH.textContent = trans['terms-parking-h'];
+      if (termsParkingP) termsParkingP.textContent = trans['terms-parking-p'];
+      if (termsIncomeHeading) termsIncomeHeading.textContent = trans['terms-income-heading'];
+      if (termsIncomeText) termsIncomeText.textContent = trans['terms-income-text'];
+      if (termsIncomeAmount) termsIncomeAmount.textContent = trans['terms-income-amount'];
+      if (termsIncomeNet) termsIncomeNet.textContent = trans['terms-income-net'];
+      if (btnTermsCalc) btnTermsCalc.textContent = trans['btn-terms-calc'];
+
+      // DOCS SECTION - Documents
+      const docsRequiredH = document.getElementById('docs-required-h');
+      const docsPassport = document.getElementById('docs-passport');
+      const docsLicense = document.getElementById('docs-license');
+      const docsCard = document.getElementById('docs-card');
+      const docsCode95 = document.getElementById('docs-code95');
+      const docsAddress = document.getElementById('docs-address');
+      const docsMarital = document.getElementById('docs-marital');
+      const docsContract = document.getElementById('docs-contract');
+      const docsTimelineH = document.getElementById('docs-timeline-h');
+      const docsTimelineP1 = document.getElementById('docs-timeline-p1');
+      const docsTimelineDuration = document.getElementById('docs-timeline-duration');
+      const docsTimelineP2 = document.getElementById('docs-timeline-p2');
+      const btnDocsPackages = document.getElementById('btn-docs-packages');
+
+      if (docsRequiredH) docsRequiredH.textContent = trans['docs-required-h'];
+      if (docsPassport) docsPassport.textContent = trans['docs-passport'];
+      if (docsLicense) docsLicense.textContent = trans['docs-license'];
+      if (docsCard) docsCard.textContent = trans['docs-card'];
+      if (docsCode95) docsCode95.textContent = trans['docs-code95'];
+      if (docsAddress) docsAddress.textContent = trans['docs-address'];
+      if (docsMarital) docsMarital.textContent = trans['docs-marital'];
+      if (docsContract) docsContract.textContent = trans['docs-contract'];
+      if (docsTimelineH) docsTimelineH.textContent = trans['docs-timeline-h'];
+      if (docsTimelineP1) docsTimelineP1.textContent = trans['docs-timeline-p1'];
+      if (docsTimelineDuration) docsTimelineDuration.textContent = trans['docs-timeline-duration'];
+      if (docsTimelineP2) docsTimelineP2.textContent = trans['docs-timeline-p2'];
+      if (btnDocsPackages) btnDocsPackages.textContent = trans['btn-docs-packages'];
+
+      // PROCESS SECTION - How we work
+      const processStep1H = document.getElementById('process-step1-h');
+      const processStep1P = document.getElementById('process-step1-p');
+      const processStep2H = document.getElementById('process-step2-h');
+      const processStep2P = document.getElementById('process-step2-p');
+      const processStep3H = document.getElementById('process-step3-h');
+      const processStep3P = document.getElementById('process-step3-p');
+      const processStep4H = document.getElementById('process-step4-h');
+      const processStep4P = document.getElementById('process-step4-p');
+      const processStep5H = document.getElementById('process-step5-h');
+      const processStep5P = document.getElementById('process-step5-p');
+      const processStep6H = document.getElementById('process-step6-h');
+      const processStep6P = document.getElementById('process-step6-p');
+
+      if (processStep1H) processStep1H.textContent = trans['process-step1-h'];
+      if (processStep1P) processStep1P.textContent = trans['process-step1-p'];
+      if (processStep2H) processStep2H.textContent = trans['process-step2-h'];
+      if (processStep2P) processStep2P.textContent = trans['process-step2-p'];
+      if (processStep3H) processStep3H.textContent = trans['process-step3-h'];
+      if (processStep3P) processStep3P.textContent = trans['process-step3-p'];
+      if (processStep4H) processStep4H.textContent = trans['process-step4-h'];
+      if (processStep4P) processStep4P.textContent = trans['process-step4-p'];
+      if (processStep5H) processStep5H.textContent = trans['process-step5-h'];
+      if (processStep5P) processStep5P.textContent = trans['process-step5-p'];
+      if (processStep6H) processStep6H.textContent = trans['process-step6-h'];
+      if (processStep6P) processStep6P.textContent = trans['process-step6-p'];
+
+      // TRUST SECTION - Why drivers trust us
+      const trustOfficialH = document.getElementById('trust-official-h');
+      const trustOfficialP = document.getElementById('trust-official-p');
+      const trustIncomeH = document.getElementById('trust-income-h');
+      const trustIncomeP = document.getElementById('trust-income-p');
+      const trustFleetH = document.getElementById('trust-fleet-h');
+      const trustFleetP = document.getElementById('trust-fleet-p');
+      const trustSupportH = document.getElementById('trust-support-h');
+      const trustSupportP = document.getElementById('trust-support-p');
+
+      if (trustOfficialH) trustOfficialH.textContent = trans['trust-official-h'];
+      if (trustOfficialP) trustOfficialP.textContent = trans['trust-official-p'];
+      if (trustIncomeH) trustIncomeH.textContent = trans['trust-income-h'];
+      if (trustIncomeP) trustIncomeP.textContent = trans['trust-income-p'];
+      if (trustFleetH) trustFleetH.textContent = trans['trust-fleet-h'];
+      if (trustFleetP) trustFleetP.textContent = trans['trust-fleet-p'];
+      if (trustSupportH) trustSupportH.textContent = trans['trust-support-h'];
+      if (trustSupportP) trustSupportP.textContent = trans['trust-support-p'];
+
+      // FAQ SECTION
+      const faqQ1 = document.getElementById('faq-q1');
+      const faqA1 = document.getElementById('faq-a1');
+      const faqQ2 = document.getElementById('faq-q2');
+      const faqA2 = document.getElementById('faq-a2');
+      const faqQ3 = document.getElementById('faq-q3');
+      const faqA3 = document.getElementById('faq-a3');
+      const faqQ4 = document.getElementById('faq-q4');
+      const faqA4 = document.getElementById('faq-a4');
+      const faqQ5 = document.getElementById('faq-q5');
+      const faqA5 = document.getElementById('faq-a5');
+
+      if (faqQ1) faqQ1.textContent = trans['faq-q1'];
+      if (faqA1) faqA1.textContent = trans['faq-a1'];
+      if (faqQ2) faqQ2.textContent = trans['faq-q2'];
+      if (faqA2) faqA2.textContent = trans['faq-a2'];
+      if (faqQ3) faqQ3.textContent = trans['faq-q3'];
+      if (faqA3) faqA3.textContent = trans['faq-a3'];
+      if (faqQ4) faqQ4.textContent = trans['faq-q4'];
+      if (faqA4) faqA4.textContent = trans['faq-a4'];
+      if (faqQ5) faqQ5.textContent = trans['faq-q5'];
+      if (faqA5) faqA5.textContent = trans['faq-a5'];
+
+      // FINAL CTA SECTION
+      const btnFinalForm = document.getElementById('btn-final-form');
+      const btnFinalTelegram = document.getElementById('btn-final-telegram');
+      const finalPrivacy = document.getElementById('final-privacy');
+
+      if (btnFinalForm) btnFinalForm.textContent = trans['btn-final-form'];
+      if (btnFinalTelegram) btnFinalTelegram.textContent = trans['btn-final-telegram'];
+      if (finalPrivacy) finalPrivacy.textContent = trans['final-privacy'];
 
       // Update HTML lang attribute
       document.documentElement.lang = lang;
