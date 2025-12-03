@@ -186,70 +186,54 @@
        </div><!-- Правый блок: видео-галерея -->
        <div class="w-full flex flex-col gap-3 fade-up visible">
         <h3 id="video_title" class="text-lg font-semibold text-cyan-300">Видео-презентация вакансии</h3>
-        <p id="video_subtitle" class="text-sm text-slate-400 mb-2">Посмотрите видео о работе и условиях</p>
+        <p id="video_subtitle" class="text-sm text-slate-400 mb-1">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
 
-        <!-- Horizontal scroll video gallery -->
-        <div class="relative">
-         <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: rgb(6 182 212) rgb(30 41 59);">
-
+        <!-- Compact vertical video grid -->
+        <div class="flex flex-col gap-3">
           <!-- Video 1 -->
-          <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.5rem)] snap-start">
-           <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9]">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-xl overflow-hidden" style="height: 200px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='20' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EОформление документов%3C/text%3E%3C/svg%3E">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EОформление документов%3C/text%3E%3C/svg%3E">
              <source src="./videos/video1.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-2 left-2 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
              Оформление документов
             </div>
-           </div>
           </div>
 
           <!-- Video 2 -->
-          <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.5rem)] snap-start">
-           <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9]">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-xl overflow-hidden" style="height: 200px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='20' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EРабота водителем%3C/text%3E%3C/svg%3E">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EРабота водителем%3C/text%3E%3C/svg%3E">
              <source src="./videos/video2.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-2 left-2 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
              Работа водителем C+E
             </div>
-           </div>
           </div>
 
           <!-- Video 3 -->
-          <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.5rem)] snap-start">
-           <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9]">
+          <div class="relative bg-slate-800/80 border border-slate-700 rounded-xl overflow-hidden" style="height: 200px;">
             <video
              class="absolute inset-0 w-full h-full object-cover"
              controls
              preload="metadata"
-             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='20' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EМаршруты%3C/text%3E%3C/svg%3E">
+             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' fill='%2306b6d4' text-anchor='middle' dominant-baseline='middle'%3EМаршруты%3C/text%3E%3C/svg%3E">
              <source src="./videos/video3.mp4" type="video/mp4">
              Ваш браузер не поддерживает видео.
             </video>
             <div class="absolute bottom-2 left-2 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
              Маршруты по Европе
             </div>
-           </div>
           </div>
-
-         </div>
-         <!-- Scroll indicator -->
-         <div class="flex justify-center gap-2 mt-2 sm:hidden">
-          <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
-          <div class="w-2 h-2 rounded-full bg-slate-600"></div>
-          <div class="w-2 h-2 rounded-full bg-slate-600"></div>
-         </div>
         </div>
        </div>
       </section><!-- Кому подойдёт -->
