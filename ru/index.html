@@ -33,22 +33,24 @@
     body, #app-root {
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    /* Light theme specific styles - True Gold Colors */
+    /* Light theme - Professional Blue Palette */
     body.light-theme {
-      background: linear-gradient(to bottom, #fdfbf7 0%, #f9f7f3 100%);
+      background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
     }
     body.light-theme .bg-slate-900 {
-      background-color: #fdfbf7 !important;
+      background-color: #f8fafc !important;
     }
     body.light-theme button:hover,
     body.light-theme a:hover {
       opacity: 0.9;
+      transform: translateY(-1px);
+      transition: all 0.2s ease;
     }
     body.light-theme .shadow-lg {
-      box-shadow: 0 10px 15px -3px rgba(184, 134, 11, 0.12), 0 4px 6px -4px rgba(184, 134, 11, 0.08) !important;
+      box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -4px rgba(59, 130, 246, 0.08) !important;
     }
     body.light-theme .shadow-md {
-      box-shadow: 0 4px 6px -1px rgba(184, 134, 11, 0.1), 0 2px 4px -2px rgba(184, 134, 11, 0.06) !important;
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.08), 0 2px 4px -2px rgba(59, 130, 246, 0.05) !important;
     }
     /* Language dropdown */
     .lang-dropdown {
@@ -714,11 +716,11 @@
 
       function applyTheme(theme) {
         if (theme === 'light') {
-          // Light theme - Warm white with true gold accents
-          body.style.backgroundColor = '#fdfbf7';
-          body.style.color = '#2c2416';
-          appRoot.style.backgroundColor = '#fdfbf7';
-          appRoot.style.color = '#2c2416';
+          // Light theme - Professional Blue Palette
+          body.style.backgroundColor = '#f8fafc';
+          body.style.color = '#1e293b';
+          appRoot.style.backgroundColor = '#f8fafc';
+          appRoot.style.color = '#1e293b';
           body.classList.add('light-theme');
           iconDark.classList.add('hidden');
           iconLight.classList.remove('hidden');
@@ -750,11 +752,11 @@
 
         contentBlocks.forEach(block => {
           if (theme === 'light') {
-            // Light theme: clean white cards with true gold borders
-            block.style.backgroundColor = '#fdfbf7';
-            block.style.color = '#2c2416';
-            block.style.borderColor = '#b8860b'; // Dark goldenrod - true gold
-            block.style.boxShadow = '0 1px 3px 0 rgba(184, 134, 11, 0.08), 0 1px 2px -1px rgba(184, 134, 11, 0.06)';
+            // Light theme: clean white cards with blue borders
+            block.style.backgroundColor = '#ffffff';
+            block.style.color = '#1e293b';
+            block.style.borderColor = '#3b82f6'; // Blue-500
+            block.style.boxShadow = '0 1px 3px 0 rgba(59, 130, 246, 0.08), 0 1px 2px -1px rgba(59, 130, 246, 0.05)';
           } else {
             // Dark theme: restore original styles
             block.style.backgroundColor = '';
@@ -764,7 +766,7 @@
           }
         });
 
-        // Update text colors
+        // Update text colors for excellent readability
         const textElements = document.querySelectorAll(
           '.text-slate-100, .text-slate-200, .text-slate-300, ' +
           '.text-slate-400, .text-slate-500, .text-cyan-200, .text-cyan-300'
@@ -772,21 +774,21 @@
 
         textElements.forEach(el => {
           if (theme === 'light') {
-            el.style.color = '#5a4a2e'; // Warm brown-gold for text
+            el.style.color = '#475569'; // Slate-600 - perfect readability
           } else {
             el.style.color = '';
           }
         });
 
-        // Update primary color accents to true gold
+        // Update primary color accents
         const primaryElements = document.querySelectorAll('.bg-cyan-500, .text-cyan-300');
         primaryElements.forEach(el => {
           if (theme === 'light') {
             if (el.classList.contains('bg-cyan-500')) {
-              el.style.backgroundColor = '#b8860b'; // Dark goldenrod - metallic gold
+              el.style.backgroundColor = '#3b82f6'; // Blue-500
             }
             if (el.classList.contains('text-cyan-300')) {
-              el.style.color = '#8b6914'; // Deep gold for text
+              el.style.color = '#2563eb'; // Blue-600
             }
           } else {
             el.style.backgroundColor = '';
@@ -794,13 +796,13 @@
           }
         });
 
-        // Update badge/pill backgrounds with subtle gold
+        // Update badge/pill backgrounds
         const badges = document.querySelectorAll('[class*="bg-slate"]');
         badges.forEach(badge => {
           if (theme === 'light' && badge.textContent.trim()) {
-            badge.style.backgroundColor = '#f9f5ed'; // Very subtle warm tint
-            badge.style.color = '#5a4a2e'; // Warm brown-gold text
-            badge.style.borderColor = '#b8860b'; // True gold border
+            badge.style.backgroundColor = '#eff6ff'; // Blue-50
+            badge.style.color = '#1e40af'; // Blue-800
+            badge.style.borderColor = '#3b82f6'; // Blue-500
           } else {
             badge.style.backgroundColor = '';
             badge.style.color = '';
@@ -827,13 +829,13 @@
           }
         });
 
-        // Update header nav controls with gold theme
+        // Update header nav controls with blue theme
         const navControls = document.querySelectorAll('nav a, nav button');
         navControls.forEach(control => {
           if (theme === 'light') {
-            control.style.backgroundColor = '#f9f5ed';
-            control.style.borderColor = '#b8860b';
-            control.style.color = '#5a4a2e';
+            control.style.backgroundColor = '#eff6ff';
+            control.style.borderColor = '#93c5fd';
+            control.style.color = '#1e40af';
           } else {
             control.style.backgroundColor = '';
             control.style.borderColor = '';
@@ -841,13 +843,13 @@
           }
         });
 
-        // Update language dropdown with gold accents
+        // Update language dropdown with blue accents
         const langMenu = document.getElementById('lang-menu');
         if (langMenu) {
           if (theme === 'light') {
-            langMenu.style.backgroundColor = '#fdfbf7';
-            langMenu.style.borderColor = '#b8860b';
-            langMenu.style.boxShadow = '0 10px 15px -3px rgba(184, 134, 11, 0.15)';
+            langMenu.style.backgroundColor = '#ffffff';
+            langMenu.style.borderColor = '#3b82f6';
+            langMenu.style.boxShadow = '0 10px 15px -3px rgba(59, 130, 246, 0.15), 0 4px 6px -4px rgba(59, 130, 246, 0.1)';
           } else {
             langMenu.style.backgroundColor = '';
             langMenu.style.borderColor = '';
@@ -858,10 +860,10 @@
         const langOptions = document.querySelectorAll('.lang-option');
         langOptions.forEach(option => {
           if (theme === 'light') {
-            option.style.color = '#2c2416';
+            option.style.color = '#1e293b';
             if (option.classList.contains('selected')) {
-              option.style.backgroundColor = '#b8860b';
-              option.style.color = '#fdfbf7';
+              option.style.backgroundColor = '#3b82f6';
+              option.style.color = '#ffffff';
             }
           } else {
             option.style.color = '';
