@@ -1,27 +1,72 @@
 // Vercel Serverless Function: /api/analytics.js
-// Сохраните этот файл как: /Users/erika/Downloads/truck-driver-landing/ru/api/analytics.js
+// Упрощенная аналитика с отправкой в Telegram
 
-import { MongoClient } from 'mongodb';
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 
-// MongoDB Connection String - замените на ваш
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://username:password@cluster.mongodb.net/';
-const DB_NAME = 'truck_driver_analytics';
-const COLLECTION_NAME = 'events';
+// Important events to send to Telegram
+const IMPORTANT_EVENTS = [
+  'button_click',
+  'discount_button_clicked',
+  'discount_click',
+  'exit_intent'
+];
 
-let cachedClient = null;
-
-async function connectToDatabase() {
-  if (cachedClient) {
-    return cachedClient;
+async function sendToTelegram(message) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    console.log('Telegram not configured, skipping notification');
+    return;
   }
 
-  const client = await MongoClient.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  try {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'HTML'
+      })
+    });
+  } catch (error) {
+    console.error('Telegram send error:', error);
+  }
+}
 
-  cachedClient = client;
-  return client;
+function formatEventMessage(event) {
+  const timestamp = new Date(event.timestamp).toLocaleString('ru-RU', { timeZone: 'Europe/Kiev' });
+  let message = `🔔 <b>Новое событие на лендинге</b>\n\n`;
+  message += `📊 <b>Событие:</b> ${event.event_name}\n`;
+  message += `⏰ <b>Время:</b> ${timestamp}\n`;
+  message += `🌐 <b>URL:</b> ${event.page?.url || 'N/A'}\n`;
+  message += `👤 <b>User ID:</b> ${event.user_id?.substring(0, 20)}...\n`;
+
+  if (event.event_data) {
+    if (event.event_data.button_text) {
+      message += `🔘 <b>Кнопка:</b> ${event.event_data.button_text}\n`;
+    }
+    if (event.event_data.href) {
+      message += `🔗 <b>Ссылка:</b> ${event.event_data.href}\n`;
+    }
+    if (event.event_data.platform) {
+      message += `📱 <b>Платформа:</b> ${event.event_data.platform}\n`;
+    }
+    if (event.event_data.time_spent) {
+      message += `⏱ <b>Время на сайте:</b> ${event.event_data.time_spent}с\n`;
+    }
+    if (event.event_data.scroll_depth) {
+      message += `📜 <b>Прокрутка:</b> ${event.event_data.scroll_depth.toFixed(0)}%\n`;
+    }
+  }
+
+  if (event.device) {
+    message += `\n📱 <b>Устройство:</b>\n`;
+    message += `- Язык: ${event.device.language}\n`;
+    message += `- Экран: ${event.device.screen_width}x${event.device.screen_height}\n`;
+  }
+
+  return message;
 }
 
 export default async function handler(req, res) {
@@ -44,25 +89,32 @@ export default async function handler(req, res) {
   }
 
   try {
-    const client = await connectToDatabase();
-    const db = client.db(DB_NAME);
-    const collection = db.collection(COLLECTION_NAME);
-
     // Add server-side metadata
     const event = {
       ...req.body,
       server_timestamp: new Date().toISOString(),
-      ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-      user_agent: req.headers['user-agent'],
+      ip_address: req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'unknown',
+      user_agent: req.headers['user-agent'] || 'unknown',
     };
 
-    // Insert event
-    const result = await collection.insertOne(event);
+    // Log event (visible in Vercel logs)
+    console.log('Analytics Event:', {
+      event_name: event.event_name,
+      user_id: event.user_id,
+      timestamp: event.server_timestamp
+    });
+
+    // Send important events to Telegram
+    if (IMPORTANT_EVENTS.includes(event.event_name)) {
+      const message = formatEventMessage(event);
+      await sendToTelegram(message);
+    }
 
     // Send success response
     res.status(200).json({
       success: true,
-      id: result.insertedId
+      event_name: event.event_name,
+      timestamp: event.server_timestamp
     });
 
   } catch (error) {

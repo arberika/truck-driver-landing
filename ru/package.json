@@ -7,9 +7,7 @@
     "build": "echo 'No build needed for static site'",
     "deploy": "vercel --prod"
   },
-  "dependencies": {
-    "mongodb": "^6.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "vercel": "^33.0.0"
   }
