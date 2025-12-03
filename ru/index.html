@@ -110,6 +110,208 @@
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="./assets/data_sdk.js" type="text/javascript"></script>
+
+  <!-- SEO META TAGS -->
+  <meta name="description" content="Работа водителем C+E в Европе через Словакию. Зарплата 2500-2700€ чистыми. Официальное оформление, народные визы, новые Renault Euro 6. Полное сопровождение от А до Я.">
+  <meta name="keywords" content="работа водителем в европе, водитель CE европа, работа в словакии водитель, водитель международник, вакансия водитель фуры, виза словакия водитель, работа водитель грузовик европа">
+  <meta name="author" content="ERIAR Recruitment">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ce.woweri.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ce.woweri.com/">
+  <meta property="og:title" content="Работа водителем C+E в Европе через Словакию | 2500-2700€/мес">
+  <meta property="og:description" content="Официальное оформление в Словакии, народные визы, новые Renault Euro 6. Зарплата 2500-2700€ чистыми + бонусы. Полное сопровождение от А до Я.">
+  <meta property="og:image" content="https://ce.woweri.com/og-image.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="ERIAR - Работа водителем в Европе">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ce.woweri.com/">
+  <meta property="twitter:title" content="Работа водителем C+E в Европе | 2500-2700€/мес">
+  <meta property="twitter:description" content="Официальное оформление в Словакии, народные визы, новые Renault Euro 6. Зарплата 2500-2700€ чистыми.">
+  <meta property="twitter:image" content="https://ce.woweri.com/og-image.jpg">
+
+  <!-- FACEBOOK PIXEL -->
+  <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID_HERE');
+fbq('track', 'PageView');
+</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+  <!-- STRUCTURED DATA (Schema.org) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Водитель грузового автомобиля C+E в Европе",
+  "description": "Официальное оформление в Словакии, зарплата 2500-2700€ чистыми, новые Renault Euro 6, полное сопровождение",
+  "datePosted": "2025-01-01",
+  "validThrough": "2025-12-31",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "ERIAR Recruitment",
+    "sameAs": "https://ce.woweri.com",
+    "logo": "https://ce.woweri.com/logo.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SK",
+      "addressRegion": "Slovakia"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 2500,
+      "maxValue": 2700,
+      "unitText": "MONTH"
+    }
+  },
+  "qualifications": "Права категории C+E, опыт работы водителем",
+  "responsibilities": "Международные перевозки грузов по Европе",
+  "benefits": "Официальное оформление, виза, новый автомобиль, полное сопровождение"
+}
+</script>
+
+  <!-- ANALYTICS SYSTEM WITH MONGODB -->
+  <script>
+const ANALYTICS_CONFIG = {
+  apiEndpoint: '/api/analytics',
+  sessionId: 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+  userId: (function() {
+    let userId = localStorage.getItem('eriar_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('eriar_user_id', userId);
+    }
+    return userId;
+  })()
+};
+
+async function trackEvent(eventName, eventData = {}) {
+  const eventPayload = {
+    event_name: eventName,
+    event_data: eventData,
+    session_id: ANALYTICS_CONFIG.sessionId,
+    user_id: ANALYTICS_CONFIG.userId,
+    timestamp: new Date().toISOString(),
+    page: {
+      url: window.location.href,
+      path: window.location.pathname,
+      title: document.title,
+      referrer: document.referrer
+    },
+    device: {
+      user_agent: navigator.userAgent,
+      language: navigator.language,
+      screen_width: window.screen.width,
+      screen_height: window.screen.height,
+      viewport_width: window.innerWidth,
+      viewport_height: window.innerHeight
+    }
+  };
+
+  try {
+    await fetch(ANALYTICS_CONFIG.apiEndpoint, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(eventPayload)
+    });
+    const events = JSON.parse(localStorage.getItem('eriar_events') || '[]');
+    events.push(eventPayload);
+    if (events.length > 100) events.shift();
+    localStorage.setItem('eriar_events', JSON.stringify(events));
+  } catch (error) {
+    console.error('Analytics tracking error:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  trackEvent('page_loaded', {
+    load_time: performance.timing.loadEventEnd - performance.timing.navigationStart
+  });
+
+  // Scroll Depth Tracking
+  let maxScrollDepth = 0;
+  let scrollCheckpoints = [25, 50, 75, 100];
+  window.addEventListener('scroll', function() {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.pageYOffset / scrollHeight) * 100;
+    if (scrolled > maxScrollDepth) {
+      maxScrollDepth = scrolled;
+      scrollCheckpoints.forEach(checkpoint => {
+        if (scrolled >= checkpoint && maxScrollDepth < checkpoint + 5) {
+          trackEvent('scroll_depth', { depth: checkpoint });
+        }
+      });
+    }
+  });
+
+  // Time on Page Tracking
+  let timeOnPage = 0;
+  setInterval(function() {
+    timeOnPage += 10;
+    if (timeOnPage % 30 === 0) {
+      trackEvent('time_on_page', { seconds: timeOnPage });
+    }
+  }, 10000);
+
+  // Button Click Tracking
+  document.addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.tagName === 'BUTTON' || target.tagName === 'A') {
+      const buttonText = target.textContent.trim();
+      const buttonId = target.id || 'unknown';
+      trackEvent('button_click', {
+        button_id: buttonId,
+        button_text: buttonText,
+        href: target.href || null
+      });
+      if (buttonId.includes('btn-hero-form') || buttonId.includes('btn-apply')) {
+        typeof fbq !== 'undefined' && fbq('track', 'InitiateCheckout', {
+          content_name: 'Application Form',
+          content_category: 'CTA'
+        });
+      }
+    }
+  });
+
+  // Exit Intent Tracking
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 0) {
+      trackEvent('exit_intent', {
+        time_spent: timeOnPage,
+        scroll_depth: maxScrollDepth
+      });
+    }
+  });
+
+  // Before Unload Tracking
+  window.addEventListener('beforeunload', function() {
+    trackEvent('page_exit', {
+      time_spent: timeOnPage,
+      scroll_depth: maxScrollDepth
+    });
+  });
+});
+</script>
+
  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.z-10{z-index:10}.m-0{margin:0px}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-2{margin-top:0.5rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/9\]{aspect-ratio:16/9}.h-full{height:100%}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-9{height:2.25rem}.w-full{width:100%}.w-14{width:3.5rem}.w-2{width:0.5rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-9{width:2.25rem}.w-max{width:max-content}.max-w-5xl{max-width:64rem}.max-w-xl{max-width:36rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-8{gap:2rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-cyan-500\/40{border-color:rgb(6 182 212 / 0.4)}.border-cyan-500\/50{border-color:rgb(6 182 212 / 0.5)}.border-cyan-500\/60{border-color:rgb(6 182 212 / 0.6)}.border-emerald-500\/50{border-color:rgb(16 185 129 / 0.5)}.border-rose-500\/50{border-color:rgb(244 63 94 / 0.5)}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.bg-cyan-500{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-rose-400{--tw-bg-opacity:1;background-color:rgb(251 113 133 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/80{background-color:rgb(30 41 59 / 0.8)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.from-cyan-500\/20{--tw-gradient-from:rgb(6 182 212 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(6 182 212 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-slate-900\/20{--tw-gradient-to:rgb(15 23 42 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(15 23 42 / 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-emerald-400\/20{--tw-gradient-to:rgb(52 211 153 / 0.2) var(--tw-gradient-to-position)}.p-0{padding:0px}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[11px\]{font-size:11px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:0.025em}.text-cyan-200{--tw-text-opacity:1;color:rgb(165 243 252 / var(--tw-text-opacity, 1))}.text-cyan-300{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-50{--tw-text-opacity:1;color:rgb(248 250 252 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cyan-500\/30{--tw-shadow-color:rgb(6 182 212 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-cyan-400:hover{--tw-border-opacity:1;border-color:rgb(34 211 238 / var(--tw-border-opacity, 1))}.hover\:bg-cyan-400:hover{--tw-bg-opacity:1;background-color:rgb(34 211 238 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-cyan-100:hover{--tw-text-opacity:1;color:rgb(207 250 254 / var(--tw-text-opacity, 1))}.active\:bg-cyan-300:active{--tw-bg-opacity:1;background-color:rgb(103 232 249 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:col-span-2{grid-column:span 2 / span 2}.sm\:flex{display:flex}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-\[1\.2fr\2c 1fr\]{grid-template-columns:1.2fr 1fr}.lg\:grid-cols-\[1\.4fr\2c 1fr\]{grid-template-columns:1.4fr 1fr}}</style></head>
  <body class="w-full h-full m-0 p-0" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240);">
    <!-- HEADER -->
@@ -4801,4 +5003,129 @@
 
   <!-- AmoCRM Social Button -->
   <script>(function(a,m,o,c,r,m){a[m]={id:"410070",hash:"f363a271a8658454e667c8dee5be29a39a97bd26c94a66e482f3b867c69fe166",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
+<!-- DISCOUNT MODAL -->
+<div id="discount-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000; background: rgba(0,0,0,0.8); align-items: center; justify-content: center;">
+  <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 16px; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 2px solid #f59e0b;">
+    <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 20px; border-radius: 14px 14px 0 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; color: #fff; font-size: 24px; font-weight: bold;">🎁 Получите скидку 10%!</h3>
+        <button onclick="closeDiscountModal()" style="background: rgba(255,255,255,0.2); border: none; color: #fff; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">×</button>
+      </div>
+    </div>
+
+    <div style="padding: 30px;">
+      <div style="background: rgba(16, 185, 129, 0.1); border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+        <h4 id="discount-modal-title" style="color: #10b981; font-size: 20px; margin: 0 0 12px 0; font-weight: bold;">Приведи друга — получи скидку!</h4>
+        <p id="discount-modal-desc" style="color: #cbd5e1; margin: 0; line-height: 1.6;">
+          При выборе <strong style="color: #fbbf24;">Пакета №6 "ВСЁ ВКЛЮЧЕНО"</strong> вы получаете возможность сэкономить до <strong style="color: #10b981;">10% (166€)</strong> за каждого друга, которого вы приведёте!
+        </p>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h5 id="discount-modal-how-title" style="color: #67e8f9; font-size: 18px; margin: 0 0 16px 0; font-weight: bold;">📋 Как это работает:</h5>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="background: rgba(6, 182, 212, 0.1); border-left: 3px solid #06b6d4; padding: 12px 16px; margin-bottom: 10px; border-radius: 8px;">
+            <span id="discount-modal-step1" style="color: #e2e8f0; line-height: 1.5;"><strong style="color: #06b6d4;">1.</strong> Вы оформляете Пакет №6</span>
+          </li>
+          <li style="background: rgba(6, 182, 212, 0.1); border-left: 3px solid #06b6d4; padding: 12px 16px; margin-bottom: 10px; border-radius: 8px;">
+            <span id="discount-modal-step2" style="color: #e2e8f0; line-height: 1.5;"><strong style="color: #06b6d4;">2.</strong> Приводите друга или знакомого водителя</span>
+          </li>
+          <li style="background: rgba(6, 182, 212, 0.1); border-left: 3px solid #06b6d4; padding: 12px 16px; margin-bottom: 10px; border-radius: 8px;">
+            <span id="discount-modal-step3" style="color: #e2e8f0; line-height: 1.5;"><strong style="color: #06b6d4;">3.</strong> Ваш друг оформляет любой пакет</span>
+          </li>
+          <li style="background: rgba(6, 182, 212, 0.1); border-left: 3px solid #06b6d4; padding: 12px 16px; border-radius: 8px;">
+            <span id="discount-modal-step4" style="color: #e2e8f0; line-height: 1.5;"><strong style="color: #06b6d4;">4.</strong> Вы получаете скидку 10% от стоимости Пакета №6!</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.2) 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+        <p id="discount-modal-example" style="color: #fbbf24; margin: 0; font-weight: bold; text-align: center; font-size: 16px;">
+          💰 Пример: Привели друга → экономия 166€ (191$)!
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <a href="https://t.me/ERIARcom_bot?start=discount_package6" target="_blank" rel="noopener" onclick="trackDiscountClick('telegram')" style="flex: 1; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: #fff; padding: 14px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: bold; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+          <span id="discount-modal-btn-telegram">📱 Написать в Telegram</span>
+        </a>
+        <a href="https://wa.me/17329635593?text=Хочу%20узнать%20про%20скидку%2010%%20за%20друга%20в%20Пакете%206" target="_blank" rel="noopener" onclick="trackDiscountClick('whatsapp')" style="flex: 1; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; padding: 14px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: bold; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+          <span id="discount-modal-btn-whatsapp">💬 WhatsApp</span>
+        </a>
+      </div>
+
+      <p id="discount-modal-note" style="color: #94a3b8; font-size: 12px; margin: 16px 0 0 0; text-align: center; line-height: 1.5;">
+        * Скидка применяется после успешного оформления вашего друга. Подробности уточняйте у менеджера.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Discount Modal Functions
+function openDiscountModal() {
+  const modal = document.getElementById('discount-modal');
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Track modal open
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', {
+        content_name: 'Discount Modal',
+        content_category: 'Discount',
+        content_type: 'modal'
+      });
+    }
+
+    // Send to analytics
+    trackEvent('discount_modal_opened', {
+      timestamp: new Date().toISOString(),
+      page_url: window.location.href
+    });
+  }
+}
+
+function closeDiscountModal() {
+  const modal = document.getElementById('discount-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+function trackDiscountClick(platform) {
+  // Facebook Pixel tracking
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', {
+      content_name: 'Discount Inquiry',
+      platform: platform,
+      package: '6'
+    });
+  }
+
+  // Custom analytics
+  trackEvent('discount_click', {
+    platform: platform,
+    package: 6,
+    timestamp: new Date().toISOString(),
+    page_url: window.location.href
+  });
+}
+
+// Close modal on outside click
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('discount-modal');
+  if (modal && e.target === modal) {
+    closeDiscountModal();
+  }
+});
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeDiscountModal();
+  }
+});
+</script>
 </body></html>

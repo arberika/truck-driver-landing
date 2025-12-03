@@ -1,0 +1,16 @@
+{
+  "name": "truck-driver-landing",
+  "version": "1.0.0",
+  "description": "Landing page for truck driver recruitment in Europe",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build needed for static site'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
