@@ -872,6 +872,56 @@
             }
           }
         });
+
+        // Update FAQ details/summary elements
+        const detailsElements = document.querySelectorAll('details');
+        detailsElements.forEach(details => {
+          if (theme === 'light') {
+            details.style.backgroundColor = '#ffffff';
+            details.style.borderColor = '#3b82f6';
+            const summary = details.querySelector('summary');
+            if (summary) {
+              summary.style.color = '#1e293b';
+            }
+            const content = details.querySelectorAll('p');
+            content.forEach(p => {
+              p.style.color = '#475569';
+            });
+          } else {
+            details.style.backgroundColor = '';
+            details.style.borderColor = '';
+            const summary = details.querySelector('summary');
+            if (summary) {
+              summary.style.color = '';
+            }
+            const content = details.querySelectorAll('p');
+            content.forEach(p => {
+              p.style.color = '';
+            });
+          }
+        });
+
+        // Update all heading elements
+        const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(heading => {
+          if (theme === 'light' && !heading.id) {
+            heading.style.color = '#1e293b';
+          } else if (theme === 'dark') {
+            if (!heading.id) {
+              heading.style.color = '';
+            }
+          }
+        });
+
+        // Update list items
+        const listItems = document.querySelectorAll('li, ul, ol');
+        listItems.forEach(item => {
+          if (theme === 'light') {
+            item.style.color = '#1e293b';
+          } else {
+            item.style.color = '';
+          }
+        });
       }
     }
 
