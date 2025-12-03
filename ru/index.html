@@ -33,6 +33,23 @@
     body, #app-root {
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+    /* Light theme specific styles */
+    body.light-theme {
+      background: linear-gradient(to bottom, #ffffff 0%, #fefce8 100%);
+    }
+    body.light-theme .bg-slate-900 {
+      background-color: #ffffff !important;
+    }
+    body.light-theme button:hover,
+    body.light-theme a:hover {
+      opacity: 0.9;
+    }
+    body.light-theme .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.2), 0 4px 6px -4px rgba(212, 175, 55, 0.15) !important;
+    }
+    body.light-theme .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(212, 175, 55, 0.15), 0 2px 4px -2px rgba(212, 175, 55, 0.1) !important;
+    }
     /* Language dropdown */
     .lang-dropdown {
       position: relative;
@@ -697,22 +714,162 @@
 
       function applyTheme(theme) {
         if (theme === 'light') {
-          // Light theme colors
-          body.style.backgroundColor = '#f8fafc';
-          body.style.color = '#0f172a';
-          appRoot.style.backgroundColor = '#f8fafc';
-          appRoot.style.color = '#0f172a';
+          // Light theme - White with Gold accents
+          body.style.backgroundColor = '#ffffff';
+          body.style.color = '#1e293b';
+          appRoot.style.backgroundColor = '#ffffff';
+          appRoot.style.color = '#1e293b';
+          body.classList.add('light-theme');
           iconDark.classList.add('hidden');
           iconLight.classList.remove('hidden');
+
+          // Update all styled blocks for light theme
+          updateBlocksForTheme('light');
         } else {
           // Dark theme colors (default)
           body.style.backgroundColor = '#020617';
           body.style.color = '#e2e8f0';
           appRoot.style.backgroundColor = '#020617';
           appRoot.style.color = '#e2e8f0';
+          body.classList.remove('light-theme');
           iconDark.classList.remove('hidden');
           iconLight.classList.add('hidden');
+
+          // Restore dark theme for blocks
+          updateBlocksForTheme('dark');
         }
+      }
+
+      function updateBlocksForTheme(theme) {
+        // Get all content blocks
+        const contentBlocks = document.querySelectorAll(
+          '.bg-slate-800\\/80, .bg-slate-800, .bg-slate-900, ' +
+          '[class*="border-slate"], [class*="border-cyan"], ' +
+          '[class*="border-emerald"], [class*="border-rose"]'
+        );
+
+        contentBlocks.forEach(block => {
+          if (theme === 'light') {
+            // Light theme: white cards with gold borders
+            block.style.backgroundColor = '#ffffff';
+            block.style.color = '#1e293b';
+            block.style.borderColor = '#d4af37';
+            block.style.boxShadow = '0 1px 3px 0 rgba(212, 175, 55, 0.1), 0 1px 2px -1px rgba(212, 175, 55, 0.1)';
+          } else {
+            // Dark theme: restore original styles
+            block.style.backgroundColor = '';
+            block.style.color = '';
+            block.style.borderColor = '';
+            block.style.boxShadow = '';
+          }
+        });
+
+        // Update text colors
+        const textElements = document.querySelectorAll(
+          '.text-slate-100, .text-slate-200, .text-slate-300, ' +
+          '.text-slate-400, .text-slate-500, .text-cyan-200, .text-cyan-300'
+        );
+
+        textElements.forEach(el => {
+          if (theme === 'light') {
+            el.style.color = '#475569'; // Readable gray for light theme
+          } else {
+            el.style.color = '';
+          }
+        });
+
+        // Update primary color accents to gold in light mode
+        const primaryElements = document.querySelectorAll('.bg-cyan-500, .text-cyan-300');
+        primaryElements.forEach(el => {
+          if (theme === 'light') {
+            if (el.classList.contains('bg-cyan-500')) {
+              el.style.backgroundColor = '#d4af37'; // Gold
+            }
+            if (el.classList.contains('text-cyan-300')) {
+              el.style.color = '#b8960f'; // Darker gold for text
+            }
+          } else {
+            el.style.backgroundColor = '';
+            el.style.color = '';
+          }
+        });
+
+        // Update badge/pill backgrounds
+        const badges = document.querySelectorAll('[class*="bg-slate"]');
+        badges.forEach(badge => {
+          if (theme === 'light' && badge.textContent.trim()) {
+            badge.style.backgroundColor = '#fefce8'; // Light gold tint
+            badge.style.color = '#713f12'; // Dark gold text
+            badge.style.borderColor = '#d4af37';
+          } else {
+            badge.style.backgroundColor = '';
+            badge.style.color = '';
+            badge.style.borderColor = '';
+          }
+        });
+
+        // Update emerald/rose indicators (keep them visible)
+        const emeraldElements = document.querySelectorAll('.bg-emerald-400');
+        emeraldElements.forEach(el => {
+          if (theme === 'light') {
+            el.style.backgroundColor = '#10b981'; // Keep green visible
+          } else {
+            el.style.backgroundColor = '';
+          }
+        });
+
+        const roseElements = document.querySelectorAll('.bg-rose-400');
+        roseElements.forEach(el => {
+          if (theme === 'light') {
+            el.style.backgroundColor = '#f43f5e'; // Keep red visible
+          } else {
+            el.style.backgroundColor = '';
+          }
+        });
+
+        // Update header nav controls
+        const navControls = document.querySelectorAll('nav a, nav button');
+        navControls.forEach(control => {
+          if (theme === 'light') {
+            control.style.backgroundColor = '#fefce8';
+            control.style.borderColor = '#d4af37';
+            control.style.color = '#713f12';
+          } else {
+            control.style.backgroundColor = '';
+            control.style.borderColor = '';
+            control.style.color = '';
+          }
+        });
+
+        // Update language dropdown
+        const langMenu = document.getElementById('lang-menu');
+        if (langMenu) {
+          if (theme === 'light') {
+            langMenu.style.backgroundColor = '#ffffff';
+            langMenu.style.borderColor = '#d4af37';
+            langMenu.style.boxShadow = '0 10px 15px -3px rgba(212, 175, 55, 0.2)';
+          } else {
+            langMenu.style.backgroundColor = '';
+            langMenu.style.borderColor = '';
+            langMenu.style.boxShadow = '';
+          }
+        }
+
+        const langOptions = document.querySelectorAll('.lang-option');
+        langOptions.forEach(option => {
+          if (theme === 'light') {
+            option.style.color = '#1e293b';
+            if (option.classList.contains('selected')) {
+              option.style.backgroundColor = '#d4af37';
+              option.style.color = '#ffffff';
+            }
+          } else {
+            option.style.color = '';
+            if (!option.classList.contains('selected')) {
+              option.style.backgroundColor = '';
+            }
+          }
+        });
       }
     }
 
