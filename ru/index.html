@@ -151,26 +151,26 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
          <div class="flex items-start gap-2 bg-slate-800/80 rounded-xl p-3 border border-slate-700"><span class="mt-0.5 text-cyan-300">•</span>
-          <p>Официальное оформление в Словакии, народные визы</p>
+          <p id="feature-1">Официальное оформление в Словакии, народные визы</p>
          </div>
          <div class="flex items-start gap-2 bg-slate-800/80 rounded-xl p-3 border border-slate-700"><span class="mt-0.5 text-cyan-300">•</span>
-          <p>Новые Renault Euro 6, собственный сервис – водитель не ремонтирует</p>
+          <p id="feature-2">Новые Renault Euro 6, собственный сервис – водитель не ремонтирует</p>
          </div>
          <div class="flex items-start gap-2 bg-slate-800/80 rounded-xl p-3 border border-slate-700"><span class="mt-0.5 text-cyan-300">•</span>
-          <p>Диета 80–100 €/день, средний доход 2500–2700 €</p>
+          <p id="feature-3">Диета 80–100 €/день, средний доход 2500–2700 €</p>
          </div>
          <div class="flex items-start gap-2 bg-slate-800/80 rounded-xl p-3 border border-slate-700"><span class="mt-0.5 text-cyan-300">•</span>
-          <p>Маршруты по всей Европе, пробег ≈ 12 000 км/мес</p>
+          <p id="feature-4">Маршруты по всей Европе, пробег ≈ 12 000 км/мес</p>
          </div>
          <div class="flex items-start gap-2 bg-slate-800/80 rounded-xl p-3 border border-slate-700 sm:col-span-2"><span class="mt-0.5 text-cyan-300">•</span>
-          <p>Сопровождение при оформлении документов и подготовке к выезду</p>
+          <p id="feature-5">Сопровождение при оформлении документов и подготовке к выезду</p>
          </div>
         </div><!-- CTA кнопки -->
-        <div class="flex flex-col sm:flex-row gap-3"><button id="btn-hero-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 shadow-lg shadow-cyan-500/30 hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" aria-label="Заполнить анкету за 3 минуты" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Заполнить анкету за 3 минуты </button>
-         <div class="flex gap-2 w-full sm:w-auto"><button id="btn-hero-messenger" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-800 text-cyan-200 border border-slate-600 hover:border-cyan-400 hover:text-cyan-100 transition-colors flex-1" aria-label="Написать в WhatsApp или Telegram" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"> Написать в WhatsApp/Telegram </button>
+        <div class="flex flex-col sm:flex-row gap-3"><button id="btn-hero-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 shadow-lg shadow-cyan-500/30 hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" aria-label="Заполнить анкету за 3 минуты" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-form-text">Заполнить анкету за 3 минуты</span></button>
+         <div class="flex gap-2 w-full sm:w-auto"><button id="btn-hero-messenger" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-slate-800 text-cyan-200 border border-slate-600 hover:border-cyan-400 hover:text-cyan-100 transition-colors flex-1" aria-label="Написать в WhatsApp или Telegram" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-messenger-text">Написать в WhatsApp/Telegram</span></button>
          </div>
         </div>
-        <p class="text-xs text-slate-400">Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы.</p>
+        <p id="hero-help-text" class="text-xs text-slate-400">Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы.</p>
        </div><!-- Правый блок: видео-презентация -->
        <div class="w-full flex flex-col gap-3 fade-up visible">
         <div class="relative bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden aspect-[16/9] flex items-center justify-center">
@@ -942,7 +942,15 @@
         trustHeading: "Почему нам доверяют водители",
         faqHeading: "Частые вопросы",
         finalHeading: "Готовы рассмотреть работу в Европе?",
-        finalSubtitle: "Оставьте короткую анкету или напишите в Telegram — ответим на вопросы и оценим ваши шансы на трудоустройство."
+        finalSubtitle: "Оставьте короткую анкету или напишите в Telegram — ответим на вопросы и оценим ваши шансы на трудоустройство.",
+        "feature-1": "Официальное оформление в Словакии, народные визы",
+        "feature-2": "Новые Renault Euro 6, собственный сервис – водитель не ремонтирует",
+        "feature-3": "Диета 80–100 €/день, средний доход 2500–2700 €",
+        "feature-4": "Маршруты по всей Европе, пробег ≈ 12 000 км/мес",
+        "feature-5": "Сопровождение при оформлении документов и подготовке к выезду",
+        "btn-form-text": "Заполнить анкету за 3 минуты",
+        "btn-messenger-text": "Написать в WhatsApp/Telegram",
+        "hero-help-text": "Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы."
       },
       uk: {
         siteLabel: "Вакансія",
@@ -959,7 +967,15 @@
         trustHeading: "Чому нам довіряють водії",
         faqHeading: "Часті питання",
         finalHeading: "Готові розглянути роботу в Європі?",
-        finalSubtitle: "Залиште коротку анкету або напишіть у Telegram — відповімо на питання та оцінимо ваші шанси на працевлаштування."
+        finalSubtitle: "Залиште коротку анкету або напишіть у Telegram — відповімо на питання та оцінимо ваші шанси на працевлаштування.",
+        "feature-1": "Офіційне оформлення в Словаччині, народні візи",
+        "feature-2": "Нові Renault Euro 6, власний сервіс – водій не ремонтує",
+        "feature-3": "Дієта 80–100 €/день, середній дохід 2500–2700 €",
+        "feature-4": "Маршрути по всій Європі, пробіг ≈ 12 000 км/міс",
+        "feature-5": "Супровід при оформленні документів та підготовці до виїзду",
+        "btn-form-text": "Заповнити анкету за 3 хвилини",
+        "btn-messenger-text": "Написати в WhatsApp/Telegram",
+        "hero-help-text": "Відповімо на питання, допоможемо оцінити ваші шанси та підберемо комфортні умови роботи."
       },
       uz: {
         siteLabel: "Vakansiya",
@@ -976,7 +992,15 @@
         trustHeading: "Haydovchilar bizga nima uchun ishonadi",
         faqHeading: "Tez-tez beriladigan savollar",
         finalHeading: "Yevropada ishlashni ko'rib chiqishga tayyormisiz?",
-        finalSubtitle: "Qisqa anketa qoldiring yoki Telegramda yozing — savollarga javob beramiz va ish olish imkoniyatingizni baholaymiz."
+        finalSubtitle: "Qisqa anketa qoldiring yoki Telegramda yozing — savollarga javob beramiz va ish olish imkoniyatingizni baholaymiz.",
+        "feature-1": "Slovakiyada rasmiy rasmiylashtiruv, xalq vizalari",
+        "feature-2": "Yangi Renault Euro 6, o'z servisi – haydovchi ta'mirlamaydi",
+        "feature-3": "Dieta 80–100 €/kun, o'rtacha daromad 2500–2700 €",
+        "feature-4": "Butun Yevropa bo'ylab marshrutlar, yugurib o'tish ≈ 12 000 km/oy",
+        "feature-5": "Hujjatlarni rasmiylashtiruv va chiqishga tayyorgarlikda qo'llab-quvvatlash",
+        "btn-form-text": "Anketani 3 daqiqada to'ldiring",
+        "btn-messenger-text": "WhatsApp/Telegram'da yozing",
+        "hero-help-text": "Savollaringizga javob beramiz, imkoniyatlaringizni baholaymiz va qulay ish sharoitlarini tanlaymiz."
       },
       tj: {
         siteLabel: "Вакансия",
@@ -993,7 +1017,15 @@
         trustHeading: "Чаро ронандагон ба мо эътимод мекунанд",
         faqHeading: "Саволҳои зуд-зуд пурсида",
         finalHeading: "Омодаед кор дар Аврупоро баррасӣ кунед?",
-        finalSubtitle: "Анкетаи кутоҳ гузоред ё дар Telegram нависед — ба саволҳо ҷавоб медиҳем ва имкониятҳои кориёбии шуморо арзёбӣ мекунем."
+        finalSubtitle: "Анкетаи кутоҳ гузоред ё дар Telegram нависед — ба саволҳо ҷавоб медиҳем ва имкониятҳои кориёбии шуморо арзёбӣ мекунем.",
+        "feature-1": "Расмикунонии расмӣ дар Словакия, визаҳои халқӣ",
+        "feature-2": "Renault Euro 6-и нав, сервиси худӣ – ронанда таъмир намекунад",
+        "feature-3": "Диета 80–100 €/рӯз, даромади миёна 2500–2700 €",
+        "feature-4": "Масирҳо дар тамоми Аврупо, пайравӣ ≈ 12 000 км/моҳ",
+        "feature-5": "Пуштибонӣ ҳангоми расмикунонии ҳуҷҷатҳо ва омодагӣ ба баромад",
+        "btn-form-text": "Анкетаро дар 3 дақиқа пур кунед",
+        "btn-messenger-text": "Дар WhatsApp/Telegram нависед",
+        "hero-help-text": "Ба саволҳо ҷавоб медиҳем, имкониятҳои шуморо арзёбӣ мекунем ва шароити кории қулай мепардозем."
       },
       tk: {
         siteLabel: "Waka Yeri",
@@ -1010,7 +1042,15 @@
         trustHeading: "Näme Üçin Sürüjiler Bize Ynanýarlar",
         faqHeading: "Ýygy-ýygydan Soralýan Soraglar",
         finalHeading: "Ýewropada Işlemegi Gözden Geçirmäge Taýynmy?",
-        finalSubtitle: "Gysga anketa galdyryň ýa-da Telegramda ýazyň — soraglara jogap bereris we iş almak mümkinçiligiňizi bahalandyrarys."
+        finalSubtitle: "Gysga anketa galdyryň ýa-da Telegramda ýazyň — soraglara jogap bereris we iş almak mümkinçiligiňizi bahalandyrarys.",
+        "feature-1": "Slowakiýada resmi resmileşdirme, halk wizalary",
+        "feature-2": "Täze Renault Euro 6, öz hyzmaty – sürüji abatlamaýar",
+        "feature-3": "Diýeta 80–100 €/gün, ortaça girdeji 2500–2700 €",
+        "feature-4": "Bütin Ýewropa boýunça ugurlar, geçilen ýol ≈ 12 000 km/aý",
+        "feature-5": "Resminamalary resmileşdirmekde we çykyşa taýynlykda goldaw",
+        "btn-form-text": "Anketany 3 minutda dolduryň",
+        "btn-messenger-text": "WhatsApp/Telegram-da ýazyň",
+        "hero-help-text": "Soraglara jogap bereris, mümkinçilikleriňizi bahalandyrarys we amatly iş şertlerini saýlarys."
       },
       kz: {
         siteLabel: "Вакансия",
@@ -1027,7 +1067,15 @@
         trustHeading: "Жүргізушілер бізге неліктен сенеді",
         faqHeading: "Жиі қойылатын сұрақтар",
         finalHeading: "Еуропада жұмыс істеуді қарауға дайынсыз ба?",
-        finalSubtitle: "Қысқа сауалнама қалдырыңыз немесе Telegram-ға жазыңыз — сұрақтарға жауап береміз және жұмысқа орналасу мүмкіндігіңізді бағалаймыз."
+        finalSubtitle: "Қысқа сауалнама қалдырыңыз немесе Telegram-ға жазыңыз — сұрақтарға жауап береміз және жұмысқа орналасу мүмкіндігіңізді бағалаймыз.",
+        "feature-1": "Словакияда ресми ресімдеу, халықтық визалар",
+        "feature-2": "Жаңа Renault Euro 6, өз сервисі – жүргізуші жөндемейді",
+        "feature-3": "Диета 80–100 €/күн, орташа табыс 2500–2700 €",
+        "feature-4": "Бүкіл Еуропа бойынша бағыттар, жүгіріс ≈ 12 000 км/ай",
+        "feature-5": "Құжаттарды ресімдеу және шығуға дайындық кезінде қолдау",
+        "btn-form-text": "Сауалнаманы 3 минутта толтырыңыз",
+        "btn-messenger-text": "WhatsApp/Telegram-ға жазыңыз",
+        "hero-help-text": "Сұрақтарға жауап береміз, мүмкіндіктеріңізді бағалаймыз және ыңғайлы жұмыс жағдайларын таңдаймыз."
       },
       az: {
         siteLabel: "Vakansiya",
@@ -1044,7 +1092,15 @@
         trustHeading: "Sürücülər Niyə Bizə Etibar Edirlər",
         faqHeading: "Tez-Tez Verilən Suallar",
         finalHeading: "Avropada İşləməyi Nəzərdən Keçirməyə Hazırsınız?",
-        finalSubtitle: "Qısa anket buraxın və ya Telegram-da yazın — suallara cavab verəcəyik və işə qəbul şansınızı qiymətləndirəcəyik."
+        finalSubtitle: "Qısa anket buraxın və ya Telegram-da yazın — suallara cavab verəcəyik və işə qəbul şansınızı qiymətləndirəcəyik.",
+        "feature-1": "Slovakiyada rəsmi rəsmiləşdirmə, xalq vizaları",
+        "feature-2": "Yeni Renault Euro 6, öz servisi – sürücü təmir etmir",
+        "feature-3": "Dieta 80–100 €/gün, orta gəlir 2500–2700 €",
+        "feature-4": "Bütün Avropa üzrə marşrutlar, yürüş ≈ 12 000 km/ay",
+        "feature-5": "Sənədləri rəsmiləşdirərkən və çıxışa hazırlıqda dəstək",
+        "btn-form-text": "Anketi 3 dəqiqəyə doldurun",
+        "btn-messenger-text": "WhatsApp/Telegram-da yazın",
+        "hero-help-text": "Suallara cavab verəcəyik, imkanlarınızı qiymətləndirəcəyik və rahat iş şərtləri seçəcəyik."
       },
       ur: {
         siteLabel: "آسامی",
@@ -1061,7 +1117,15 @@
         trustHeading: "ڈرائیور ہم پر کیوں اعتماد کرتے ہیں",
         faqHeading: "اکثر پوچھے جانے والے سوالات",
         finalHeading: "یورپ میں کام پر غور کرنے کے لیے تیار ہیں؟",
-        finalSubtitle: "مختصر سوالنامہ چھوڑیں یا Telegram پر لکھیں — سوالات کے جوابات دیں گے اور ملازمت کے امکانات کا اندازہ لگائیں گے۔"
+        finalSubtitle: "مختصر سوالنامہ چھوڑیں یا Telegram پر لکھیں — سوالات کے جوابات دیں گے اور ملازمت کے امکانات کا اندازہ لگائیں گے۔",
+        "feature-1": "سلوواکیہ میں سرکاری رجسٹریشن، عوامی ویزا",
+        "feature-2": "نئے Renault Euro 6، اپنی سروس – ڈرائیور مرمت نہیں کرتا",
+        "feature-3": "روزانہ 80–100 €، اوسط آمدنی 2500–2700 €",
+        "feature-4": "پورے یورپ میں راستے، مسافت ≈ 12,000 کلومیٹر/ماہ",
+        "feature-5": "دستاویزات کی تکمیل اور روانگی کی تیاری میں مدد",
+        "btn-form-text": "3 منٹ میں فارم بھریں",
+        "btn-messenger-text": "WhatsApp/Telegram پر لکھیں",
+        "hero-help-text": "سوالات کے جوابات دیں گے، آپ کے امکانات کا اندازہ لگائیں گے اور آرام دہ کام کی شرائط منتخب کریں گے۔"
       },
       tr: {
         siteLabel: "İş İlanı",
@@ -1078,7 +1142,15 @@
         trustHeading: "Sürücüler Neden Bize Güveniyor",
         faqHeading: "Sık Sorulan Sorular",
         finalHeading: "Avrupa'da Çalışmayı Değerlendirmeye Hazır Mısınız?",
-        finalSubtitle: "Kısa bir anket bırakın veya Telegram'da yazın — soruları yanıtlayacağız ve istihdam şansınızı değerlendireceğiz."
+        finalSubtitle: "Kısa bir anket bırakın veya Telegram'da yazın — soruları yanıtlayacağız ve istihdam şansınızı değerlendireceğiz.",
+        "feature-1": "Slovakya'da resmi kayıt, halk vizesi",
+        "feature-2": "Yeni Renault Euro 6, özel servis – sürücü tamir yapmaz",
+        "feature-3": "Günlük 80–100 €, ortalama gelir 2500–2700 €",
+        "feature-4": "Tüm Avrupa'da rotalar, mesafe ≈ 12,000 km/ay",
+        "feature-5": "Belgelerin tamamlanması ve çıkışa hazırlıkta destek",
+        "btn-form-text": "Formu 3 dakikada doldurun",
+        "btn-messenger-text": "WhatsApp/Telegram'da yazın",
+        "hero-help-text": "Soruları yanıtlayacağız, şanslarınızı değerlendireceğiz ve rahat çalışma koşulları seçeceğiz."
       },
       en: {
         siteLabel: "Vacancy",
@@ -1095,7 +1167,15 @@
         trustHeading: "Why Drivers Trust Us",
         faqHeading: "Frequently Asked Questions",
         finalHeading: "Ready to Consider Working in Europe?",
-        finalSubtitle: "Leave a short questionnaire or write on Telegram — we'll answer questions and assess your employment chances."
+        finalSubtitle: "Leave a short questionnaire or write on Telegram — we'll answer questions and assess your employment chances.",
+        "feature-1": "Official registration in Slovakia, national visas",
+        "feature-2": "New Renault Euro 6, own service center – driver doesn't repair",
+        "feature-3": "Daily allowance 80–100 €/day, average income 2500–2700 €",
+        "feature-4": "Routes across Europe, mileage ≈ 12,000 km/month",
+        "feature-5": "Support with document processing and departure preparation",
+        "btn-form-text": "Fill out the form in 3 minutes",
+        "btn-messenger-text": "Write on WhatsApp/Telegram",
+        "hero-help-text": "We'll answer your questions, assess your chances and help you find comfortable working conditions."
       }
     };
 
@@ -1172,6 +1252,25 @@
       if (faqHeading) faqHeading.textContent = trans.faqHeading;
       if (finalHeading) finalHeading.textContent = trans.finalHeading;
       if (finalSubtitle) finalSubtitle.textContent = trans.finalSubtitle;
+
+      // Update new translatable elements
+      const feature1 = document.getElementById('feature-1');
+      const feature2 = document.getElementById('feature-2');
+      const feature3 = document.getElementById('feature-3');
+      const feature4 = document.getElementById('feature-4');
+      const feature5 = document.getElementById('feature-5');
+      const btnFormText = document.getElementById('btn-form-text');
+      const btnMessengerText = document.getElementById('btn-messenger-text');
+      const heroHelpText = document.getElementById('hero-help-text');
+
+      if (feature1) feature1.textContent = trans['feature-1'];
+      if (feature2) feature2.textContent = trans['feature-2'];
+      if (feature3) feature3.textContent = trans['feature-3'];
+      if (feature4) feature4.textContent = trans['feature-4'];
+      if (feature5) feature5.textContent = trans['feature-5'];
+      if (btnFormText) btnFormText.textContent = trans['btn-form-text'];
+      if (btnMessengerText) btnMessengerText.textContent = trans['btn-messenger-text'];
+      if (heroHelpText) heroHelpText.textContent = trans['hero-help-text'];
 
       // Update HTML lang attribute
       document.documentElement.lang = lang;
