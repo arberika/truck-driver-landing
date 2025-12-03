@@ -1,8 +1,13 @@
 // Vercel Serverless Function: /api/analytics.js
-// Упрощенная аналитика с отправкой в Telegram
+// Аналитика с отправкой в Telegram и Facebook Conversions API
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
+
+// Facebook Conversions API Configuration
+const FB_PIXEL_ID = process.env.FB_PIXEL_ID || '544084131397675';
+const FB_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN || '';
+const FB_TEST_EVENT_CODE = process.env.FB_TEST_EVENT_CODE || '';
 
 // Important events to send to Telegram
 const IMPORTANT_EVENTS = [
@@ -90,6 +95,103 @@ function formatEventMessage(event) {
   return message;
 }
 
+// Send event to Facebook Conversions API
+async function sendToFacebookCAPI(event) {
+  if (!FB_ACCESS_TOKEN) {
+    console.log('Facebook CAPI not configured, skipping');
+    return;
+  }
+
+  try {
+    // Map our event names to Facebook standard events
+    const eventMapping = {
+      'page_view': 'PageView',
+      'button_click': 'ViewContent',
+      'discount_click': 'InitiateCheckout',
+      'discount_button_clicked': 'InitiateCheckout',
+      'form_submit': 'Lead',
+      'video_play': 'ViewContent',
+      'exit_intent': 'ViewContent'
+    };
+
+    const fbEventName = eventMapping[event.event_name] || 'CustomEvent';
+
+    // Generate event_id for deduplication (same as browser pixel)
+    const eventId = event.event_id || `${event.user_id}_${event.event_name}_${Date.now()}`;
+
+    // Hash email if present (for user matching)
+    const userData = {};
+    if (event.ip_address && event.ip_address !== 'unknown') {
+      userData.client_ip_address = event.ip_address;
+    }
+    if (event.user_agent && event.user_agent !== 'unknown') {
+      userData.client_user_agent = event.user_agent;
+    }
+    if (event.utm?.fbclid) {
+      userData.fbc = `fb.1.${Date.now()}.${event.utm.fbclid}`;
+    }
+    if (event.utm?.fbp) {
+      userData.fbp = event.utm.fbp;
+    }
+
+    // Build custom data
+    const customData = {};
+    if (event.page?.url) {
+      customData.content_name = event.page.title || event.page.url;
+      customData.content_category = 'truck-driver-landing';
+    }
+    if (event.event_data?.button_text) {
+      customData.content_ids = [event.event_data.button_text];
+    }
+    if (event.utm?.utm_source) {
+      customData.source = event.utm.utm_source;
+    }
+
+    // Build the payload
+    const payload = {
+      data: [{
+        event_name: fbEventName,
+        event_time: Math.floor(new Date(event.timestamp || Date.now()).getTime() / 1000),
+        event_id: eventId,
+        event_source_url: event.page?.url || 'https://ce.woweri.com',
+        action_source: 'website',
+        user_data: userData,
+        custom_data: customData
+      }]
+    };
+
+    // Add test event code if configured
+    if (FB_TEST_EVENT_CODE) {
+      payload.test_event_code = FB_TEST_EVENT_CODE;
+    }
+
+    // Send to Facebook
+    const url = `https://graph.facebook.com/v18.0/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error('Facebook CAPI Error:', result);
+    } else {
+      console.log('Facebook CAPI Success:', {
+        event: fbEventName,
+        events_received: result.events_received,
+        fbtrace_id: result.fbtrace_id
+      });
+    }
+
+    return result;
+
+  } catch (error) {
+    console.error('Facebook CAPI send error:', error);
+  }
+}
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -130,6 +232,9 @@ export default async function handler(req, res) {
       const message = formatEventMessage(event);
       await sendToTelegram(message);
     }
+
+    // Send ALL events to Facebook Conversions API
+    const fbResult = await sendToFacebookCAPI(event);
 
     // Send success response
     res.status(200).json({

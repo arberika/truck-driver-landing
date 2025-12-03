@@ -226,14 +226,27 @@ const ANALYTICS_CONFIG = {
   utm: getUTMParams()
 };
 
+// Get Facebook _fbp cookie for deduplication
+function getFBPCookie() {
+  const match = document.cookie.match(/(?:^|;)\s*_fbp\s*=\s*([^;]+)/);
+  return match ? match[1] : null;
+}
+
 async function trackEvent(eventName, eventData = {}) {
+  // Generate unique event_id for deduplication between browser pixel and server CAPI
+  const eventId = `${ANALYTICS_CONFIG.userId}_${eventName}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
   const eventPayload = {
     event_name: eventName,
+    event_id: eventId,
     event_data: eventData,
     session_id: ANALYTICS_CONFIG.sessionId,
     user_id: ANALYTICS_CONFIG.userId,
     timestamp: new Date().toISOString(),
-    utm: ANALYTICS_CONFIG.utm,
+    utm: {
+      ...ANALYTICS_CONFIG.utm,
+      fbp: getFBPCookie()
+    },
     page: {
       url: window.location.href,
       path: window.location.pathname,
@@ -253,18 +266,41 @@ async function trackEvent(eventName, eventData = {}) {
   };
 
   try {
+    // Send to our analytics API (which will forward to Facebook CAPI)
     await fetch(ANALYTICS_CONFIG.apiEndpoint, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(eventPayload)
     });
+
+    // Store in localStorage
     const events = JSON.parse(localStorage.getItem('eriar_events') || '[]');
     events.push(eventPayload);
     if (events.length > 100) events.shift();
     localStorage.setItem('eriar_events', JSON.stringify(events));
+
+    // Also send to browser Facebook Pixel with eventID for deduplication
+    if (typeof fbq !== 'undefined') {
+      const fbEventMapping = {
+        'page_view': 'PageView',
+        'page_loaded': 'PageView',
+        'button_click': 'ViewContent',
+        'discount_click': 'InitiateCheckout',
+        'discount_button_clicked': 'InitiateCheckout',
+        'form_submit': 'Lead',
+        'video_play': 'ViewContent',
+        'exit_intent': 'ViewContent'
+      };
+      const fbEventName = fbEventMapping[eventName];
+      if (fbEventName) {
+        fbq('track', fbEventName, eventData, { eventID: eventId });
+      }
+    }
   } catch (error) {
     console.error('Analytics tracking error:', error);
   }
+
+  return eventId; // Return eventId for use in other functions
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -306,14 +342,9 @@ document.addEventListener('DOMContentLoaded', function() {
       trackEvent('button_click', {
         button_id: buttonId,
         button_text: buttonText,
-        href: target.href || null
+        href: target.href || null,
+        content_name: buttonId.includes('btn-hero-form') || buttonId.includes('btn-apply') ? 'Application Form' : buttonText
       });
-      if (buttonId.includes('btn-hero-form') || buttonId.includes('btn-apply')) {
-        typeof fbq !== 'undefined' && fbq('track', 'InitiateCheckout', {
-          content_name: 'Application Form',
-          content_category: 'CTA'
-        });
-      }
     }
   });
 
@@ -5270,20 +5301,13 @@ function scrollToDiscount() {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Track scroll event
+    // Track scroll event (trackEvent now handles Facebook Pixel automatically)
     if (typeof trackEvent === 'function') {
       trackEvent('discount_button_clicked', {
         timestamp: new Date().toISOString(),
-        page_url: window.location.href
-      });
-    }
-
-    // Facebook Pixel tracking
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'ViewContent', {
+        page_url: window.location.href,
         content_name: 'Discount Section',
-        content_category: 'Discount',
-        content_type: 'scroll'
+        content_category: 'Discount'
       });
     }
   }
@@ -5296,19 +5320,12 @@ function openDiscountModal() {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
-    // Track modal open
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'ViewContent', {
-        content_name: 'Discount Modal',
-        content_category: 'Discount',
-        content_type: 'modal'
-      });
-    }
-
-    // Send to analytics
+    // Track modal open (trackEvent now handles Facebook Pixel automatically)
     trackEvent('discount_modal_opened', {
       timestamp: new Date().toISOString(),
-      page_url: window.location.href
+      page_url: window.location.href,
+      content_name: 'Discount Modal',
+      content_category: 'Discount'
     });
   }
 }
@@ -5322,19 +5339,11 @@ function closeDiscountModal() {
 }
 
 function trackDiscountClick(platform) {
-  // Facebook Pixel tracking
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', {
-      content_name: 'Discount Inquiry',
-      platform: platform,
-      package: '6'
-    });
-  }
-
-  // Custom analytics
+  // Custom analytics (trackEvent now handles Facebook Pixel automatically)
   trackEvent('discount_click', {
     platform: platform,
     package: 6,
+    content_name: 'Discount Inquiry',
     timestamp: new Date().toISOString(),
     page_url: window.location.href
   });
