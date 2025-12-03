@@ -1,0 +1,45 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept-Language",
+          "value": "uk.*"
+        }
+      ],
+      "destination": "/uk/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept-Language",
+          "value": "uz.*"
+        }
+      ],
+      "destination": "/uz/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept-Language",
+          "value": "tg.*"
+        }
+      ],
+      "destination": "/tj/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/ru/",
+      "permanent": false
+    }
+  ]
+}
