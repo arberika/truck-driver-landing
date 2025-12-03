@@ -29,6 +29,46 @@
       outline: 2px solid rgba(255,255,255,0.9);
       outline-offset: 2px;
     }
+    /* Theme transitions */
+    body, #app-root {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Language dropdown */
+    .lang-dropdown {
+      position: relative;
+    }
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      background: rgb(30, 41, 59);
+      border: 1px solid rgb(71, 85, 105);
+      border-radius: 0.75rem;
+      padding: 0.5rem;
+      min-width: 160px;
+      z-index: 50;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    }
+    .lang-menu.active {
+      display: block;
+    }
+    .lang-option {
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      transition: background-color 0.2s;
+    }
+    .lang-option:hover {
+      background: rgb(51, 65, 85);
+    }
+    .lang-option.selected {
+      background: rgb(6, 182, 212);
+      color: rgb(15, 23, 42);
+      font-weight: 600;
+    }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="./assets/data_sdk.js" type="text/javascript"></script>
@@ -48,7 +88,37 @@
         <p id="site-title" class="text-sm font-semibold">Водитель C+E в Европу</p>
        </div>
       </div>
-      <div class="hidden sm:flex items-center gap-3 text-xs"><span class="px-2 py-1 rounded-full bg-slate-800/80 text-cyan-200 border border-cyan-500/50"> Официальное трудоустройство в ЕС </span>
+      <div class="flex items-center gap-2">
+       <!-- Contact buttons -->
+       <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center hover:bg-slate-700 transition-colors" title="WhatsApp">
+        <svg class="w-5 h-5 text-cyan-300" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+       </a>
+       <a href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center hover:bg-slate-700 transition-colors" title="Telegram">
+        <svg class="w-5 h-5 text-cyan-300" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+       </a>
+       <!-- Theme toggle -->
+       <button id="theme-toggle" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center hover:bg-slate-700 transition-colors focus-ring" title="Переключить тему" aria-label="Переключить тему">
+        <svg id="theme-icon-dark" class="w-5 h-5 text-cyan-300" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+        <svg id="theme-icon-light" class="w-5 h-5 text-cyan-300 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M12,18a6,6,0,1,1,6-6A6,6,0,0,1,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8ZM12,5a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM12,19a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19Zm9-7H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm13.66-5.66a1,1,0,0,0,1.41,0l.71-.71a1,1,0,1,0-1.41-1.41l-.71.71A1,1,0,0,0,18.66,6.34ZM5.34,17.66l-.71.71a1,1,0,0,0,1.41,1.41l.71-.71a1,1,0,0,0-1.41-1.41ZM18.66,17.66a1,1,0,0,0-1.41,1.41l.71.71a1,1,0,0,0,1.41-1.41ZM6.34,6.34,5.63,5.63A1,1,0,0,0,4.22,7l.71.71a1,1,0,0,0,1.41-1.37Z"/></svg>
+       </button>
+       <!-- Language selector -->
+       <div class="lang-dropdown">
+        <button id="lang-toggle" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center hover:bg-slate-700 transition-colors focus-ring" title="Выбрать язык" aria-label="Выбрать язык">
+         <svg class="w-5 h-5 text-cyan-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+        </button>
+        <div id="lang-menu" class="lang-menu">
+         <div class="lang-option selected" data-lang="ru">🇷🇺 Русский</div>
+         <div class="lang-option" data-lang="uk">🇺🇦 Українська</div>
+         <div class="lang-option" data-lang="uz">🇺🇿 O'zbek</div>
+         <div class="lang-option" data-lang="tj">🇹🇯 Тоҷикӣ</div>
+         <div class="lang-option" data-lang="tk">🇹🇲 Türkmen</div>
+         <div class="lang-option" data-lang="kz">🇰🇿 Қазақ</div>
+         <div class="lang-option" data-lang="az">🇦🇿 Azərbaycan</div>
+         <div class="lang-option" data-lang="ur">🇵🇰 اردو</div>
+         <div class="lang-option" data-lang="tr">🇹🇷 Türkçe</div>
+         <div class="lang-option" data-lang="en">🇬🇧 English</div>
+        </div>
+       </div>
       </div>
      </nav>
      <main class="w-full flex flex-col gap-10" aria-label="Лендинг вакансии водителя C+E"><!-- Первый экран -->
@@ -603,6 +673,299 @@
         initInteractions();
         initScrollAnimations();
       }
+      initThemeToggle();
+      initLanguageSwitch();
     });
+
+    // Theme Toggle
+    function initThemeToggle() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const iconDark = document.getElementById('theme-icon-dark');
+      const iconLight = document.getElementById('theme-icon-light');
+      const body = document.body;
+      const appRoot = document.getElementById('app-root');
+
+      // Load saved theme or default to dark
+      let currentTheme = localStorage.getItem('theme') || 'dark';
+      applyTheme(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+        applyTheme(currentTheme);
+      });
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          // Light theme colors
+          body.style.backgroundColor = '#f8fafc';
+          body.style.color = '#0f172a';
+          appRoot.style.backgroundColor = '#f8fafc';
+          appRoot.style.color = '#0f172a';
+          iconDark.classList.add('hidden');
+          iconLight.classList.remove('hidden');
+        } else {
+          // Dark theme colors (default)
+          body.style.backgroundColor = '#020617';
+          body.style.color = '#e2e8f0';
+          appRoot.style.backgroundColor = '#020617';
+          appRoot.style.color = '#e2e8f0';
+          iconDark.classList.remove('hidden');
+          iconLight.classList.add('hidden');
+        }
+      }
+    }
+
+    // Language Switching with Complete Translations
+    const translations = {
+      ru: {
+        siteLabel: "Вакансия",
+        siteTitle: "Водитель C+E в Европу",
+        heroBadge: "Набор водителей C+E • выезд через Словакию",
+        mainHeading: "Работа для водителей C+E в Европе",
+        heroSubtitle: "Официальное оформление в Словакии, народные визы и современный автопарк Renault Euro 6. Полное сопровождение оформления документов и прозрачный доход от 2500 до 2700 € в месяц.",
+        videoTitle: "Видео-презентация вакансии",
+        videoSubtitle: "Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.",
+        fitHeading: "Кому подойдёт эта вакансия",
+        termsHeading: "Условия работы и оплата",
+        docsHeading: "Документы и оформление",
+        processHeading: "Как мы работаем: 6 простых шагов",
+        trustHeading: "Почему нам доверяют водители",
+        faqHeading: "Частые вопросы",
+        finalHeading: "Готовы рассмотреть работу в Европе?",
+        finalSubtitle: "Оставьте короткую анкету или напишите в Telegram — ответим на вопросы и оценим ваши шансы на трудоустройство."
+      },
+      uk: {
+        siteLabel: "Вакансія",
+        siteTitle: "Водій C+E до Європи",
+        heroBadge: "Набір водіїв C+E • виїзд через Словаччину",
+        mainHeading: "Робота для водіїв C+E в Європі",
+        heroSubtitle: "Офіційне оформлення в Словаччині, народні візи та сучасний автопарк Renault Euro 6. Повний супровід оформлення документів та прозорий дохід від 2500 до 2700 € на місяць.",
+        videoTitle: "Відео-презентація вакансії",
+        videoSubtitle: "Тут буде відео Sora з докладним поясненням умов, етапів оформлення та прикладами рейсів.",
+        fitHeading: "Кому підійде ця вакансія",
+        termsHeading: "Умови роботи та оплата",
+        docsHeading: "Документи та оформлення",
+        processHeading: "Як ми працюємо: 6 простих кроків",
+        trustHeading: "Чому нам довіряють водії",
+        faqHeading: "Часті питання",
+        finalHeading: "Готові розглянути роботу в Європі?",
+        finalSubtitle: "Залиште коротку анкету або напишіть у Telegram — відповімо на питання та оцінимо ваші шанси на працевлаштування."
+      },
+      uz: {
+        siteLabel: "Vakansiya",
+        siteTitle: "C+E haydovchi Yevropaga",
+        heroBadge: "C+E haydovchilar nabori • Slovakiya orqali chiqish",
+        mainHeading: "Yevropada C+E haydovchilar uchun ish",
+        heroSubtitle: "Slovakiyada rasmiy rasmiylashtiruv, xalq vizalari va zamonaviy Renault Euro 6 avtoparki. Hujjatlarni rasmiylashtirish bo'yicha to'liq qo'llab-quvvatlash va oyiga 2500 dan 2700 € gacha shaffof daromad.",
+        videoTitle: "Vakansiya video-taqdimoti",
+        videoSubtitle: "Bu yerda shartlar, rasmiylashtiruv bosqichlari va reys misollarini batafsil tushuntiruvchi Sora videosi bo'ladi.",
+        fitHeading: "Bu vakansiya kimga mos keladi",
+        termsHeading: "Ish shartlari va to'lov",
+        docsHeading: "Hujjatlar va rasmiylashtiruv",
+        processHeading: "Biz qanday ishlaymiz: 6 oddiy qadam",
+        trustHeading: "Haydovchilar bizga nima uchun ishonadi",
+        faqHeading: "Tez-tez beriladigan savollar",
+        finalHeading: "Yevropada ishlashni ko'rib chiqishga tayyormisiz?",
+        finalSubtitle: "Qisqa anketa qoldiring yoki Telegramda yozing — savollarga javob beramiz va ish olish imkoniyatingizni baholaymiz."
+      },
+      tj: {
+        siteLabel: "Вакансия",
+        siteTitle: "Ронандаи C+E ба Аврупо",
+        heroBadge: "Қабули ронандагони C+E • баромад тавассути Словакия",
+        mainHeading: "Кор барои ронандагони C+E дар Аврупо",
+        heroSubtitle: "Расмикунонии расмӣ дар Словакия, визаҳои халқӣ ва автопарки муосири Renault Euro 6. Пуштибонии пурраи расмикунонии ҳуҷҷатҳо ва даромади шаффофи 2500 то 2700 € дар моҳ.",
+        videoTitle: "Видео-пешниҳоди вакансия",
+        videoSubtitle: "Дар ин ҷо видеои Sora бо шарҳи муфассали шартҳо, марҳилаҳои расмикунонӣ ва намунаҳои рейсҳо хоҳад буд.",
+        fitHeading: "Ин вакансия ба кӣ мувофиқ аст",
+        termsHeading: "Шартҳои кор ва пардохт",
+        docsHeading: "Ҳуҷҷатҳо ва расмикунонӣ",
+        processHeading: "Мо чӣ гуна кор мекунем: 6 қадами содда",
+        trustHeading: "Чаро ронандагон ба мо эътимод мекунанд",
+        faqHeading: "Саволҳои зуд-зуд пурсида",
+        finalHeading: "Омодаед кор дар Аврупоро баррасӣ кунед?",
+        finalSubtitle: "Анкетаи кутоҳ гузоред ё дар Telegram нависед — ба саволҳо ҷавоб медиҳем ва имкониятҳои кориёбии шуморо арзёбӣ мекунем."
+      },
+      tk: {
+        siteLabel: "Waka Yeri",
+        siteTitle: "C+E Sürüjisi Ýewropa",
+        heroBadge: "C+E Sürüjileriň Ýygnanylyşy • Slowakiýadan Çykyş",
+        mainHeading: "Ýewropada C+E Sürüjiler Üçin Iş",
+        heroSubtitle: "Slowakiýada resmi resmileşdirme, halk wizalary we häzirki zaman Renault Euro 6 awtoparkasy. Resminamalary resmileşdirmekde doly goldaw we aýda 2500-den 2700 € aç girdeji.",
+        videoTitle: "Waka Ýeriniň Wideo Görkezilişi",
+        videoSubtitle: "Bu ýerde şertleri, resmileşdirme tapgyrlaryny we reis myþallaryny jikme-jik düşündirýän Sora wideosy bolar.",
+        fitHeading: "Bu Waka Yeri Kime Laýyk Gelýär",
+        termsHeading: "Iş Şertleri we Töleg",
+        docsHeading: "Resminamalar we Resmileşdirme",
+        processHeading: "Biz Nädip Işleýäris: 6 Ýönekeý Ädim",
+        trustHeading: "Näme Üçin Sürüjiler Bize Ynanýarlar",
+        faqHeading: "Ýygy-ýygydan Soralýan Soraglar",
+        finalHeading: "Ýewropada Işlemegi Gözden Geçirmäge Taýynmy?",
+        finalSubtitle: "Gysga anketa galdyryň ýa-da Telegramda ýazyň — soraglara jogap bereris we iş almak mümkinçiligiňizi bahalandyrarys."
+      },
+      kz: {
+        siteLabel: "Вакансия",
+        siteTitle: "C+E жүргізушісі Еуропаға",
+        heroBadge: "C+E жүргізушілерді жинау • Словакия арқылы шығу",
+        mainHeading: "Еуропадағы C+E жүргізушілері үшін жұмыс",
+        heroSubtitle: "Словакияда ресми ресімдеу, халықтық визалар және заманауи Renault Euro 6 автопаркі. Құжаттарды ресімдеуді толық қолдау және айына 2500-ден 2700 € дейін мөлдір табыс.",
+        videoTitle: "Вакансияның бейне-презентациясы",
+        videoSubtitle: "Мұнда шарттарды, ресімдеу кезеңдерін және рейстер мысалдарын егжей-тегжейлі түсіндіретін Sora бейнесі болады.",
+        fitHeading: "Бұл вакансия кімге сәйкес келеді",
+        termsHeading: "Жұмыс шарттары және төлем",
+        docsHeading: "Құжаттар және ресімдеу",
+        processHeading: "Біз қалай жұмыс істейміз: 6 қарапайым қадам",
+        trustHeading: "Жүргізушілер бізге неліктен сенеді",
+        faqHeading: "Жиі қойылатын сұрақтар",
+        finalHeading: "Еуропада жұмыс істеуді қарауға дайынсыз ба?",
+        finalSubtitle: "Қысқа сауалнама қалдырыңыз немесе Telegram-ға жазыңыз — сұрақтарға жауап береміз және жұмысқа орналасу мүмкіндігіңізді бағалаймыз."
+      },
+      az: {
+        siteLabel: "Vakansiya",
+        siteTitle: "C+E Sürücüsü Avropaya",
+        heroBadge: "C+E Sürücülərin Toplanması • Slovakiya vasitəsilə çıxış",
+        mainHeading: "Avropada C+E Sürücüləri Üçün İş",
+        heroSubtitle: "Slovakiyada rəsmi rəsmiləşdirmə, xalq vizaları və müasir Renault Euro 6 avtoparku. Sənədlərin rəsmiləşdirilməsində tam dəstək və ayda 2500-dən 2700 €-ya qədər şəffaf gəlir.",
+        videoTitle: "Vakansiyanın Video-Təqdimatı",
+        videoSubtitle: "Burada şərtləri, rəsmiləşdirmə mərhələlərini və reys nümunələrini ətraflı izah edən Sora videosu olacaq.",
+        fitHeading: "Bu Vakansiya Kimə Uyğundur",
+        termsHeading: "İş Şərtləri və Ödəniş",
+        docsHeading: "Sənədlər və Rəsmiləşdirmə",
+        processHeading: "Necə İşləyirik: 6 Sadə Addım",
+        trustHeading: "Sürücülər Niyə Bizə Etibar Edirlər",
+        faqHeading: "Tez-Tez Verilən Suallar",
+        finalHeading: "Avropada İşləməyi Nəzərdən Keçirməyə Hazırsınız?",
+        finalSubtitle: "Qısa anket buraxın və ya Telegram-da yazın — suallara cavab verəcəyik və işə qəbul şansınızı qiymətləndirəcəyik."
+      },
+      ur: {
+        siteLabel: "آسامی",
+        siteTitle: "C+E ڈرائیور یورپ کے لیے",
+        heroBadge: "C+E ڈرائیوروں کی بھرتی • سلوواکیہ کے ذریعے روانگی",
+        mainHeading: "یورپ میں C+E ڈرائیوروں کے لیے کام",
+        heroSubtitle: "سلوواکیہ میں سرکاری رجسٹریشن، عوامی ویزا اور جدید Renault Euro 6 فلیٹ۔ دستاویزات کی تکمیل میں مکمل مدد اور ماہانہ 2500 سے 2700 € تک شفاف آمدنی۔",
+        videoTitle: "آسامی کی ویڈیو پریزنٹیشن",
+        videoSubtitle: "یہاں شرائط، رجسٹریشن کے مراحل اور سفر کی مثالوں کی تفصیلی وضاحت کے ساتھ Sora ویڈیو ہوگی۔",
+        fitHeading: "یہ آسامی کس کے لیے موزوں ہے",
+        termsHeading: "کام کی شرائط اور تنخواہ",
+        docsHeading: "دستاویزات اور رجسٹریشن",
+        processHeading: "ہم کیسے کام کرتے ہیں: 6 آسان مراحل",
+        trustHeading: "ڈرائیور ہم پر کیوں اعتماد کرتے ہیں",
+        faqHeading: "اکثر پوچھے جانے والے سوالات",
+        finalHeading: "یورپ میں کام پر غور کرنے کے لیے تیار ہیں؟",
+        finalSubtitle: "مختصر سوالنامہ چھوڑیں یا Telegram پر لکھیں — سوالات کے جوابات دیں گے اور ملازمت کے امکانات کا اندازہ لگائیں گے۔"
+      },
+      tr: {
+        siteLabel: "İş İlanı",
+        siteTitle: "C+E Sürücüsü Avrupa'ya",
+        heroBadge: "C+E Sürücü Alımı • Slovakya üzerinden çıkış",
+        mainHeading: "Avrupa'da C+E Sürücüleri İçin İş",
+        heroSubtitle: "Slovakya'da resmi kayıt, halk vizesi ve modern Renault Euro 6 filosu. Belgelerin tamamlanmasında tam destek ve ayda 2500 ila 2700 € şeffaf gelir.",
+        videoTitle: "İş İlanı Video Sunumu",
+        videoSubtitle: "Burada şartları, kayıt aşamalarını ve sefer örneklerini ayrıntılı olarak açıklayan Sora videosu olacak.",
+        fitHeading: "Bu İş İlanı Kime Uygun",
+        termsHeading: "Çalışma Şartları ve Ödeme",
+        docsHeading: "Belgeler ve Kayıt",
+        processHeading: "Nasıl Çalışıyoruz: 6 Basit Adım",
+        trustHeading: "Sürücüler Neden Bize Güveniyor",
+        faqHeading: "Sık Sorulan Sorular",
+        finalHeading: "Avrupa'da Çalışmayı Değerlendirmeye Hazır Mısınız?",
+        finalSubtitle: "Kısa bir anket bırakın veya Telegram'da yazın — soruları yanıtlayacağız ve istihdam şansınızı değerlendireceğiz."
+      },
+      en: {
+        siteLabel: "Vacancy",
+        siteTitle: "C+E Driver to Europe",
+        heroBadge: "C+E Driver Recruitment • Departure via Slovakia",
+        mainHeading: "Work for C+E Drivers in Europe",
+        heroSubtitle: "Official registration in Slovakia, national visas and modern Renault Euro 6 fleet. Full support in document processing and transparent income from 2500 to 2700 € per month.",
+        videoTitle: "Vacancy Video Presentation",
+        videoSubtitle: "Here will be a Sora video with detailed explanation of conditions, registration stages and route examples.",
+        fitHeading: "Who Is This Vacancy Suitable For",
+        termsHeading: "Working Conditions and Payment",
+        docsHeading: "Documents and Registration",
+        processHeading: "How We Work: 6 Simple Steps",
+        trustHeading: "Why Drivers Trust Us",
+        faqHeading: "Frequently Asked Questions",
+        finalHeading: "Ready to Consider Working in Europe?",
+        finalSubtitle: "Leave a short questionnaire or write on Telegram — we'll answer questions and assess your employment chances."
+      }
+    };
+
+    function initLanguageSwitch() {
+      const langToggle = document.getElementById('lang-toggle');
+      const langMenu = document.getElementById('lang-menu');
+      const langOptions = document.querySelectorAll('.lang-option');
+
+      // Load saved language or default to Russian
+      let currentLang = localStorage.getItem('language') || 'ru';
+      updateLanguage(currentLang);
+
+      // Toggle language menu
+      langToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!langMenu.contains(e.target) && e.target !== langToggle) {
+          langMenu.classList.remove('active');
+        }
+      });
+
+      // Handle language selection
+      langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          const selectedLang = option.getAttribute('data-lang');
+          currentLang = selectedLang;
+          localStorage.setItem('language', selectedLang);
+          updateLanguage(selectedLang);
+          langMenu.classList.remove('active');
+
+          // Update selected state
+          langOptions.forEach(opt => opt.classList.remove('selected'));
+          option.classList.add('selected');
+        });
+      });
+    }
+
+    function updateLanguage(lang) {
+      const trans = translations[lang] || translations.ru;
+
+      // Update all translatable elements
+      const siteLabel = document.getElementById('site-label');
+      const siteTitle = document.getElementById('site-title');
+      const heroBadge = document.getElementById('hero-badge');
+      const mainHeading = document.getElementById('main_heading');
+      const heroSubtitle = document.getElementById('hero_subtitle');
+      const videoTitle = document.getElementById('video_title');
+      const videoSubtitle = document.getElementById('video_subtitle');
+      const fitHeading = document.getElementById('fit_heading');
+      const termsHeading = document.getElementById('terms_heading');
+      const docsHeading = document.getElementById('docs_heading');
+      const processHeading = document.getElementById('process_heading');
+      const trustHeading = document.getElementById('trust_heading');
+      const faqHeading = document.getElementById('faq_heading');
+      const finalHeading = document.getElementById('final_heading');
+      const finalSubtitle = document.getElementById('final_subtitle');
+
+      if (siteLabel) siteLabel.textContent = trans.siteLabel;
+      if (siteTitle) siteTitle.textContent = trans.siteTitle;
+      if (heroBadge) heroBadge.textContent = trans.heroBadge;
+      if (mainHeading) mainHeading.textContent = trans.mainHeading;
+      if (heroSubtitle) heroSubtitle.textContent = trans.heroSubtitle;
+      if (videoTitle) videoTitle.textContent = trans.videoTitle;
+      if (videoSubtitle) videoSubtitle.textContent = trans.videoSubtitle;
+      if (fitHeading) fitHeading.textContent = trans.fitHeading;
+      if (termsHeading) termsHeading.textContent = trans.termsHeading;
+      if (docsHeading) docsHeading.textContent = trans.docsHeading;
+      if (processHeading) processHeading.textContent = trans.processHeading;
+      if (trustHeading) trustHeading.textContent = trans.trustHeading;
+      if (faqHeading) faqHeading.textContent = trans.faqHeading;
+      if (finalHeading) finalHeading.textContent = trans.finalHeading;
+      if (finalSubtitle) finalSubtitle.textContent = trans.finalSubtitle;
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+    }
   </script>
 </body></html>
