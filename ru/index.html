@@ -4484,6 +4484,22 @@
         headerTelegram.href = `https://t.me/${TELEGRAM_BOT}`;
       }
     }
+
+    // Auto-pause other videos when one starts playing
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+
+      videos.forEach(video => {
+        video.addEventListener('play', function() {
+          // Pause all other videos
+          videos.forEach(otherVideo => {
+            if (otherVideo !== video && !otherVideo.paused) {
+              otherVideo.pause();
+            }
+          });
+        });
+      });
+    });
   </script>
 
   <!-- AmoCRM Social Button -->
