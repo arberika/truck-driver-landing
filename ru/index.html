@@ -88,6 +88,25 @@
       color: rgb(15, 23, 42);
       font-weight: 600;
     }
+    /* Show navigation on xl screens */
+    @media (min-width: 1280px) {
+      #main-nav {
+        display: flex !important;
+      }
+      .md\:block {
+        display: block !important;
+      }
+    }
+    @media (min-width: 768px) {
+      .md\:block {
+        display: block !important;
+      }
+    }
+    @media (min-width: 640px) {
+      .sm\:flex {
+        display: flex !important;
+      }
+    }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="./assets/data_sdk.js" type="text/javascript"></script>
@@ -109,7 +128,7 @@
        </a>
 
        <!-- Navigation Menu - только на больших экранах -->
-       <nav class="hidden xl:flex" style="display: none; align-items: center; gap: 12px; font-size: 14px;">
+       <nav id="main-nav" style="display: none; align-items: center; gap: 12px; font-size: 14px;">
         <a href="#fit" id="nav_fit" style="color: #cbd5e1; transition: color 0.2s; white-space: nowrap;">Кому подходит</a>
         <a href="#terms" id="nav_terms" style="color: #cbd5e1; transition: color 0.2s;">Условия</a>
         <a href="#docs" id="nav_docs" style="color: #cbd5e1; transition: color 0.2s;">Документы</a>
@@ -1200,7 +1219,7 @@
 
     // Прокликивание CTA (сейчас — заглушки ссылок)
     function initInteractions() {
-      const TELEGRAM_BOT_URL = "https://t.me/eriar_bot?start=utm_source=facebook&utm_medium=cpc&utm_campaign=drivers_ce";
+      const TELEGRAM_BOT_URL = "https://t.me/ERIARcom_bot?start=utm_source=facebook&utm_medium=cpc&utm_campaign=drivers_ce";
       const TELEGRAM_GROUP_URL = "https://t.me/eriarcom";
       const TAPLINK_URL = "https://taplink.cc/your_taplink_here?utm_source=facebook&utm_medium=cpc&utm_campaign=drivers_ce";
       const WHATSAPP_URL = "https://wa.me/0000000000?text=Интересует%20вакансия%20водителя%20C%2BE%20в%20Европу&utm_source=facebook&utm_medium=cpc&utm_campaign=drivers_ce";
@@ -1250,7 +1269,7 @@
         finalTelegram.addEventListener("click", (e) => {
           e.preventDefault();
           openInNewTab(TELEGRAM_BOT_URL);
-          showStatus("Открыт бот в Telegram @eriar_bot");
+          showStatus("Открыт бот в Telegram @ERIARcom_bot");
         });
       }
 
