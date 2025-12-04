@@ -345,6 +345,16 @@ async function trackEvent(eventName, eventData = {}) {
         fbq('track', fbEventName, eventData, { eventID: eventId });
       }
     }
+
+    // Send to Google Analytics 4
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, {
+        ...eventData,
+        event_category: eventData.category || 'engagement',
+        event_label: eventData.label || eventName,
+        site_language: siteLanguage
+      });
+    }
   } catch (error) {
     console.error('Analytics tracking error:', error);
   }
