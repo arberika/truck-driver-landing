@@ -248,10 +248,17 @@ async function trackEvent(eventName, eventData = {}) {
   // Generate unique event_id for deduplication between browser pixel and server CAPI
   const eventId = `${ANALYTICS_CONFIG.userId}_${eventName}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
+  // Get current site language from URL or localStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  const siteLanguage = urlParams.get('lang') || localStorage.getItem('language') || 'ru';
+
   const eventPayload = {
     event_name: eventName,
     event_id: eventId,
-    event_data: eventData,
+    event_data: {
+      ...eventData,
+      site_language: siteLanguage  // Add language to all events
+    },
     session_id: ANALYTICS_CONFIG.sessionId,
     user_id: ANALYTICS_CONFIG.userId,
     timestamp: new Date().toISOString(),
@@ -5185,8 +5192,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const langMenu = document.getElementById('lang-menu');
       const langOptions = document.querySelectorAll('.lang-option');
 
-      // Load saved language or default to Russian
-      let currentLang = localStorage.getItem('language') || 'ru';
+      // Get language from URL parameter first, then localStorage, then default to Russian
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      let currentLang = urlLang || localStorage.getItem('language') || 'ru';
+
+      // Save URL language to localStorage if present
+      if (urlLang) {
+        localStorage.setItem('language', urlLang);
+      }
+
       updateLanguage(currentLang);
 
       // Toggle language menu
@@ -5208,6 +5223,18 @@ document.addEventListener('DOMContentLoaded', function() {
           const selectedLang = option.getAttribute('data-lang');
           currentLang = selectedLang;
           localStorage.setItem('language', selectedLang);
+
+          // Update URL with language parameter
+          const newUrl = new URL(window.location);
+          newUrl.searchParams.set('lang', selectedLang);
+          window.history.pushState({}, '', newUrl);
+
+          // Track language change event
+          trackEvent('language_change', {
+            language: selectedLang,
+            previous_language: currentLang
+          });
+
           updateLanguage(selectedLang);
           langMenu.classList.remove('active');
 
