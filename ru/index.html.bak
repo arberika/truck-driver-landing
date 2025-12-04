@@ -541,85 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
        </div>
-      </section>
-
-      <!-- Социальные доказательства -->
-      <section id="testimonials" class="fade-up visible bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl p-6 border border-slate-700">
-        <div class="text-center mb-6">
-          <h2 class="text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            Водители уже работают в Европе
-          </h2>
-          <div class="flex justify-center gap-8 text-sm text-slate-300 mt-4">
-            <div class="text-center">
-              <div class="text-2xl font-bold text-cyan-400">247+</div>
-              <div class="text-xs text-slate-400">водителей</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-emerald-400">92%</div>
-              <div class="text-xs text-slate-400">одобрение виз</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-blue-400">5 лет</div>
-              <div class="text-xs text-slate-400">на рынке</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- Отзыв 1 -->
-          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg">
-                АС
-              </div>
-              <div>
-                <div class="font-semibold text-slate-200">Андрей С.</div>
-                <div class="text-xs text-slate-400">Ташкент → Словакия</div>
-              </div>
-            </div>
-            <p class="text-sm text-slate-300 mb-2">"Все четко по договору. Визу получил за 3 недели, работаю уже 8 месяцев. Renault новый, зарплата приходит вовремя."</p>
-            <div class="flex gap-1 text-yellow-400 text-xs">★★★★★</div>
-          </div>
-
-          <!-- Отзыв 2 -->
-          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-white font-bold text-lg">
-                ДК
-              </div>
-              <div>
-                <div class="font-semibold text-slate-200">Дмитрий К.</div>
-                <div class="text-xs text-slate-400">Алматы → Братислава</div>
-              </div>
-            </div>
-            <p class="text-sm text-slate-300 mb-2">"Сопровождение на каждом этапе. Помогли с документами, встретили в аэропорту. Реальная зарплата 2600€, как и обещали."</p>
-            <div class="flex gap-1 text-yellow-400 text-xs">★★★★★</div>
-          </div>
-
-          <!-- Отзыв 3 -->
-          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
-                РМ
-              </div>
-              <div>
-                <div class="font-semibold text-slate-200">Рустам М.</div>
-                <div class="text-xs text-slate-400">Бишкек → Кошице</div>
-              </div>
-            </div>
-            <p class="text-sm text-slate-300 mb-2">"Первый раз отказали в визе — переподали бесплатно. Со второго раза получил D-визу. Сейчас оформляю ВНЖ."</p>
-            <div class="flex gap-1 text-yellow-400 text-xs">★★★★★</div>
-          </div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">
-            Проверить мои шансы
-          </a>
-        </div>
-      </section>
-
-      <!-- Кому подойдёт -->
+      </section><!-- Кому подойдёт -->
       <section id="fit" class="fade-up visible">
        <h2 id="fit_heading" class="text-xl sm:text-2xl font-bold mb-4" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;">
     <div style="display: flex; align-items: center; gap: 12px;">
@@ -701,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div>
          <p id="terms-income-heading" class="font-semibold mb-1">Пример дохода водителя</p>
          <p class="text-slate-100"><span id="terms-income-text">При среднем пробеге и стандартных условиях водитель получает</span> <span id="terms-income-amount" class="font-semibold text-cyan-300">около 2500–2700 € в месяц</span> <span id="terms-income-net">«чистыми».</span></p>
-        </div><button id="btn-terms-form" type="button" class="focus-ring inline-flex items-center justify-center px-6 py-4 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-900 shadow-md hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-terms-calc">Уточнить расчёт под ваш опыт</span></button>
+        </div><button id="btn-terms-form" type="button" class="focus-ring inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-900 shadow-md hover:bg-cyan-400 active:bg-cyan-300 transition-colors w-full sm:w-auto" style="background-color: rgb(6, 182, 212); color: rgb(2, 6, 23); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 14.4px;"><span id="btn-terms-calc">Уточнить расчёт под ваш опыт</span></button>
        </div>
       </section><!-- Документы и оформление -->
       <section id="docs" class="fade-up">
@@ -1042,8 +964,8 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
 
          <div class="flex flex-col sm:flex-row gap-2">
-          <a href="https://t.me/ERIARcom_bot?start=discount_package6" target="_blank" rel="noopener" onclick="trackDiscountClick('telegram')" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">📱 Написать в Telegram</a>
-          <a href="https://wa.me/17329635593?text=Хочу%20узнать%20про%20скидку%2010%%20за%20друга%20в%20Пакете%206" target="_blank" rel="noopener" onclick="trackDiscountClick('whatsapp')" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition-colors">💬 WhatsApp</a>
+          <a href="https://t.me/ERIARcom_bot?start=discount_package6" target="_blank" rel="noopener" onclick="trackDiscountClick('telegram')" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">📱 Написать в Telegram</a>
+          <a href="https://wa.me/17329635593?text=Хочу%20узнать%20про%20скидку%2010%%20за%20друга%20в%20Пакете%206" target="_blank" rel="noopener" onclick="trackDiscountClick('whatsapp')" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition-colors">💬 WhatsApp</a>
          </div>
         </article>
       </section>
@@ -1119,8 +1041,8 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
 
          <div class="flex flex-col gap-2 mt-auto">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"><span id="btn_apply">Заполнить анкету</span></a>
-          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors"><span id="btn_consult">Получить консультацию</span></a>
+          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"><span id="btn_apply">Заполнить анкету</span></a>
+          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors"><span id="btn_consult">Получить консультацию</span></a>
          </div>
         </article>
 
@@ -1160,8 +1082,8 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
 
          <div class="flex flex-col gap-2 mt-auto">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
-          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
+          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
+          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
          </div>
         </article>
 
@@ -1198,8 +1120,8 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
 
          <div class="flex flex-col gap-2 mt-auto">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
-          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
+          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
+          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
          </div>
         </article>
 
@@ -1245,8 +1167,8 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
 
          <div class="flex flex-col gap-2 mt-auto">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
-          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
+          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors">Заполнить анкету</a>
+          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-slate-700 text-cyan-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
          </div>
         </article>
 
@@ -1307,8 +1229,8 @@ document.addEventListener('DOMContentLoaded', function() {
           </ol>
          </div>
          <div class="flex flex-col sm:flex-row gap-2">
-          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors">Заполнить анкету</a>
-          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-6 py-4 rounded-xl text-sm font-semibold bg-slate-700 text-amber-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
+          <a href="https://forms.amocrm.ru/rwvmdlv" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors">Заполнить анкету</a>
+          <a href="https://t.me/ERIARcom_bot" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-slate-700 text-amber-200 hover:bg-slate-600 transition-colors">Получить консультацию</a>
          </div>
         </article>
 
