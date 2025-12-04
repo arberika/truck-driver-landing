@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3 id="video_title" class="text-lg font-semibold text-cyan-300 mt-2">Видео-презентация вакансии</h3>
         <p id="video_subtitle" class="text-sm text-slate-400 mb-1">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
 
-        <!-- Video carousel: horizontal scroll on mobile, vertical on desktop -->
+        <!-- Video carousel: horizontal scroll on mobile, smart grid on desktop -->
         <div class="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none scrollbar-hide">
           <!-- Video 1 -->
           <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
@@ -646,31 +646,34 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
 
-          <!-- Video 3 -->
-          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
-            <video
-             class="absolute inset-0 w-full h-full object-cover"
-             controls
-             preload="metadata"
-             src="./videos/video6.mp4#t=0.1">
-             Ваш браузер не поддерживает видео.
-            </video>
-            <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
-             Видео 3
+          <!-- Video 3 & 4 - Side by side on desktop -->
+          <div class="flex flex-row gap-2 flex-shrink-0 snap-center w-[85vw] md:w-full">
+            <!-- Video 3 -->
+            <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-1" style="height: 140px;">
+              <video
+               class="absolute inset-0 w-full h-full object-cover"
+               controls
+               preload="metadata"
+               src="./videos/video6.mp4#t=0.1">
+               Ваш браузер не поддерживает видео.
+              </video>
+              <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
+               Видео 3
+              </div>
             </div>
-          </div>
 
-          <!-- Video 4 -->
-          <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-shrink-0 snap-center w-[85vw] md:w-full" style="height: 140px;">
-            <video
-             class="absolute inset-0 w-full h-full object-cover"
-             controls
-             preload="metadata"
-             src="./videos/video7.mp4#t=0.1">
-             Ваш браузер не поддерживает видео.
-            </video>
-            <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
-             Видео 4
+            <!-- Video 4 -->
+            <div class="relative bg-slate-800/80 border border-slate-700 rounded-lg overflow-hidden flex-1" style="height: 140px;">
+              <video
+               class="absolute inset-0 w-full h-full object-cover"
+               controls
+               preload="metadata"
+               src="./videos/video7.mp4#t=0.1">
+               Ваш браузер не поддерживает видео.
+              </video>
+              <div class="absolute bottom-1 left-1 bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-slate-200">
+               Видео 4
+              </div>
             </div>
           </div>
         </div>
