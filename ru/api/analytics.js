@@ -5,7 +5,8 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 
 // Facebook Conversions API Configuration
-const FB_PIXEL_ID = process.env.FB_PIXEL_ID || '3789700971281396';
+const FB_PIXEL_ID = process.env.FB_PIXEL_ID || '3789700971281396'; // Browser Pixel ID
+const FB_DATASET_ID = process.env.FB_DATASET_ID || '678938088055473'; // Dataset ID for CAPI
 const FB_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN || '';
 const FB_TEST_EVENT_CODE = process.env.FB_TEST_EVENT_CODE || '';
 
@@ -165,8 +166,8 @@ async function sendToFacebookCAPI(event) {
       payload.test_event_code = FB_TEST_EVENT_CODE;
     }
 
-    // Send to Facebook
-    const url = `https://graph.facebook.com/v18.0/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
+    // Send to Facebook (using Dataset ID for CAPI)
+    const url = `https://graph.facebook.com/v18.0/${FB_DATASET_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
