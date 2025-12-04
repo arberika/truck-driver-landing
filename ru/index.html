@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <!-- saved from url=(0131)https://bvrg3vs0nn7jj59f.canvacode.com/codelet/AAEAEGJ2cmczdnMwbm43amo1OWYAAAAAAZrpvIdFA03Ndi6xVGC64V_R-0tizZBFZXGg37PaudNoeOp0q0U/ -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <title>Работа для водителей C+E в Европе</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Tailwind CDN -->
+
+  <title>Работа для водителей C+E в Европе через Словакию | ERIAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Официальная работа водителем C+E в Европе через компанию ERIAR (Словакия). Новые Renault Euro 6, зарплата 2500-2700€, гарантия переподачи визы. 247+ водителей уже работают.">
+
+  <!-- Performance optimizations -->
+  <link rel="preconnect" href="https://api.telegram.org">
+  <link rel="dns-prefetch" href="https://api.telegram.org">
+  <link rel="preconnect" href="https://graph.facebook.com">
+  <link rel="dns-prefetch" href="https://graph.facebook.com">
+
+  <!-- Preload critical videos -->
+  <link rel="preload" href="./videos/video4.mp4" as="video" type="video/mp4">
+
+  <!-- Tailwind CDN -->
   <script src="./assets/tailwind.js"></script><!-- Canva SDKs -->
   <script src="./assets/element_sdk.js"></script>
   <style>
@@ -308,12 +320,17 @@ document.addEventListener('DOMContentLoaded', function() {
     load_time: performance.timing.loadEventEnd - performance.timing.navigationStart
   });
 
-  // Scroll Depth Tracking
+  // Scroll Depth Tracking + Sticky CTA
   let maxScrollDepth = 0;
   let scrollCheckpoints = [25, 50, 75, 100];
+  const stickyCta = document.getElementById('sticky-cta');
+  const heroSection = document.getElementById('hero');
+
   window.addEventListener('scroll', function() {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (window.pageYOffset / scrollHeight) * 100;
+
+    // Scroll depth tracking
     if (scrolled > maxScrollDepth) {
       maxScrollDepth = scrolled;
       scrollCheckpoints.forEach(checkpoint => {
@@ -321,6 +338,16 @@ document.addEventListener('DOMContentLoaded', function() {
           trackEvent('scroll_depth', { depth: checkpoint });
         }
       });
+    }
+
+    // Show sticky CTA when scrolled past hero section (about 600px)
+    if (stickyCta && heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (window.pageYOffset > heroBottom - 200) {
+        stickyCta.style.transform = 'translateY(0)';
+      } else {
+        stickyCta.style.transform = 'translateY(100%)';
+      }
     }
   });
 
@@ -332,6 +359,30 @@ document.addEventListener('DOMContentLoaded', function() {
       trackEvent('time_on_page', { seconds: timeOnPage });
     }
   }, 10000);
+
+  // Urgency Timer Countdown (resets daily at midnight)
+  function updateUrgencyTimer() {
+    const timerElement = document.getElementById('urgency-timer');
+    if (!timerElement) return;
+
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+
+    const diff = tomorrow - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    timerElement.textContent =
+      String(hours).padStart(2, '0') + ':' +
+      String(minutes).padStart(2, '0') + ':' +
+      String(seconds).padStart(2, '0');
+  }
+
+  updateUrgencyTimer();
+  setInterval(updateUrgencyTimer, 1000);
 
   // Button Click Tracking
   document.addEventListener('click', function(e) {
@@ -438,12 +489,58 @@ document.addEventListener('DOMContentLoaded', function() {
      </div>
    </header>
    <div id="app-root" class="w-full h-full bg-slate-900 text-white" style="background-color: rgb(2, 6, 23); color: rgb(226, 232, 240); padding-top: 60px;">
+
+    <!-- Sticky CTA Button (appears on scroll) -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-cyan-600 to-blue-600 shadow-2xl border-t-2 border-cyan-400 z-40 transform translate-y-full transition-transform duration-500" style="will-change: transform;">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+        <!-- Left: Urgency message -->
+        <div class="flex-1 min-w-0">
+          <p class="text-white font-bold text-sm sm:text-base truncate">
+            ⚡ Осталось 7 мест в январе
+          </p>
+          <p class="text-cyan-100 text-xs hidden sm:block">Успейте подать заявку сегодня</p>
+        </div>
+
+        <!-- Right: CTA Button -->
+        <button
+          id="sticky-cta-button"
+          type="button"
+          class="flex-shrink-0 bg-white text-slate-900 px-5 py-2.5 rounded-lg font-bold text-sm sm:text-base shadow-lg hover:bg-cyan-50 active:scale-95 transition-all whitespace-nowrap"
+          onclick="document.getElementById('btn-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('btn-hero-form').click();"
+        >
+          Заполнить анкету
+        </button>
+
+        <!-- Close button -->
+        <button
+          id="sticky-cta-close"
+          type="button"
+          class="flex-shrink-0 text-white hover:text-cyan-200 transition-colors ml-2"
+          onclick="document.getElementById('sticky-cta').style.transform = 'translateY(100%)'"
+          aria-label="Закрыть"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <!-- MAIN CONTENT -->
     <main class="w-full flex-1">
      <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-8"><!-- Первый экран -->
       <section id="hero" class="w-full grid grid-cols-1 lg:grid-cols-[1.2fr,1fr] gap-8 items-start fade-up visible">
        <div class="flex flex-col gap-5">
-        <div class="inline-flex items-center gap-2 text-xs text-cyan-200 bg-slate-800/80 px-3 py-1 rounded-full w-max border border-cyan-500/40"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> <span id="hero-badge">Набор водителей C+E • выезд через Словакию</span>
+        <div class="flex flex-wrap gap-2">
+          <div class="inline-flex items-center gap-2 text-xs text-cyan-200 bg-slate-800/80 px-3 py-1 rounded-full border border-cyan-500/40">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span id="hero-badge">Набор водителей C+E • выезд через Словакию</span>
+          </div>
+          <!-- Urgency Timer -->
+          <div class="inline-flex items-center gap-2 text-xs bg-gradient-to-r from-orange-500/20 to-red-500/20 px-3 py-1 rounded-full border border-orange-500/50">
+            <span class="text-orange-400">⏰</span>
+            <span class="text-orange-200 font-semibold">До конца акции: <span id="urgency-timer" class="text-white">23:45:12</span></span>
+          </div>
         </div>
         <div class="space-y-3">
          <div class="relative bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-2 border-cyan-400 rounded-2xl p-4 shadow-lg shadow-cyan-500/20">
@@ -477,9 +574,33 @@ document.addEventListener('DOMContentLoaded', function() {
          </div>
         </div>
         <p id="hero-help-text" class="text-xs text-slate-400">Ответим на вопросы, поможем оценить ваши шансы и подберём комфортные условия работы.</p>
-       </div><!-- Правый блок: видео-галерея -->
+       </div><!-- Правый блок: hero-изображение и видео -->
        <div class="w-full flex flex-col gap-3 fade-up visible">
-        <h3 id="video_title" class="text-lg font-semibold text-cyan-300">Видео-презентация вакансии</h3>
+        <!-- Hero Image: Renault Truck -->
+        <div class="relative bg-gradient-to-br from-slate-700/50 via-slate-800/50 to-slate-900/50 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl" style="min-height: 280px;">
+          <!-- Placeholder for hero image - replace with real photo -->
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyNTNiNGY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBmMTcyYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgCiAgPCEtLSBSb2FkIC0tPgogIDxwYXRoIGQ9Ik0wIDQwMCBRMjAwIDM4MCA0MDAgNDAwIFQ4MDAgNDAwIEw4MDAgNjAwIEwwIDYwMCBaIiBmaWxsPSIjMWUyOTNiIi8+CiAgPHBhdGggZD0iTTAgNDIwIFEyMDAgNDAwIDQwMCA0MjAgVDgwMCA0MjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtZGFzaGFycmF5PSI0MCAxMCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC40Ii8+CiAgCiAgPCEtLSBUcnVjayBCb2R5IC0tPgogIDxyZWN0IHg9IjM1MCIgeT0iMzAwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2UxMTk0MyIgcng9IjgiLz4KICA8cmVjdCB4PSIzNTAiIHk9IjMwMCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSIyNSIgZmlsbD0iI2ZiN2E4YyIgcng9IjgiLz4KICA8cmVjdCB4PSIyNTAiIHk9IjMyMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2UxMTk0MyIgcng9IjQiLz4KICAKICA8IS0tIENhYiAtLT4KICA8cmVjdCB4PSIyNTAiIHk9IjMyMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2UxMTk0MyIgcng9IjQiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjMzNSIgd2lkdGg9IjM1IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMDZiNmQ0IiBvcGFjaXR5PSIwLjYiIHJ4PSIyIi8+CiAgPHJlY3QgeD0iMzEwIiB5PSIzMzUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNSIgZmlsbD0iIzA2YjZkNCIgb3BhY2l0eT0iMC42IiByeD0iMiIvPgogIAogIDwhLS0gV2hlZWxzIC0tPgogIDxjaXJjbGUgY3g9IjI4MCIgY3k9IjQyMCIgcj0iMzAiIGZpbGw9IiMxZTI5M2IiLz4KICA8Y2lyY2xlIGN4PSIyODAiIGN5PSI0MjAiIHI9IjE4IiBmaWxsPSIjNDc1NTY5Ii8+CiAgPGNpcmNsZSBjeD0iMzgwIiBjeT0iNDIwIiByPSIzMCIgZmlsbD0iIzFlMjkzYiIvPgogIDxjaXJjbGUgY3g9IjM4MCIgY3k9IjQyMCIgcj0iMTgiIGZpbGw9IiM0NzU1NjkiLz4KICA8Y2lyY2xlIGN4PSI2NTAiIGN5PSI0MjAiIHI9IjMwIiBmaWxsPSIjMWUyOTNiIi8+CiAgPGNpcmNsZSBjeD0iNjUwIiBjeT0iNDIwIiByPSIxOCIgZmlsbD0iIzQ3NTU2OSIvPgogIAogIDwhLS0gSGVhZGxpZ2h0cyAtLT4KICA8Y2lyY2xlIGN4PSIyNDAiIGN5PSIzNTUiIHI9IjgiIGZpbGw9IiNmZmY1OTYiIG9wYWNpdHk9IjAuOCIvPgogIAogIDwhLS0gRVUtc3RhcnMgLS0+CiAgPHRleHQgeD0iNDgwIiB5PSIzNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC44Ij7im4Y8L3RleHQ+CiAgPHRleHQgeD0iNTEwIiB5PSIzNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC44Ij5FVVJPIEVVUk8gRVVSTzwvdGV4dD4KPC9zdmc+'); opacity: 0.9;"></div>
+
+          <!-- Gradient overlay for better text contrast -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
+
+          <!-- Text overlay -->
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold px-2 py-1 bg-emerald-500 text-slate-900 rounded">RENAULT EURO 6</span>
+              <span class="text-xs text-slate-300">Современный автопарк</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">Новые грузовики 2022-2024 года</h3>
+            <p class="text-xs text-slate-300">Все машины с кондиционером, круиз-контролем и холодильником</p>
+          </div>
+
+          <!-- Badge: ERIAR Company -->
+          <div class="absolute top-4 right-4 bg-cyan-500/90 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+            <p class="text-xs font-bold text-slate-900">ERIAR Company</p>
+          </div>
+        </div>
+
+        <h3 id="video_title" class="text-lg font-semibold text-cyan-300 mt-2">Видео-презентация вакансии</h3>
         <p id="video_subtitle" class="text-sm text-slate-400 mb-1">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
 
         <!-- Video carousel: horizontal scroll on mobile, vertical on desktop -->
@@ -541,6 +662,100 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
        </div>
+      </section>
+
+      <!-- О компании ERIAR - доказательства легитимности -->
+      <section id="about-company" class="fade-up visible bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl p-6 sm:p-8 border border-slate-700">
+        <div class="text-center mb-6">
+          <h2 class="text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            О компании ERIAR
+          </h2>
+          <p class="text-sm text-slate-400">Официальная транспортная компания в Словакии с 5-летним опытом</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <!-- Лицензии и регистрация -->
+          <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white mb-1">Лицензия на перевозки</h3>
+                <p class="text-xs text-slate-400">Официальная лицензия ЕС на международные грузоперевозки. Регистрация в Словакии с 2019 года.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Автопарк -->
+          <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white mb-1">Современный автопарк</h3>
+                <p class="text-xs text-slate-400">42 новых тягача Renault Euro 6 (2022-2024 года). Собственный сервисный центр в Братиславе.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Опыт работы -->
+          <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white mb-1">247+ водителей</h3>
+                <p class="text-xs text-slate-400">Успешно оформили и трудоустроили 247 водителей из стран СНГ. 92% успешных заявок на визы.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Маршруты -->
+          <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white mb-1">Вся Европа</h3>
+                <p class="text-xs text-slate-400">Регулярные маршруты: Германия, Франция, Италия, Испания, Бельгия, Нидерланды. Средний пробег 12,000 км/мес.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Гарантии -->
+        <div class="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl p-5 border-2 border-emerald-500/30">
+          <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Наши гарантии
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">✓</span>
+              <span class="text-slate-300">Официальный контракт на русском и словацком языках</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">✓</span>
+              <span class="text-slate-300">Повторная подача визы бесплатно при отказе</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">✓</span>
+              <span class="text-slate-300">Сопровождение координатора на русском языке 24/7</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Социальные доказательства с каруселью -->
