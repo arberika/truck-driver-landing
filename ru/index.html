@@ -2055,7 +2055,43 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
        </div>
 
-      </section><!-- Финальный CTA -->
+      </section>
+
+      <!-- Instagram CTA -->
+      <section id="instagram-cta" class="fade-up">
+       <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 sm:p-8 border border-purple-400/50 shadow-xl">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+         <div class="flex-1 text-white space-y-3">
+          <h2 id="instagram_cta_heading" class="text-2xl sm:text-3xl font-bold">
+           📸 Подпишитесь на наш Instagram
+          </h2>
+          <p id="instagram_cta_text" class="text-lg text-purple-100">
+           Получайте эксклюзивный контент, новые вакансии и советы экспертов
+          </p>
+          <p id="instagram_cta_services" class="text-sm text-purple-50 bg-purple-700/30 rounded-lg p-3 border border-purple-400/30">
+           💼 Нужна другая вакансия? Вопросы по иммиграции, ВНЖ или юридическим вопросам? У нас много специалистов!
+          </p>
+         </div>
+         <div class="flex-shrink-0">
+          <a
+           href="https://www.instagram.com/eriarwork"
+           target="_blank"
+           rel="noopener noreferrer"
+           id="instagram_cta_button"
+           class="inline-flex items-center gap-3 bg-white text-purple-600 font-bold px-8 py-4 rounded-xl hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+           onclick="trackEvent('instagram_cta_click', {source: 'instagram_section'})"
+          >
+           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+           </svg>
+           <span>Подписаться на Instagram</span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+
+      <!-- Финальный CTA -->
       <section id="final-cta" class="fade-up">
        <div class="bg-slate-800/80 border border-cyan-500/60 rounded-2xl p-5 flex flex-col gap-4 text-sm">
         <div>
@@ -2917,7 +2953,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Личный менеджер на период адаптации",
         "pkg6_inc_6": "Смена вакансии без доплат",
         "pkg6_inc_7": "Встреча по приезду и адаптация",
-        "pkg6_inc_8": "Пожизненная поддержка (без доплат)"
+        "pkg6_inc_8": "Пожизненная поддержка (без доплат)",
+        "instagram_cta_heading": "📸 Подпишитесь на наш Instagram",
+        "instagram_cta_text": "Получайте эксклюзивный контент, новые вакансии и советы экспертов",
+        "instagram_cta_services": "💼 Нужна другая вакансия? Вопросы по иммиграции, ВНЖ или юридическим вопросам? У нас много специалистов!",
+        "instagram_cta_button": "Подписаться на Instagram"
       },
       uk: {
         siteLabel: "Вакансія",
@@ -3174,7 +3214,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Особистий менеджер на період адаптації",
         "pkg6_inc_6": "Зміна вакансії без доплат",
         "pkg6_inc_7": "Зустріч по приїзду та адаптація",
-        "pkg6_inc_8": "Довічна підтримка (без доплат)"
+        "pkg6_inc_8": "Довічна підтримка (без доплат)",
+        "instagram_cta_heading": "📸 Підпишіться на наш Instagram",
+        "instagram_cta_text": "Отримуйте ексклюзивний контент, нові вакансії та поради експертів",
+        "instagram_cta_services": "💼 Потрібна інша вакансія? Питання щодо імміграції, ВНЖ чи юридичних питань? У нас багато фахівців!",
+        "instagram_cta_button": "Підписатися на Instagram"
       },
       uz: {
         siteLabel: "Vakansiya",
@@ -3450,7 +3494,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pricing_process_step2": "Bizning menejer arizani ko'rib chiqadi (1-2 kun)",
         "pricing_process_step3": "Tasdiqlangandan keyin shartnoma imzolaymiz",
         "pricing_process_step4": "Tanlangan paket uchun hisob-faktura chiqaramiz",
-        "pricing_process_step5": "Hujjatlarni rasmiylashtirish boshlaymiz"
+        "pricing_process_step5": "Hujjatlarni rasmiylashtirish boshlaymiz",
+        "instagram_cta_heading": "📸 Instagram'ga obuna bo'ling",
+        "instagram_cta_text": "Eksklyuziv kontent, yangi vakansiyalar va mutaxassislar maslahatlari",
+        "instagram_cta_services": "💼 Boshqa vakansiya kerakmi? Immigratsiya, VNJ yoki yuridik savollar bormi? Bizda ko'plab mutaxassislar bor!",
+        "instagram_cta_button": "Instagram'ga obuna bo'lish"
       },
       tj: {
         siteLabel: "Вакансия",
@@ -3707,7 +3755,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Менеҷери шахсӣ барои давраи мутобиқшавӣ",
         "pkg6_inc_6": "Иваз кардани вакансия бе пардохти иловагӣ",
         "pkg6_inc_7": "Пешвозӣ ҳангоми расидан ва мутобиқшавӣ",
-        "pkg6_inc_8": "Пуштибонии абадӣ (бе пардохти иловагӣ)"
+        "pkg6_inc_8": "Пуштибонии абадӣ (бе пардохти иловагӣ)",
+        "instagram_cta_heading": "📸 Ба Instagram-и мо обуна шавед",
+        "instagram_cta_text": "Мӯҳтавои эксклюзивӣ, вакансияҳои нав ва маслиҳатҳои мутахассисон гиред",
+        "instagram_cta_services": "💼 Вакансияи дигар лозим аст? Саволҳо дар бораи муҳоҷират, иҷозатномаи истиқомат ё масоили ҳуқуқӣ доред? Мо мутахассисони зиёд дорем!",
+        "instagram_cta_button": "Ба Instagram обуна шудан"
       },
       tk: {
         siteLabel: "Waka Yeri",
@@ -3964,7 +4016,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Uýgunlaşma döwri üçin şahsy menejer",
         "pkg6_inc_6": "Goşmaça tölegsiz wakansýany çalşmak",
         "pkg6_inc_7": "Gelmäňizde garşy almak we uýgunlaşma",
-        "pkg6_inc_8": "Ömürlik goldaw (goşmaça tölegsiz)"
+        "pkg6_inc_8": "Ömürlik goldaw (goşmaça tölegsiz)",
+        "instagram_cta_heading": "📸 Biziň Instagram-a ýazylmak",
+        "instagram_cta_text": "Eksklýuziw mazmun, täze wakansýalar we hünärmenleriň maslahatlaryny alyň",
+        "instagram_cta_services": "💼 Başga wakansýa gerekmi? Immigrasiýa, ýaşaýyş rugsady ýa-da hukuk meseleleri barada soraglar barmy? Bizde köp hünärmenler bar!",
+        "instagram_cta_button": "Instagram-a ýazylmak"
       },
       kz: {
         siteLabel: "Вакансия",
@@ -4221,7 +4277,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Бейімделу кезеңі үшін жеке менеджер",
         "pkg6_inc_6": "Қосымша төлемсіз вакансияны өзгерту",
         "pkg6_inc_7": "Келгенде қарсы алу және бейімделу",
-        "pkg6_inc_8": "Өмір бойғы қолдау (қосымша төлемсіз)"
+        "pkg6_inc_8": "Өмір бойғы қолдау (қосымша төлемсіз)",
+        "instagram_cta_heading": "📸 Біздің Instagram-ға жазылыңыз",
+        "instagram_cta_text": "Эксклюзивті контент, жаңа вакансиялар және мамандардың кеңестерін алыңыз",
+        "instagram_cta_services": "💼 Басқа вакансия қажет пе? Иммиграция, тұрғылықты рұқсат немесе заң мәселелері бойынша сұрақтар бар ма? Бізде көптеген мамандар бар!",
+        "instagram_cta_button": "Instagram-ға жазылу"
       },
       az: {
         siteLabel: "Vakansiya",
@@ -4478,7 +4538,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Uyğunlaşma dövrü üçün şəxsi menecer",
         "pkg6_inc_6": "Əlavə ödəniş olmadan vakansiya dəyişmə",
         "pkg6_inc_7": "Gəlişdə qarşılama və uyğunlaşma",
-        "pkg6_inc_8": "Ömürlük dəstək (əlavə ödənişsiz)"
+        "pkg6_inc_8": "Ömürlük dəstək (əlavə ödənişsiz)",
+        "instagram_cta_heading": "📸 Bizim Instagram-a abunə olun",
+        "instagram_cta_text": "Eksklüziv məzmun, yeni vakansiyalar və mütəxəssislərin məsləhətlərini əldə edin",
+        "instagram_cta_services": "💼 Başqa vakansiya lazımdır? İmmiqrasiya, yaşayış icazəsi və ya hüquqi məsələlər barədə suallarınız var? Bizdə çoxlu mütəxəssislər var!",
+        "instagram_cta_button": "Instagram-a abunə olun"
       },
       ur: {
         siteLabel: "آسامی",
@@ -4735,7 +4799,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "موافقت کی مدت کے لیے ذاتی مینیجر",
         "pkg6_inc_6": "اضافی ادائیگی کے بغیر نوکری تبدیلی",
         "pkg6_inc_7": "آمد پر استقبال اور موافقت",
-        "pkg6_inc_8": "تاحیات معاونت (اضافی ادائیگی کے بغیر)"
+        "pkg6_inc_8": "تاحیات معاونت (اضافی ادائیگی کے بغیر)",
+        "instagram_cta_heading": "📸 ہماری Instagram کو فالو کریں",
+        "instagram_cta_text": "خصوصی مواد، نئی آسامیاں اور ماہرین کے مشورے حاصل کریں",
+        "instagram_cta_services": "💼 کوئی اور آسامی چاہیے؟ امیگریشن، رہائشی اجازت یا قانونی معاملات کے بارے میں سوالات ہیں؟ ہمارے پاس بہت سے ماہرین ہیں!",
+        "instagram_cta_button": "Instagram کو فالو کریں"
       },
       tr: {
         siteLabel: "İş İlanı",
@@ -4992,7 +5060,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Uyum dönemi için kişisel müdür",
         "pkg6_inc_6": "Ek ödeme olmadan iş değişikliği",
         "pkg6_inc_7": "Gelişte karşılama ve uyum",
-        "pkg6_inc_8": "Ömür boyu destek (ek ödeme olmadan)"
+        "pkg6_inc_8": "Ömür boyu destek (ek ödeme olmadan)",
+        "instagram_cta_heading": "📸 Instagram'ımızı takip edin",
+        "instagram_cta_text": "Özel içerik, yeni iş ilanları ve uzmanlardan tavsiyeler alın",
+        "instagram_cta_services": "💼 Başka bir iş mi gerekiyor? Göç, oturma izni veya yasal konularda sorularınız mı var? Birçok uzmanımız var!",
+        "instagram_cta_button": "Instagram'ı takip et"
       },
       en: {
         siteLabel: "Vacancy",
@@ -5249,7 +5321,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "pkg4_inc_8": "Personal manager during adaptation",
         "pkg6_inc_6": "Job change at no extra cost",
         "pkg6_inc_7": "Airport pickup and adaptation",
-        "pkg6_inc_8": "Lifetime support (no extra fees)"
+        "pkg6_inc_8": "Lifetime support (no extra fees)",
+        "instagram_cta_heading": "📸 Follow us on Instagram",
+        "instagram_cta_text": "Get exclusive content, new job openings and expert advice",
+        "instagram_cta_services": "💼 Need a different job? Questions about immigration, residence permits or legal matters? We have many specialists!",
+        "instagram_cta_button": "Follow on Instagram"
       }
     };
 
@@ -5971,6 +6047,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (pkg4BtnConsult) pkg4BtnConsult.textContent = trans['btn_consult'] || pkg4BtnConsult.textContent;
       if (pkg6BtnApply) pkg6BtnApply.textContent = trans['btn_apply'] || pkg6BtnApply.textContent;
       if (pkg6BtnConsult) pkg6BtnConsult.textContent = trans['btn_consult'] || pkg6BtnConsult.textContent;
+
+      // Instagram CTA
+      const instagramCtaHeading = document.getElementById('instagram_cta_heading');
+      const instagramCtaText = document.getElementById('instagram_cta_text');
+      const instagramCtaServices = document.getElementById('instagram_cta_services');
+      const instagramCtaButton = document.getElementById('instagram_cta_button');
+
+      if (instagramCtaHeading) instagramCtaHeading.textContent = trans['instagram_cta_heading'] || instagramCtaHeading.textContent;
+      if (instagramCtaText) instagramCtaText.textContent = trans['instagram_cta_text'] || instagramCtaText.textContent;
+      if (instagramCtaServices) instagramCtaServices.textContent = trans['instagram_cta_services'] || instagramCtaServices.textContent;
+      if (instagramCtaButton) {
+        const buttonSpan = instagramCtaButton.querySelector('span');
+        if (buttonSpan) buttonSpan.textContent = trans['instagram_cta_button'] || buttonSpan.textContent;
+      }
 
       // Update HTML lang attribute
       document.documentElement.lang = lang;
