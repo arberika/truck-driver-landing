@@ -5,7 +5,7 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 
 // Facebook Conversions API Configuration
-const FB_PIXEL_ID = process.env.FB_PIXEL_ID || '544084131397675';
+const FB_PIXEL_ID = process.env.FB_PIXEL_ID || '3789700971281396';
 const FB_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN || '';
 const FB_TEST_EVENT_CODE = process.env.FB_TEST_EVENT_CODE || '';
 
