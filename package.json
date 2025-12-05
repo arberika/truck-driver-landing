@@ -1,0 +1,23 @@
+{
+  "name": "truck-driver-landing-ce",
+  "version": "2.0.0",
+  "description": "Multilingual landing page for truck drivers C+E with Facebook CAPI and AmoCRM integration",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "landing-page",
+    "truck-drivers",
+    "facebook-capi",
+    "amocrm",
+    "vercel"
+  ],
+  "author": "ERIAR",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
