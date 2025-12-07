@@ -744,12 +744,27 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
         <div class="space-y-3">
-         <div class="relative bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-2 border-cyan-400 rounded-2xl p-4 shadow-lg shadow-cyan-500/20">
-          <div class="absolute -top-2 -left-2 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
-          <div class="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-          <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-          <div class="absolute -bottom-2 -right-2 w-4 h-4 bg-cyan-400 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
-          <h1 id="main_heading" class="text-2xl sm:text-3xl font-extrabold leading-snug text-center" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 27.2px; background: linear-gradient(to right, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Работа водителем C+E в Европе<br><span class="text-xl sm:text-2xl text-emerald-400">с гарантией переподачи визы</span></h1>
+         <!-- YouTube Playlist Embed -->
+         <div class="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-lg shadow-cyan-500/20">
+           <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+             <iframe
+               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+               src="https://www.youtube.com/embed/videoseries?list=PL_5BV18VUrAepbWRaJq5311cHmXpKROg3"
+               title="Как устроиться водителем в Европу - видео-гайд"
+               frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               allowfullscreen
+               loading="eager">
+             </iframe>
+           </div>
+
+           <!-- Overlay Title -->
+           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/95 via-slate-900/80 to-transparent p-4">
+             <h1 id="main_heading" class="text-xl sm:text-2xl font-extrabold leading-snug" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(to right, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+               📺 Работа водителем C+E в Европе
+             </h1>
+             <p class="text-sm text-emerald-400 font-semibold mt-1">Смотрите видео о процессах оформления</p>
+           </div>
          </div>
          <p id="hero_subtitle" class="text-sm sm:text-base text-slate-200 max-w-xl" style="font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 16px;">Официальное оформление в Словакии через компанию ERIAR. Новые Renault Euro 6, стабильный доход 2500-2700€ + диеты 90-100€/день. Уже 247+ водителей работают в Европе.</p>
         </div>
@@ -805,36 +820,11 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
 
-        <h3 id="video_title" class="text-lg font-semibold text-cyan-300 mt-2">Видео-презентация вакансии</h3>
-        <p id="video_subtitle" class="text-sm text-slate-400 mb-1">Здесь будет видео Sora с подробным объяснением условий, этапов оформления и примерами рейсов.</p>
-
-<!-- YouTube Playlist -->
-        <h3 id="video_title" class="text-lg font-semibold text-cyan-300 mt-2">📺 Видео-гайд: Как устроиться водителем в Европу</h3>
-        <p id="video_subtitle" class="text-sm text-slate-400 mb-3">Подробные видео о всех этапах: документы, виза, переезд, работа. Смотрите и готовьтесь!</p>
-
-        <!-- YouTube Playlist Embed -->
-        <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl overflow-hidden border border-slate-700">
-          <div class="relative" style="padding-bottom: 56.25%; height: 0;">
-            <iframe 
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-              src="https://www.youtube.com/embed/videoseries?list=PL_5BV18VUrAepbWRaJq5311cHmXpKROg3"
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
-              loading="lazy">
-            </iframe>
-          </div>
-          
-          <!-- CTA Button to Full Playlist -->
-          <div class="p-4 bg-slate-800/50">
-            <a 
-              href="https://youtube.com/playlist?list=PL_5BV18VUrAepbWRaJq5311cHmXpKROg3" 
-              target="_blank" 
-              rel="noopener"
-              class="inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors w-full">
-              ▶ Смотреть все видео на YouTube
-            </a>
-          </div>
-        </div>
-<!-- End YouTube section -->
+        <!-- Link to full playlist -->
+        <a
+          href="https://youtube.com/playlist?list=PL_5BV18VUrAepbWRaJq5311cHmXpKROg3"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors w-full mt-3 shadow-lg">
+          ▶ Смотреть все видео о трудоустройстве на YouTube
+        </a>
